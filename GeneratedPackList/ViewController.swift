@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //Default value true, man
+    var genderSelected = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +22,24 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //View 1, choose gender
+    
+    @IBAction func manBtn(_ sender: UIButton) {
+        genderSelected = true
+        print("Det funkade du är en " + String(genderSelected))
+    }
+    
+    
+    @IBAction func womanBtn(_ sender: UIButton) {
+        genderSelected = false
+         print("Det funkade du är en " + String(genderSelected))
+    }
+    
+    
+    
+   
+    
 
 }
 
