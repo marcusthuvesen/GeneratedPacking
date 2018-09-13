@@ -17,6 +17,7 @@
 		2505B8CE21459E020030BC8B /* GeneratedPackListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505B8CD21459E020030BC8B /* GeneratedPackListUITests.swift */; };
 		2561E2C321497DDA0019223E /* ReasonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561E2C221497DDA0019223E /* ReasonUI.swift */; };
 		2561E2C52149A5F00019223E /* WhatClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561E2C42149A5F00019223E /* WhatClimate.swift */; };
+		2561E2C7214A686D0019223E /* TravelLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561E2C6214A686D0019223E /* TravelLength.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2505B8CF21459E020030BC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2561E2C221497DDA0019223E /* ReasonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonUI.swift; sourceTree = "<group>"; };
 		2561E2C42149A5F00019223E /* WhatClimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatClimate.swift; sourceTree = "<group>"; };
+		2561E2C6214A686D0019223E /* TravelLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLength.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2505B8AA21459DFF0030BC8B /* AppDelegate.swift */,
 				2505B8AC21459DFF0030BC8B /* ViewController.swift */,
 				2505B8AE21459DFF0030BC8B /* Main.storyboard */,
+				2561E2C6214A686D0019223E /* TravelLength.swift */,
 				2561E2C42149A5F00019223E /* WhatClimate.swift */,
 				2561E2C221497DDA0019223E /* ReasonUI.swift */,
 				2505B8B421459E010030BC8B /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2505B8B321459DFF0030BC8B /* GeneratedPackList.xcdatamodeld in Sources */,
+				2561E2C7214A686D0019223E /* TravelLength.swift in Sources */,
 				2561E2C52149A5F00019223E /* WhatClimate.swift in Sources */,
 				2505B8AD21459DFF0030BC8B /* ViewController.swift in Sources */,
 				2505B8AB21459DFF0030BC8B /* AppDelegate.swift in Sources */,
