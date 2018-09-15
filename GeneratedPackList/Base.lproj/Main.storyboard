@@ -350,7 +350,7 @@
         <!--List View-->
         <scene sceneID="OVw-TJ-kLn">
             <objects>
-                <viewController id="2JW-vu-wjZ" customClass="ListView" customModule="GeneratedPackList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListView" id="2JW-vu-wjZ" customClass="ListView" customModule="GeneratedPackList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2jb-jL-ndL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
