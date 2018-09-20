@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaH-IC-prC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c9B-62-ph6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +28,7 @@
                                         <state key="normal" title="MAN" image="silhouette-2632477_960_720-1"/>
                                         <connections>
                                             <action selector="manBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRG-BW-7D1"/>
-                                            <segue destination="gaH-IC-prC" kind="show" id="IHC-5W-NMI"/>
+                                            <segue destination="oyj-at-0Y8" kind="show" id="36g-ja-yu1"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-L7-dUB">
@@ -53,7 +53,7 @@
                                         <state key="normal" title="WOMAN" image="detective-woman"/>
                                         <connections>
                                             <action selector="womanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ei6-Gd-wGt"/>
-                                            <segue destination="gaH-IC-prC" kind="show" id="nYe-uj-zsb"/>
+                                            <segue destination="oyj-at-0Y8" kind="show" id="c8q-Jd-m6D"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -107,7 +107,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT -&gt;"/>
                                 <connections>
-                                    <segue destination="oyj-at-0Y8" kind="show" id="Ff7-it-7Hz"/>
+                                    <segue destination="2JW-vu-wjZ" kind="show" id="xl0-ca-0hB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIy-Tf-mdp">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bn-io-eUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050.4000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="3958" y="164"/>
         </scene>
         <!--Travel Length-->
         <scene sceneID="VSw-TA-hWd">
@@ -296,7 +296,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="2JW-vu-wjZ" kind="show" id="Cst-6c-Lwc"/>
+                                    <segue destination="gaH-IC-prC" kind="show" id="cGW-fZ-ue4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT CLIMATE ARE YOU TRAVELLING TO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NX-op-egM">
@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bU-ph-bEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3964" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2990" y="163"/>
         </scene>
         <!--List View-->
         <scene sceneID="OVw-TJ-kLn">
@@ -367,7 +367,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Hejsan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGD-c8-PYs">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Skriv här" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGD-c8-PYs">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -426,6 +426,6 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IHC-5W-NMI"/>
+        <segue reference="36g-ja-yu1"/>
     </inferredMetricsTieBreakers>
 </document>

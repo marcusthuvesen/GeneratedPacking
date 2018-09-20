@@ -36,8 +36,7 @@ class ViewController: UIViewController {
          print("Det funkade du är en " + String(genderSelected))
     }
     
-    
-    
+   
    
     
 

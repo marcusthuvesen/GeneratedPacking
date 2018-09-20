@@ -11,7 +11,7 @@ import UIKit
 class ReasonUI: UIViewController {
     
    
-    var businessChosen = false   //Variable for color change
+    var businessChosen = false//Variable for color change
     var sunBeachChosen = false   //Variable for color change
     var cityChosen = false   //Variable for color change
     var hikingChosen = false   //Variable for color change
@@ -32,44 +32,65 @@ class ReasonUI: UIViewController {
         
         if businessChosen == false {
             businessChosen = true
-            print(businessChosen)
+            print("Nu försöker vi skicka true till Listview")
             businessOutl.backgroundColor = UIColor.lightGray
             
-            let myVar = storyboard?.instantiateViewController(withIdentifier: "ListView") as! ListView
-            myVar.chosen1 = businessChosen
-            navigationController?.pushViewController(myVar, animated: true)
-           
+            
         }
         else if businessChosen == true {
             businessChosen = false
-            print(businessChosen)
+            print("Nu skickar vi inget")
             businessOutl.backgroundColor = UIColor.black
         }
         
-        
-        
     }
+   
+   
     
     @IBOutlet weak var sunBeachOutl: UIButton!
     @IBAction func sunBeachBtn(_ sender: UIButton) {
        
         if sunBeachChosen == false {
             sunBeachChosen = true
-            print(sunBeachChosen)
+            print("Nu försöker vi skicka true2 till ListView")
             sunBeachOutl.backgroundColor = UIColor.lightGray
-            let myVar2 = storyboard?.instantiateViewController(withIdentifier: "ListView") as! ListView
-            myVar2.chosen2 = sunBeachChosen
-            navigationController?.pushViewController(myVar2, animated: true)
-            
-            
             
         }
         else if sunBeachChosen == true {
             sunBeachChosen = false
-            print(sunBeachChosen)
+            print("Nu skickar vi inget2")
             sunBeachOutl.backgroundColor = UIColor.black
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {  //Sending values when user clicks next
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var myVar = storyboard.instantiateViewController(withIdentifier: "ListView") as! ListView
+        myVar.chosen1 = businessChosen
+        myVar.chosen2 = sunBeachChosen
+        self.present(myVar, animated: true)
+        
+    }
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 
