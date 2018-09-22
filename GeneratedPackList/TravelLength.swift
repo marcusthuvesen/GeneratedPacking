@@ -9,29 +9,26 @@
 import UIKit
 
 class TravelLength: UIViewController {
-var sliderValue = 1
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
 
     
+    var sliderValue = 1
     
     @IBOutlet weak var packTitleInput: UITextField!
     
-    
-    @IBAction func textFieldBtn(_ sender: UIButton) {
-        var packTitle : String = packTitleInput.text!
-        print(packTitle)
-        packTitleInput.resignFirstResponder()
-    }
-    
-    
-    
-    
     @IBOutlet weak var sliderLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+    }
+ 
+   
+    
+   /* let defaults = UserDefaults.standard
+    defaults.set(nyvar, forKey: "listNameString")
+    
+    UserDefaults.standard.set("TEST", forKey: "packTitleInput") //setObject*/
     
     
     @IBAction func sliderChanged(_ sender: UISlider) {
@@ -46,6 +43,15 @@ var sliderValue = 1
             print("landry ändrad till " + String(sliderValue))
         }
     }
+    
+    
+    @IBAction func nextViewBtn(_ sender: UIButton) {
+        
+         var listNameString : String = (packTitleInput.text!)
+        UserDefaults.standard.set(listNameString, forKey: "listNameString")
+        print(listNameString)
+    }
+    
 }
     
     
