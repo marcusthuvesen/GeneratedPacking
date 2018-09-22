@@ -146,6 +146,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="City"/>
+                                <connections>
+                                    <action selector="cityBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="6BY-zQ-ZyQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18S-Ap-uUH">
                                 <rect key="frame" x="166" y="343" width="0.0" height="0.0"/>
@@ -168,6 +171,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Skiing"/>
+                                <connections>
+                                    <action selector="skiingBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="tYb-8b-oBG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r3-XR-Yxh">
                                 <rect key="frame" x="166" y="452" width="0.0" height="0.0"/>
@@ -200,7 +206,13 @@
                     </view>
                     <connections>
                         <outlet property="businessOutl" destination="ASc-ro-0ZO" id="nFc-Yb-PPa"/>
+                        <outlet property="campingOutl" destination="uGS-o4-xNQ" id="3gW-lx-zwh"/>
+                        <outlet property="cityOutl" destination="MlU-tq-eAo" id="gag-b0-HDB"/>
+                        <outlet property="hikingOutl" destination="0YL-uT-TEl" id="XQ9-kT-6E0"/>
+                        <outlet property="partyOutl" destination="Dqk-X0-zai" id="KLb-wj-6oa"/>
+                        <outlet property="skiingOutl" destination="nFW-cd-upR" id="Bl7-Y9-HGw"/>
                         <outlet property="sunBeachOutl" destination="bIy-Tf-mdp" id="ioK-jV-Gaq"/>
+                        <outlet property="trainingOutl" destination="XFt-BA-LhI" id="m1j-eb-44i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bn-io-eUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,7 +405,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBR-J6-m6S">
-                                <rect key="frame" x="9" y="106" width="350" height="1"/>
+                                <rect key="frame" x="5" y="106" width="370" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -402,7 +414,7 @@
                         <viewLayoutGuide key="safeArea" id="tvw-1e-ukZ"/>
                     </view>
                     <connections>
-                        <outlet property="listLabel" destination="mKC-tF-Q2W" id="49C-Ds-qCi"/>
+                        <outlet property="listLabel" destination="mKC-tF-Q2W" id="5ho-8B-1og"/>
                         <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                     </connections>
                 </viewController>
