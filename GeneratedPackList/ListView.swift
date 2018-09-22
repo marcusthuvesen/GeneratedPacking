@@ -158,27 +158,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
     
     var generatedObjects = [String]()
-   
-    func business (){
-    }
-    
-    func training (){
-    }
-    
-    func sunBeach (){
-    }
-    
-    func skiing () {
-    }
-    
-    func city () {
-    }
-    
-    func hiking () {
-    }
-    
-    
-   
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
     {
