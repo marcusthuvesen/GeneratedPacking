@@ -10,11 +10,20 @@ import UIKit
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
-    var businessObjectsMan = ["BUSINESSSTUFF", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
-    var trainingObjects = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
-    var sunBeachObjects = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
+    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
+    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
+    
+    var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
+    var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
+    
+    var cityObjectsMan = ["CITYSTUFF", "Map"]
+    var cityObjectsWoman = ["CITYSTUFF", "Map"]
+   
     var skiingObjects = ["SKISTUFF", "Ski boots"]
-    var cityObjects = ["CITYSTUFF", "Map"]
+ 
+    var trainingObjectsMan = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
+    var trainingObjectsWoman = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
+    
     var hikingObjects = ["HIKINGSTUFF", "Walking Stick"]
     var partyObjects = [""]
     var campingObjects = [""]
@@ -23,6 +32,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var chosen1 = false
     var chosen2 = false
+    var chosen3 = false
     
     
     @IBOutlet weak var listLabel: UILabel!
@@ -30,33 +40,45 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       // let listNamn = defaults.string(forKey: "TEST")
-     //   print(listLabel)
        
         
         let name = UserDefaults.standard.string(forKey: "listNameString")
-        print("Det funkar" + (name!))
-        listLabel.text = "hej"
+        print("Det funkar " + (name!))
+        listLabel.text = name
         
-        if chosen1 == true{
-            print("Business print true")
+        let gender = UserDefaults.standard.bool(forKey: "genderSelected")
+        print(gender)
+        
+        
+        if chosen1 == true && gender == true {
             generatedObjects += businessObjectsMan
+            print("Business print MAN")
             
         }
-        else if chosen1 == false {
-            print("Business print false")
+        else if chosen1 == true && gender == false {
+            generatedObjects += businessObjectsWoman
+            print("Business print WOMAN")
         }
         
-        if chosen2 == true{
-            print("sunBeach print true")
-            generatedObjects += sunBeachObjects
+       /* if chosen2 == true && gender == true {
+            generatedObjects += sunBeachObjectsMan
+            print("sunBeach print MAN")
             
         }
-        else if chosen2 == false {
-            print("SunBeach print False")
-        }
+        else if chosen2 == false && gender == false {
+            generatedObjects += sunBeachObjectsWoman
+            print("SunBeach print WOMAN")
+        }*/
 
+        if chosen3 == true && gender == true {
+            generatedObjects += cityObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen3 == true && gender == false {
+            generatedObjects += cityObjectsWoman
+            print("SunBeach print WOMAN")
+        }
         // Do any additional setup after loading the view.
     }
    

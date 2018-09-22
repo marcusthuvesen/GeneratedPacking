@@ -162,6 +162,7 @@ class ReasonUI: UIViewController {
         var myVar = storyboard.instantiateViewController(withIdentifier: "ListView") as! ListView
         myVar.chosen1 = businessChosen
         myVar.chosen2 = sunBeachChosen
+        myVar.chosen3 = cityChosen
         self.present(myVar, animated: true)
         
     }

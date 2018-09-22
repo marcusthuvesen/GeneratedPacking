@@ -26,14 +26,16 @@ class ViewController: UIViewController {
     //View 1, choose gender
     
     @IBAction func manBtn(_ sender: UIButton) {
-        genderSelected = true
-        print("Det funkade du är en " + String(genderSelected))
+        
+        UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+        print(genderSelected)
     }
     
     
     @IBAction func womanBtn(_ sender: UIButton) {
         genderSelected = false
-         print("Det funkade du är en " + String(genderSelected))
+        UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+        print(genderSelected)
     }
     
    
