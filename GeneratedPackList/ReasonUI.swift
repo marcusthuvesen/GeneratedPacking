@@ -163,6 +163,11 @@ class ReasonUI: UIViewController {
         myVar.chosen1 = businessChosen
         myVar.chosen2 = sunBeachChosen
         myVar.chosen3 = cityChosen
+        myVar.chosen4 = hikingChosen
+        myVar.chosen5 = skiingChosen
+        myVar.chosen6 = trainingChosen
+        myVar.chosen7 = partyChosen
+        myVar.chosen8 = campingChosen
         self.present(myVar, animated: true)
         
     }

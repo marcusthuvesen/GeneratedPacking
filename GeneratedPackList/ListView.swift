@@ -19,20 +19,31 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var cityObjectsMan = ["CITYSTUFF", "Map"]
     var cityObjectsWoman = ["CITYSTUFF", "Map"]
    
-    var skiingObjects = ["SKISTUFF", "Ski boots"]
- 
+    var skiingObjectsMan = ["SKISTUFF", "Ski boots"]
+    var skiingObjectsWoman = ["SKISTUFF", "Ski boots"]
+    
     var trainingObjectsMan = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
     var trainingObjectsWoman = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
     
-    var hikingObjects = ["HIKINGSTUFF", "Walking Stick"]
-    var partyObjects = [""]
-    var campingObjects = [""]
+    var hikingObjectsMan = ["HIKINGSTUFF", "Walking Stick"]
+    var hikingObjectsWoman = ["HIKINGSTUFF", "Walking Stick"]
+    
+    var partyObjectsMan = ["PARTYSTUFF"]
+    var partyObjectsWoman = ["PARTYSTUFF"]
+    
+    var campingObjectsMan = ["CAMPINGSTUFF"]
+    var campingObjectsWoman = ["CAMPINGSTUFF"]
     
  
     
     var chosen1 = false
     var chosen2 = false
     var chosen3 = false
+    var chosen4 = false
+    var chosen5 = false
+    var chosen6 = false
+    var chosen7 = false
+    var chosen8 = false
     
     
     @IBOutlet weak var listLabel: UILabel!
@@ -49,7 +60,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
         
-        
+        //BUSINESS
         if chosen1 == true && gender == true {
             generatedObjects += businessObjectsMan
             print("Business print MAN")
@@ -60,16 +71,20 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             print("Business print WOMAN")
         }
         
-       /* if chosen2 == true && gender == true {
+        //SUNBEACH
+        
+        if chosen2 == true && gender == true {
             generatedObjects += sunBeachObjectsMan
             print("sunBeach print MAN")
             
         }
-        else if chosen2 == false && gender == false {
+        else if chosen2 == true && gender == false {
             generatedObjects += sunBeachObjectsWoman
             print("SunBeach print WOMAN")
-        }*/
+        }
 
+        //CITY
+        
         if chosen3 == true && gender == true {
             generatedObjects += cityObjectsMan
             print("sunBeach print MAN")
@@ -79,6 +94,65 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             generatedObjects += cityObjectsWoman
             print("SunBeach print WOMAN")
         }
+        
+        //SKIING
+        
+        if chosen4 == true && gender == true {
+            generatedObjects += skiingObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen4 == true && gender == false {
+            generatedObjects += skiingObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
+        //TRAINING
+        if chosen5 == true && gender == true {
+            generatedObjects += trainingObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen5 == true && gender == false {
+            generatedObjects += trainingObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
+        //HIKING
+        if chosen6 == true && gender == true {
+            generatedObjects += hikingObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen6 == true && gender == false {
+            generatedObjects += hikingObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
+        //PARTY
+        
+        if chosen7 == true && gender == true {
+            generatedObjects += partyObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen7 == true && gender == false {
+            generatedObjects += partyObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
+        //CAMPING
+        
+        if chosen8 == true && gender == true {
+            generatedObjects += campingObjectsMan
+            print("sunBeach print MAN")
+            
+        }
+        else if chosen8 == true && gender == false {
+            generatedObjects += campingObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
         // Do any additional setup after loading the view.
     }
    

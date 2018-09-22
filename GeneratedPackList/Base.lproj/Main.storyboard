@@ -140,6 +140,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Hiking"/>
+                                <connections>
+                                    <action selector="hikingBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="yMG-e8-iOy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlU-tq-eAo">
                                 <rect key="frame" x="0.0" y="246" width="189" height="107"/>
