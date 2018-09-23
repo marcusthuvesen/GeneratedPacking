@@ -10,7 +10,7 @@ import UIKit
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
-    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
+    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
     var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
     
     var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
@@ -46,6 +46,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen8 = false
     
     
+    
     @IBOutlet weak var listLabel: UILabel!
     
 
@@ -62,6 +63,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
         print(sliderValue)
+        
+        var sliderString = String(sliderValue)
+        var sliderString2 = " Suits"
+        var sliderStrings = (sliderString + sliderString2)
+        businessObjectsMan.insert(sliderStrings, at: 1)
         
         //BUSINESS
         if chosen1 == true && gender == true {
