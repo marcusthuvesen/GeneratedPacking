@@ -60,6 +60,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
         
+        let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
+        print(sliderValue)
+        
         //BUSINESS
         if chosen1 == true && gender == true {
             generatedObjects += businessObjectsMan

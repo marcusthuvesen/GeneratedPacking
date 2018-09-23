@@ -53,6 +53,8 @@ class TravelLength: UIViewController {
          var listNameString : String = (packTitleInput.text!)
         UserDefaults.standard.set(listNameString, forKey: "listNameString")
         print(listNameString)
+        UserDefaults.standard.set(sliderValue, forKey: "sliderValue")
+        print(sliderValue)
     }
     
 }
