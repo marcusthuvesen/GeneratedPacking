@@ -51,8 +51,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         
+ 
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
         listLabel.text = name
@@ -157,8 +157,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
    
     
-    
-  
+    @IBAction func newList(_ sender: Any) {
+         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+    }
+   
     
     var generatedObjects = [String]()
     
