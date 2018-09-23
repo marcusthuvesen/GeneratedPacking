@@ -10,29 +10,34 @@ import UIKit
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
-    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
-    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ]
+    var baseListMan = ["--TOILETRIES MAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
     
-    var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
-    var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers"]
+     var baseListWoman = ["--TOILETRIES WOMAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
     
-    var cityObjectsMan = ["CITYSTUFF", "Map"]
-    var cityObjectsWoman = ["CITYSTUFF", "Map"]
+    
+    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ""]
+    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ""]
+    
+    var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
+    var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
+    
+    var cityObjectsMan = ["CITYSTUFF", "Map", ""]
+    var cityObjectsWoman = ["CITYSTUFF", "Map", ""]
    
-    var skiingObjectsMan = ["SKISTUFF", "Ski boots"]
-    var skiingObjectsWoman = ["SKISTUFF", "Ski boots"]
+    var skiingObjectsMan = ["SKISTUFF", "Ski boots", ""]
+    var skiingObjectsWoman = ["SKISTUFF", "Ski boots", ""]
     
-    var trainingObjectsMan = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
-    var trainingObjectsWoman = ["TRAININGSTUFF", "Joggers", "Running Shoes"]
+    var trainingObjectsMan = ["TRAININGSTUFF", "Joggers", "Running Shoes", ""]
+    var trainingObjectsWoman = ["TRAININGSTUFF", "Joggers", "Running Shoes", ""]
     
-    var hikingObjectsMan = ["HIKINGSTUFF", "Walking Stick"]
-    var hikingObjectsWoman = ["HIKINGSTUFF", "Walking Stick"]
+    var hikingObjectsMan = ["HIKINGSTUFF", "Walking Stick", ""]
+    var hikingObjectsWoman = ["HIKINGSTUFF", "Walking Stick", ""]
     
-    var partyObjectsMan = ["PARTYSTUFF"]
-    var partyObjectsWoman = ["PARTYSTUFF"]
+    var partyObjectsMan = ["PARTYSTUFF", ""]
+    var partyObjectsWoman = ["PARTYSTUFF", ""]
     
-    var campingObjectsMan = ["CAMPINGSTUFF"]
-    var campingObjectsWoman = ["CAMPINGSTUFF"]
+    var campingObjectsMan = ["CAMPINGSTUFF", ""]
+    var campingObjectsWoman = ["CAMPINGSTUFF", ""]
     
  
     
@@ -69,6 +74,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         var sliderStrings = (sliderString + sliderString2)
         businessObjectsMan.insert(sliderStrings, at: 1)
         
+        //Baselist
+        if(gender == true){
+        generatedObjects += baseListMan
+        }
+        else if(gender == false){
+            generatedObjects += baseListWoman
+        }
         //BUSINESS
         if chosen1 == true && gender == true {
             generatedObjects += businessObjectsMan
