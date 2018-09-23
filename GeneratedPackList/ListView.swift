@@ -87,70 +87,70 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         if chosen3 == true && gender == true {
             generatedObjects += cityObjectsMan
-            print("sunBeach print MAN")
+            print("city print MAN")
             
         }
         else if chosen3 == true && gender == false {
             generatedObjects += cityObjectsWoman
-            print("SunBeach print WOMAN")
+            print("city print WOMAN")
         }
         
         //SKIING
         
         if chosen4 == true && gender == true {
             generatedObjects += skiingObjectsMan
-            print("sunBeach print MAN")
+            print("skiing print MAN")
             
         }
         else if chosen4 == true && gender == false {
             generatedObjects += skiingObjectsWoman
-            print("SunBeach print WOMAN")
+            print("skiing print WOMAN")
         }
         
         //TRAINING
         if chosen5 == true && gender == true {
             generatedObjects += trainingObjectsMan
-            print("sunBeach print MAN")
+            print("training print MAN")
             
         }
         else if chosen5 == true && gender == false {
             generatedObjects += trainingObjectsWoman
-            print("SunBeach print WOMAN")
+            print("training print WOMAN")
         }
         
         //HIKING
         if chosen6 == true && gender == true {
             generatedObjects += hikingObjectsMan
-            print("sunBeach print MAN")
+            print("hiking print MAN")
             
         }
         else if chosen6 == true && gender == false {
             generatedObjects += hikingObjectsWoman
-            print("SunBeach print WOMAN")
+            print("hiking print WOMAN")
         }
         
         //PARTY
         
         if chosen7 == true && gender == true {
             generatedObjects += partyObjectsMan
-            print("sunBeach print MAN")
+            print("party print MAN")
             
         }
         else if chosen7 == true && gender == false {
             generatedObjects += partyObjectsWoman
-            print("SunBeach print WOMAN")
+            print("party print WOMAN")
         }
         
         //CAMPING
         
         if chosen8 == true && gender == true {
             generatedObjects += campingObjectsMan
-            print("sunBeach print MAN")
+            print("camping print MAN")
             
         }
         else if chosen8 == true && gender == false {
             generatedObjects += campingObjectsWoman
-            print("SunBeach print WOMAN")
+            print("camping print WOMAN")
         }
         
         // Do any additional setup after loading the view.
@@ -158,11 +158,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
     
     
-   /* @IBAction func newListBtn(_ sender: UIButton) {
-          performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
-        
-    }*/
-    
+  
     
     var generatedObjects = [String]()
     
