@@ -157,9 +157,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
    
     
-    @IBAction func newList(_ sender: Any) {
-         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+    @IBAction func newListBtn(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
+    
+    
    
     
     var generatedObjects = [String]()
