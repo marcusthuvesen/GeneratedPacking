@@ -74,13 +74,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         var sliderStrings = (sliderString + sliderString2)
         businessObjectsMan.insert(sliderStrings, at: 1)
         
-        //Baselist
-        if(gender == true){
-        generatedObjects += baseListMan
-        }
-        else if(gender == false){
-            generatedObjects += baseListWoman
-        }
+       
         //BUSINESS
         if chosen1 == true && gender == true {
             generatedObjects += businessObjectsMan
@@ -174,6 +168,14 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             print("camping print WOMAN")
         }
         
+        //Baselist
+        if(gender == true){
+            generatedObjects += baseListMan
+        }
+        else if(gender == false){
+            generatedObjects += baseListWoman
+        }
+        
         // Do any additional setup after loading the view.
     }
    
@@ -196,8 +198,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
     }
     
-   
-   
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
