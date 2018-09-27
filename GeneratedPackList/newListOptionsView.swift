@@ -21,9 +21,12 @@ class newListOptionsView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func unwindToVC1(segue:UIStoryboardSegue) {
-        
-    }*/
+   
+    
+    @IBAction func newGeneratedListBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+    }
+    
 
     
 }
