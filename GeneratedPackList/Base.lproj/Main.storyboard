@@ -139,7 +139,7 @@
                                 <rect key="frame" x="197" y="246" width="178" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Hiking"/>
+                                <state key="normal" title="Skiing"/>
                                 <connections>
                                     <action selector="hikingBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="yMG-e8-iOy"/>
                                 </connections>
@@ -164,7 +164,7 @@
                                 <rect key="frame" x="197" y="361" width="178" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Training"/>
+                                <state key="normal" title="Hiking"/>
                                 <connections>
                                     <action selector="trainingBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="cX7-gJ-5Xp"/>
                                 </connections>
@@ -173,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="361" width="189" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Skiing"/>
+                                <state key="normal" title="Training"/>
                                 <connections>
                                     <action selector="skiingBtn:" destination="gaH-IC-prC" eventType="touchUpInside" id="tYb-8b-oBG"/>
                                 </connections>
@@ -489,6 +489,7 @@
                     </view>
                     <connections>
                         <outlet property="listLabel" destination="mKC-tF-Q2W" id="5ho-8B-1og"/>
+                        <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>
                         <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                     </connections>
                 </viewController>
@@ -520,7 +521,7 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JBQ-5O-9I1"/>
+        <segue reference="sQx-A0-wd1"/>
         <segue reference="36g-ja-yu1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -39,7 +39,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var campingObjectsMan = ["CAMPINGSTUFF", ""]
     var campingObjectsWoman = ["CAMPINGSTUFF", ""]
     
- 
+    var generatedObjects = [String]()
     
     var chosen1 = false
     var chosen2 = false
@@ -51,8 +51,19 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen8 = false
     
     
+    @IBOutlet weak var table: UITableView!
     
     @IBOutlet weak var listLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        generatedObjects.removeAll()
+        baseListMan.removeAll()
+        baseListWoman.removeAll()
+        table.reloadData()
+        print(generatedObjects)
+    }
+    
+    
     
 
     override func viewDidLoad() {
@@ -182,11 +193,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBAction func newListBtn(_ sender: Any) {
     }
-    
-    
-   
-    
-    var generatedObjects = [String]()
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
     {
