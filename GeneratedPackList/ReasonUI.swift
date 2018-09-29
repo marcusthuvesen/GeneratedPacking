@@ -168,7 +168,7 @@ class ReasonUI: UIViewController {
         myVar.chosen6 = trainingChosen
         myVar.chosen7 = partyChosen
         myVar.chosen8 = campingChosen
-        myVar.newEmptyListValue = false
+        
         self.present(myVar, animated: true)
         
     }

@@ -247,7 +247,7 @@
                                             <segue destination="StV-Pp-LRF" kind="unwind" identifier="unwindSegueToVC1" unwindAction="unwindToVC1WithSegue:" id="yBQ-94-dHC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpE-tG-Lex">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="btnSubmitSegue" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpE-tG-Lex">
                                         <rect key="frame" x="32" y="102" width="176" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -258,7 +258,7 @@
                                         </state>
                                         <connections>
                                             <action selector="newEmptyList:" destination="aBV-C2-zCR" eventType="touchUpInside" id="3kE-xX-gdb"/>
-                                            <segue destination="2JW-vu-wjZ" kind="show" id="JBQ-5O-9I1"/>
+                                            <segue destination="2JW-vu-wjZ" kind="presentation" identifier="valueSender2" id="7dh-cU-lCO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -522,7 +522,7 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sQx-A0-wd1"/>
+        <segue reference="7dh-cU-lCO"/>
         <segue reference="36g-ja-yu1"/>
     </inferredMetricsTieBreakers>
 </document>

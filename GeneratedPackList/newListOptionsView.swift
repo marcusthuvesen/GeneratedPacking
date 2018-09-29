@@ -10,12 +10,11 @@ import UIKit
 
 class newListOptionsView: UIViewController {
 
-var newEmptyListValue = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.set(newEmptyListValue, forKey: "newEmptyListValue")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -26,17 +25,26 @@ var newEmptyListValue = false
     }
     
    
+    let value = true
     
     @IBAction func newGeneratedListBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
     
     
-    @IBAction func newEmptyList(_ sender: UIButton) {
-       newEmptyListValue = true
-       UserDefaults.standard.set(newEmptyListValue, forKey: "newEmptyListValue")
+    override func prepare (for segue: UIStoryboardSegue, sender: Any!) {
+    
+            let vc = segue.destination as! ListView
+            vc.newEmptyListValue = value
         
     }
+    
+    @IBAction func newEmptyList(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "valueSender2", sender: self)
+    }
+    
+    
     
     
 }

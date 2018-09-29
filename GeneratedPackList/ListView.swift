@@ -55,30 +55,21 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var listLabel: UILabel!
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-       
-  
-    }
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        print("Boolen " + String(newEmptyListValue))
         
-        newEmptyListValue = UserDefaults.standard.bool(forKey: "newEmptyListValue")
         if newEmptyListValue == true{
-            print(newEmptyListValue)
+            print("Du hamnade i TRUE")
             generatedObjects.removeAll()
-            baseListMan.removeAll()
-            baseListWoman.removeAll()
             table.reloadData()
         }
             
         else{
-            print("else")
-        }
+            print("Du hamnade ELSE")
+        
  
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
@@ -190,16 +181,17 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
         
         //Baselist
-        if(gender == true){
+        if(newEmptyListValue == false && gender == true){
+            print("DU HAMNADE I BASLISTAN")
             generatedObjects += baseListMan
         }
-        else if(gender == false){
+        else if(newEmptyListValue == false && gender == false){
             generatedObjects += baseListWoman
         }
         
         // Do any additional setup after loading the view.
+        }
     }
-   
     
     @IBAction func newListBtn(_ sender: Any) {
     }

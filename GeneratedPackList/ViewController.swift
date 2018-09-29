@@ -32,14 +32,14 @@ class ViewController: UIViewController {
     @IBAction func manBtn(_ sender: UIButton) {
         
         UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
-        print(genderSelected)
+        print("MAN")
     }
     
     
     @IBAction func womanBtn(_ sender: UIButton) {
         genderSelected = false
         UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
-        print(genderSelected)
+        print("KVINNA")
     }
     
    
