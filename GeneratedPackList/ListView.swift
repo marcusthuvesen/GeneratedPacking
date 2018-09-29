@@ -49,18 +49,16 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen6 = false
     var chosen7 = false
     var chosen8 = false
-    
+    var newEmptyListValue = false
     
     @IBOutlet weak var table: UITableView!
     
     @IBOutlet weak var listLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        generatedObjects.removeAll()
-        baseListMan.removeAll()
-        baseListWoman.removeAll()
-        table.reloadData()
-        print(generatedObjects)
+        
+       
+  
     }
     
     
@@ -69,6 +67,18 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        newEmptyListValue = UserDefaults.standard.bool(forKey: "newEmptyListValue")
+        if newEmptyListValue == true{
+            print(newEmptyListValue)
+            generatedObjects.removeAll()
+            baseListMan.removeAll()
+            baseListWoman.removeAll()
+            table.reloadData()
+        }
+            
+        else{
+            print("else")
+        }
  
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))

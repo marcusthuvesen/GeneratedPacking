@@ -10,8 +10,12 @@ import UIKit
 
 class newListOptionsView: UIViewController {
 
+var newEmptyListValue = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.set(newEmptyListValue, forKey: "newEmptyListValue")
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +31,12 @@ class newListOptionsView: UIViewController {
         performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
     }
     
-
+    
+    @IBAction func newEmptyList(_ sender: UIButton) {
+       newEmptyListValue = true
+       UserDefaults.standard.set(newEmptyListValue, forKey: "newEmptyListValue")
+        
+    }
+    
     
 }
