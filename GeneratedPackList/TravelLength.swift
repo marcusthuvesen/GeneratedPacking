@@ -24,10 +24,6 @@ class TravelLength: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         packTitleInput.text = ""
     }
-    
-    
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
-    }
    
     
    /* let defaults = UserDefaults.standard

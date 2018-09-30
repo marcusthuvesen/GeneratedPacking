@@ -16,7 +16,7 @@ class newListOptionsView: UIViewController {
         super.viewDidLoad()
         
         popupView.layer.cornerRadius = 10
-
+         popupView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
 
