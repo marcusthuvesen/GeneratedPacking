@@ -59,17 +59,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        print("Boolen " + String(newEmptyListValue))
-        
-        if newEmptyListValue == true{
-            print("Du hamnade i TRUE")
-            generatedObjects.removeAll()
-            table.reloadData()
-        }
-            
-        else{
-            print("Du hamnade ELSE")
-        
  
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
@@ -190,7 +179,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
         
         // Do any additional setup after loading the view.
-        }
+        
     }
     
     @IBAction func newListBtn(_ sender: Any) {

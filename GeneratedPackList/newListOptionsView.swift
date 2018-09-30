@@ -25,10 +25,7 @@ class newListOptionsView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
-    let value = true
-    
-   
+
     @IBAction func exitPopup(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
