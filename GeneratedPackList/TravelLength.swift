@@ -22,6 +22,7 @@ class TravelLength: UIViewController {
         super.viewDidLoad()
         viewContainer.layer.cornerRadius = 10
         viewContainer.layer.masksToBounds = true
+        
     }
  
     override func viewDidAppear(_ animated: Bool) {
