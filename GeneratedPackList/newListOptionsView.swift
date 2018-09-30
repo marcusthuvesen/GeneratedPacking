@@ -10,11 +10,12 @@ import UIKit
 
 class newListOptionsView: UIViewController {
 
+    @IBOutlet weak var popupView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        popupView.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }
@@ -27,21 +28,9 @@ class newListOptionsView: UIViewController {
    
     let value = true
     
-    @IBAction func newGeneratedListBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
-    }
-    
-    
-    override func prepare (for segue: UIStoryboardSegue, sender: Any!) {
-    
-            let vc = segue.destination as! ListView
-            vc.newEmptyListValue = value
-        
-    }
-    
-    @IBAction func newEmptyList(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "valueSender2", sender: self)
+   
+    @IBAction func exitPopup(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     
