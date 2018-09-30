@@ -230,60 +230,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="31" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-Ib-UPh">
-                                <rect key="frame" x="14" y="319" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16839013010000001" green="0.69397286059999996" blue="0.72682561530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="sliderChanged:" destination="c9B-62-ph6" eventType="valueChanged" id="wQ0-Ef-np1"/>
-                                </connections>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-1Y-wsy">
-                                <rect key="frame" x="89" y="420" width="197" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.96855633649999995" blue="0.92020449869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="ACCESS TO LAUNDRY">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="laundryAccess:" destination="c9B-62-ph6" eventType="touchUpInside" id="jvU-4j-52z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uS-gZ-z29">
-                                <rect key="frame" x="253" y="572" width="106" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.23489040799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextViewBtn:" destination="c9B-62-ph6" eventType="touchUpInside" id="6az-Z6-kWL"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ORM-pO-zjw"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Packlist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHG-wU-ISb">
-                                <rect key="frame" x="20" y="126" width="334" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TRAVEL LENGTH 1 DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-mV-Lmx">
-                                <rect key="frame" x="0.0" y="271" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gq-2D-fwW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="31" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-Ib-UPh">
+                                        <rect key="frame" x="14" y="318" width="347" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.16839013010000001" green="0.69397286059999996" blue="0.72682561530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="c9B-62-ph6" eventType="valueChanged" id="wQ0-Ef-np1"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-1Y-wsy">
+                                        <rect key="frame" x="89" y="392" width="197" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.96855633649999995" blue="0.92020449869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="ACCESS TO LAUNDRY">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="laundryAccess:" destination="c9B-62-ph6" eventType="touchUpInside" id="jvU-4j-52z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uS-gZ-z29">
+                                        <rect key="frame" x="261" y="584" width="106" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.23489040799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextViewBtn:" destination="c9B-62-ph6" eventType="touchUpInside" id="6az-Z6-kWL"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="ORM-pO-zjw"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Packlist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHG-wU-ISb">
+                                        <rect key="frame" x="20" y="97" width="334" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TRAVEL LENGTH 1 DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-mV-Lmx">
+                                        <rect key="frame" x="0.0" y="259" width="375" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.45207220174194696" blue="0.18551510947384531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Gq-2D-fwW" firstAttribute="bottom" secondItem="yjB-Uz-Kh6" secondAttribute="bottom" id="1LR-f9-Rnh"/>
+                            <constraint firstItem="4Gq-2D-fwW" firstAttribute="trailing" secondItem="yjB-Uz-Kh6" secondAttribute="trailing" id="2Nn-JG-1p7"/>
+                            <constraint firstItem="4Gq-2D-fwW" firstAttribute="top" secondItem="fLK-No-8Zn" secondAttribute="top" id="8hc-CL-qEy"/>
+                            <constraint firstItem="4Gq-2D-fwW" firstAttribute="leading" secondItem="yjB-Uz-Kh6" secondAttribute="leading" id="zoy-f0-vgG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yjB-Uz-Kh6"/>
                     </view>
                     <navigationItem key="navigationItem" id="5F1-Wu-WEd"/>
                     <connections>
                         <outlet property="packTitleInput" destination="VHG-wU-ISb" id="RJn-bt-O2Y"/>
                         <outlet property="sliderLabel" destination="3ce-mV-Lmx" id="7oS-8n-5H7"/>
+                        <outlet property="viewContainer" destination="4Gq-2D-fwW" id="ccE-8X-sWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqb-iM-1hJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

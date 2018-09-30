@@ -14,11 +14,14 @@ class TravelLength: UIViewController {
     var sliderValue = 1
     
     @IBOutlet weak var packTitleInput: UITextField!
+    @IBOutlet weak var viewContainer: UIView!
     
     @IBOutlet weak var sliderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewContainer.layer.cornerRadius = 10
+        viewContainer.layer.masksToBounds = true
     }
  
     override func viewDidAppear(_ animated: Bool) {
