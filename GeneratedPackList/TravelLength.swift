@@ -15,26 +15,19 @@ class TravelLength: UIViewController {
     
     @IBOutlet weak var packTitleInput: UITextField!
     @IBOutlet weak var viewContainer: UIView!
-    
+    @IBOutlet weak var laundryOutl: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewContainer.layer.cornerRadius = 10
-        viewContainer.layer.masksToBounds = true
-        
+        laundryOutl.layer.cornerRadius = 10
     }
  
     override func viewDidAppear(_ animated: Bool) {
         packTitleInput.text = ""
     }
    
-    
-   /* let defaults = UserDefaults.standard
-    defaults.set(nyvar, forKey: "listNameString")
-    
-    UserDefaults.standard.set("TEST", forKey: "packTitleInput") //setObject*/
-    
+   
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderValue = Int(sender.value)

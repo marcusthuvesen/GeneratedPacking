@@ -110,12 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				2561E2C6214A686D0019223E /* TravelLength.swift */,
-				25535319215CE92500AE83B8 /* newListOptionsView.swift */,
 				2505B8AA21459DFF0030BC8B /* AppDelegate.swift */,
 				2505B8AC21459DFF0030BC8B /* ViewController.swift */,
 				2561E2C42149A5F00019223E /* WhatClimate.swift */,
 				2561E2C221497DDA0019223E /* ReasonUI.swift */,
 				255794F1214AF79A005CF14D /* ListView.swift */,
+				25535319215CE92500AE83B8 /* newListOptionsView.swift */,
 				2505B8AE21459DFF0030BC8B /* Main.storyboard */,
 				2505B8B421459E010030BC8B /* Assets.xcassets */,
 				2505B8B621459E010030BC8B /* LaunchScreen.storyboard */,

@@ -30,7 +30,10 @@ class newListOptionsView: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-   
+    @IBAction func newEmptyBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     
 }

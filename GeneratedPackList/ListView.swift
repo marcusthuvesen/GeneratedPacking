@@ -49,17 +49,23 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen6 = false
     var chosen7 = false
     var chosen8 = false
-    var newEmptyListValue = false
+    
     
     @IBOutlet weak var table: UITableView!
     
     @IBOutlet weak var listLabel: UILabel!
     
+    @IBOutlet weak var newListOutl: UIButton!
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
- 
+        
+        
+        newListOutl.layer.cornerRadius = 30
+        newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+        
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
         listLabel.text = name
@@ -170,11 +176,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
         
         //Baselist
-        if(newEmptyListValue == false && gender == true){
+        if(gender == true){
             print("DU HAMNADE I BASLISTAN")
             generatedObjects += baseListMan
         }
-        else if(newEmptyListValue == false && gender == false){
+            //emptyList == false &&
+        else if( gender == false){
             generatedObjects += baseListWoman
         }
         

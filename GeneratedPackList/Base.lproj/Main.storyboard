@@ -317,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5F1-Wu-WEd"/>
                     <connections>
+                        <outlet property="laundryOutl" destination="F6b-1Y-wsy" id="Svo-6c-vcf"/>
                         <outlet property="packTitleInput" destination="VHG-wU-ISb" id="RJn-bt-O2Y"/>
                         <outlet property="sliderLabel" destination="3ce-mV-Lmx" id="7oS-8n-5H7"/>
                         <outlet property="viewContainer" destination="4Gq-2D-fwW" id="ccE-8X-sWi"/>
@@ -465,7 +466,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-Ci-DvM">
-                                <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                <rect key="frame" x="0.0" y="96.5" width="375" height="570.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDENTIFIER" textLabel="bGD-c8-PYs" rowHeight="41" style="IBUITableViewCellStyleDefault" id="83P-t7-qtz">
@@ -506,11 +507,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSn-nA-02u">
-                                <rect key="frame" x="320" y="615" width="55" height="52"/>
+                                <rect key="frame" x="300" y="605" width="75" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-5x-hbf">
-                                        <rect key="frame" x="0.0" y="0.0" width="55" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="41"/>
@@ -525,14 +526,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="5O5-05-ctA"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" id="61b-42-DJy"/>
-                            <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="fBR-J6-m6S" secondAttribute="bottom" constant="10" id="Fkm-j1-316"/>
+                            <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="fBR-J6-m6S" secondAttribute="bottom" constant="2" id="Fkm-j1-316"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="mKC-tF-Q2W" secondAttribute="bottom" constant="2" id="O05-3y-a2i"/>
                             <constraint firstAttribute="trailing" secondItem="fBR-J6-m6S" secondAttribute="trailing" id="OVL-9U-ljm"/>
                             <constraint firstItem="mKC-tF-Q2W" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" constant="44" id="VN1-B2-3GC"/>
@@ -545,6 +545,7 @@
                     </view>
                     <connections>
                         <outlet property="listLabel" destination="mKC-tF-Q2W" id="5ho-8B-1og"/>
+                        <outlet property="newListOutl" destination="8RK-5x-hbf" id="rmq-kV-K5k"/>
                         <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>
                         <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                     </connections>
@@ -596,13 +597,16 @@
                                         <state key="normal" title="New Empty List">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="newEmptyBtn:" destination="KXN-KU-EMp" eventType="touchUpInside" id="ClK-HX-lqi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.23489040799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52985873287671237" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.23489040799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="0.26698951198630139" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="0.19860338184931506" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SbX-wh-lbG" firstAttribute="leading" secondItem="CFE-wS-JaO" secondAttribute="leading" constant="48" id="Kes-fZ-JBg"/>
                             <constraint firstItem="SbX-wh-lbG" firstAttribute="centerY" secondItem="ySf-81-4XS" secondAttribute="centerY" id="LHV-X8-bH0"/>
