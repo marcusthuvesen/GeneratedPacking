@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2JW-vu-wjZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,6 @@
                                         <state key="normal" title="MAN" image="silhouette-2632477_960_720-1"/>
                                         <connections>
                                             <action selector="manBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRG-BW-7D1"/>
-                                            <segue destination="oyj-at-0Y8" kind="show" id="36g-ja-yu1"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-L7-dUB">
@@ -53,7 +52,16 @@
                                         <state key="normal" title="WOMAN" image="detective-woman"/>
                                         <connections>
                                             <action selector="womanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ei6-Gd-wGt"/>
-                                            <segue destination="oyj-at-0Y8" kind="show" id="c8q-Jd-m6D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcm-sb-0ah">
+                                        <rect key="frame" x="88" y="541" width="207" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="oyj-at-0Y8" kind="show" id="OPV-RM-dnq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,10 +83,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qKh-lU-lN5"/>
+                    <connections>
+                        <outlet property="manOutl" destination="grT-km-A5f" id="S7P-Ch-wrT"/>
+                        <outlet property="womanOutl" destination="CPR-cb-wbu" id="MMf-P3-ofm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2018" y="175"/>
+            <point key="canvasLocation" x="2017.3913043478262" y="174.77678571428569"/>
         </scene>
         <!--ReasonUI-->
         <scene sceneID="EDZ-cT-nSW">
@@ -637,7 +649,6 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="36g-ja-yu1"/>
         <segue reference="ijL-gQ-939"/>
     </inferredMetricsTieBreakers>
 </document>

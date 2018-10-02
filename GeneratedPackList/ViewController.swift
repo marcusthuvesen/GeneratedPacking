@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     //Default value true, man
     var genderSelected = true
-
+    var clickedBtnManValue = false
+    var clickedBtnWomanValue = false
+    
+    @IBOutlet weak var manOutl: UIButton!
+    @IBOutlet weak var womanOutl: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -27,16 +32,50 @@ class ViewController: UIViewController {
     
     @IBAction func manBtn(_ sender: UIButton) {
         
-        UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
-        print("MAN")
+        if clickedBtnManValue == false {
+            if clickedBtnWomanValue == true{
+                clickedBtnWomanValue = false
+                womanOutl.alpha = 1
+            }
+            clickedBtnManValue = true
+            manOutl.alpha = 0.5
+            UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+            print("MAN")
+        }
+        else if clickedBtnManValue == true{
+            manOutl.alpha = 1
+            womanOutl.alpha = 0.5
+            clickedBtnManValue = false
+            clickedBtnWomanValue = true
+        }
+        
     }
     
     
     @IBAction func womanBtn(_ sender: UIButton) {
-        genderSelected = false
-        UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
-        print("KVINNA")
+        
+        if clickedBtnWomanValue == false {
+            //om man är iklickad
+            if clickedBtnManValue == true{
+                clickedBtnManValue = false
+                manOutl.alpha = 1
+            }
+            clickedBtnWomanValue  = true
+            womanOutl.alpha = 0.5
+            genderSelected = false //Kvinna
+            UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+            print("KVINNA")
+        }
+        else if clickedBtnWomanValue == true{
+            womanOutl.alpha = 1
+            manOutl.alpha = 0.5
+            clickedBtnWomanValue = false
+            clickedBtnManValue = true
+        }
     }
+    
+    
+    
     
    
    
