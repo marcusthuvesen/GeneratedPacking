@@ -57,11 +57,29 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var newListOutl: UIButton!
 
-
+    @IBOutlet weak var popupView: UIView!
+    
+    
+    @IBAction func newEmptyList(_ sender: UIButton) {
+        
+        generatedObjects.removeAll()
+        listLabel.text = ""
+        print(generatedObjects)
+        table.reloadData()
+        popupView.isHidden = true
+        
+        
+    }
+    
+    @IBAction func newListBtn(_ sender: UIButton) {
+        popupView.isHidden = false
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        popupView.isHidden = true
         
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
@@ -189,8 +207,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
     }
     
-    @IBAction func newListBtn(_ sender: Any) {
-    }
+   
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
     {

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c9B-62-ph6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c9B-62-ph6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwc-L1-kFp">
-                                <rect key="frame" x="0.0" y="605.5" width="375" height="61.5"/>
+                                <rect key="frame" x="0.0" y="605" width="375" height="62"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,10 +127,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CPI-nu-5lk">
-                                <rect key="frame" x="0.0" y="215" width="375" height="129.5"/>
+                                <rect key="frame" x="0.0" y="215" width="375" height="129"/>
                                 <subviews>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM9-Eg-PpG">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="129.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="129"/>
                                         <color key="backgroundColor" red="0.98646080069999997" green="0.98956627929999996" blue="0.99898604749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="City"/>
                                         <connections>
@@ -139,7 +138,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5A7-ZR-gvB">
-                                        <rect key="frame" x="188" y="0.0" width="187" height="129.5"/>
+                                        <rect key="frame" x="188" y="0.0" width="187" height="129"/>
                                         <color key="backgroundColor" red="0.98646080069999997" green="0.98956627929999996" blue="0.99898604749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Skiing"/>
                                         <connections>
@@ -149,7 +148,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yjt-ST-1QM">
-                                <rect key="frame" x="0.0" y="345.5" width="375" height="129"/>
+                                <rect key="frame" x="0.0" y="345" width="375" height="129"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8w-mi-ZwU">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="129"/>
@@ -170,7 +169,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="F13-FQ-cyH">
-                                <rect key="frame" x="0.0" y="475.5" width="375" height="129"/>
+                                <rect key="frame" x="0.0" y="475" width="375" height="129"/>
                                 <subviews>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ix-Yj-BZ9">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="129"/>
@@ -506,6 +505,41 @@
                                     <constraint firstAttribute="height" constant="1" id="vKj-MS-Tn0"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isv-88-R8e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0d-s9-Ku4">
+                                        <rect key="frame" x="57" y="228" width="260" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKc-z3-KcO">
+                                                <rect key="frame" x="0.0" y="127" width="260" height="83"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="New Empty List">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="newEmptyList:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="Mg1-vm-f0Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-gL-Ydx">
+                                                <rect key="frame" x="0.0" y="35" width="260" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="New Generated List">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="c9B-62-ph6" kind="show" id="ijL-gQ-939"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.55629280821917804" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSn-nA-02u">
                                 <rect key="frame" x="300" y="605" width="75" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -519,10 +553,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="newListBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="tfl-31-jV9"/>
-                                            <segue destination="KXN-KU-EMp" kind="popoverPresentation" popoverAnchorView="8RK-5x-hbf" id="gdM-ZO-IKb">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="newListBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="rf6-j3-ULN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -536,16 +567,21 @@
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="mKC-tF-Q2W" secondAttribute="bottom" constant="2" id="O05-3y-a2i"/>
                             <constraint firstAttribute="trailing" secondItem="fBR-J6-m6S" secondAttribute="trailing" id="OVL-9U-ljm"/>
                             <constraint firstItem="mKC-tF-Q2W" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" constant="44" id="VN1-B2-3GC"/>
+                            <constraint firstItem="isv-88-R8e" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" id="dJb-8G-FY2"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" id="fP4-UF-lVy"/>
                             <constraint firstItem="mKC-tF-Q2W" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="gDy-RC-NOG"/>
                             <constraint firstItem="mKC-tF-Q2W" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" id="jbB-hq-atw"/>
+                            <constraint firstItem="isv-88-R8e" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="kHc-QA-j2s"/>
+                            <constraint firstItem="isv-88-R8e" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" id="srZ-CI-dkL"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="bottom" secondItem="tvw-1e-ukZ" secondAttribute="bottom" id="y7F-f4-fUj"/>
+                            <constraint firstItem="isv-88-R8e" firstAttribute="bottom" secondItem="tvw-1e-ukZ" secondAttribute="bottom" id="zu4-lz-uER"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tvw-1e-ukZ"/>
                     </view>
                     <connections>
                         <outlet property="listLabel" destination="mKC-tF-Q2W" id="5ho-8B-1og"/>
                         <outlet property="newListOutl" destination="8RK-5x-hbf" id="rmq-kV-K5k"/>
+                        <outlet property="popupView" destination="isv-88-R8e" id="iLB-iA-a43"/>
                         <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>
                         <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                     </connections>
@@ -553,75 +589,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH1-Os-9W5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5008.8000000000002" y="164.16791604197903"/>
-        </scene>
-        <!--New List Options View-->
-        <scene sceneID="eUA-t7-2FY">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="KXN-KU-EMp" customClass="newListOptionsView" customModule="GeneratedPackList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ySf-81-4XS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbX-wh-lbG">
-                                <rect key="frame" x="48" y="209" width="279" height="245"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcE-yg-DnQ">
-                                        <rect key="frame" x="0.0" y="38" width="279" height="95"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Generate New List">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="c9B-62-ph6" kind="show" id="P6b-fg-0G4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTV-Nm-sSL">
-                                        <rect key="frame" x="0.0" y="-1" width="34" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <state key="normal" title="X">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="exitPopup:" destination="KXN-KU-EMp" eventType="touchUpInside" id="poH-40-zbj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1s-61-euS">
-                                        <rect key="frame" x="0.0" y="141" width="279" height="95"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="New Empty List">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newEmptyBtn:" destination="KXN-KU-EMp" eventType="touchUpInside" id="ClK-HX-lqi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.23489040799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="0.26698951198630139" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="0.19860338184931506" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="SbX-wh-lbG" firstAttribute="leading" secondItem="CFE-wS-JaO" secondAttribute="leading" constant="48" id="Kes-fZ-JBg"/>
-                            <constraint firstItem="SbX-wh-lbG" firstAttribute="centerY" secondItem="ySf-81-4XS" secondAttribute="centerY" id="LHV-X8-bH0"/>
-                            <constraint firstItem="SbX-wh-lbG" firstAttribute="centerX" secondItem="ySf-81-4XS" secondAttribute="centerX" id="QQY-el-syR"/>
-                            <constraint firstItem="SbX-wh-lbG" firstAttribute="top" secondItem="CFE-wS-JaO" secondAttribute="top" constant="189" id="SNq-RU-YuG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="CFE-wS-JaO"/>
-                    </view>
-                    <connections>
-                        <outlet property="popupView" destination="SbX-wh-lbG" id="v8f-Hj-niC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oPJ-DY-S8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5949.6000000000004" y="174.96251874062969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PPY-oY-Pbq">
@@ -648,6 +615,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="36g-ja-yu1"/>
-        <segue reference="P6b-fg-0G4"/>
+        <segue reference="ijL-gQ-939"/>
     </inferredMetricsTieBreakers>
 </document>
