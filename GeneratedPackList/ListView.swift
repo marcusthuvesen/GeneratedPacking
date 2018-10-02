@@ -59,6 +59,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet weak var popupView: UIView!
     
+    @IBAction func popupExitBtn(_ sender: UIButton) {
+        popupView.isHidden = true
+    }
     
     @IBAction func newEmptyList(_ sender: UIButton) {
         
