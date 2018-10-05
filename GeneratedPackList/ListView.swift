@@ -58,7 +58,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var table: UITableView!
     
-    @IBOutlet weak var listLabel: UILabel!
+    
+    @IBOutlet weak var listNameText: UITextField!
+    
+    @IBAction func listNameTextTouch(_ sender: UITextField) {
+    }
+    
     
     @IBOutlet weak var newListOutl: UIButton!
 
@@ -81,7 +86,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBAction func newEmptyList(_ sender: UIButton) {
         
         generatedObjects.removeAll()
-        listLabel.text = ""
+        listNameText.text = ""
         print(generatedObjects)
         table.reloadData()
         popupView.isHidden = true
@@ -113,7 +118,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
-        listLabel.text = name
+        listNameText.text = name
         
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
