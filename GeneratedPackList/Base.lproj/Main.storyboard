@@ -483,16 +483,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-Hu-pK2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-Hu-pK2">
                                 <rect key="frame" x="8" y="80" width="306" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Q9d-WQ-Yib"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="listNameTextTouch:" destination="2JW-vu-wjZ" eventType="touchDown" id="41L-vV-o4C"/>
+                                    <outlet property="delegate" destination="2JW-vu-wjZ" id="qhc-rg-AlI"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uni-NG-56B">
@@ -505,6 +506,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="sNS-OH-Qn6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-My-gcg">
                                 <rect key="frame" x="8" y="133" width="311" height="30"/>
@@ -649,7 +653,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3843137254901961" green="0.61568627450980395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="isv-88-R8e" secondAttribute="bottom" id="11q-JW-QC0"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="5O5-05-ctA"/>
@@ -680,6 +684,7 @@
                         <viewLayoutGuide key="safeArea" id="tvw-1e-ukZ"/>
                     </view>
                     <connections>
+                        <outlet property="hideSaveBtn" destination="uni-NG-56B" id="7Nm-q0-Waz"/>
                         <outlet property="inputAddText" destination="h0x-My-gcg" id="Etf-lE-Qvi"/>
                         <outlet property="listNameText" destination="ks3-Hu-pK2" id="YHq-pU-uu6"/>
                         <outlet property="newListOutl" destination="8RK-5x-hbf" id="rmq-kV-K5k"/>

@@ -57,20 +57,25 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBOutlet weak var table: UITableView!
-    
-    
     @IBOutlet weak var listNameText: UITextField!
+    @IBOutlet weak var hideSaveBtn: UIButton!
+    @IBOutlet weak var newListOutl: UIButton!
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var inputAddText: UITextField!
     
-    @IBAction func listNameTextTouch(_ sender: UITextField) {
+    
+    @IBAction func saveBtn(_ sender: UIButton) {
+        
+        listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
+        hideSaveBtn.isHidden = true
+        listNameText.resignFirstResponder()
     }
     
+    @IBAction func listNameTextTouch(_ sender: UITextField) {
+        listNameText.backgroundColor = .white
+        hideSaveBtn.isHidden = false
+    }
     
-    @IBOutlet weak var newListOutl: UIButton!
-
-    @IBOutlet weak var popupView: UIView!
-    
-    
-    @IBOutlet weak var inputAddText: UITextField!
     
     @IBAction func addBtn(_ sender: UIButton) {
         generatedObjects.insert(inputAddText.text!, at: 0)
@@ -104,7 +109,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        
+        hideSaveBtn.isHidden = true
         popupView.isHidden = true
         
         popupView.layer.cornerRadius = 10
