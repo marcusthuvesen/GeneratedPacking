@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
@@ -50,6 +52,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen7 = false
     var chosen8 = false
     
+    var savedObjects = [String]()
+    var savedListNames = [String]()
+    
     
     @IBOutlet weak var table: UITableView!
     
@@ -58,6 +63,16 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var newListOutl: UIButton!
 
     @IBOutlet weak var popupView: UIView!
+    
+    
+    @IBOutlet weak var inputAddText: UITextField!
+    
+    @IBAction func addBtn(_ sender: UIButton) {
+        generatedObjects.insert(inputAddText.text!, at: 0)
+        table.reloadData()
+        
+    }
+    
     
     @IBAction func popupExitBtn(_ sender: UIButton) {
         popupView.isHidden = true
@@ -78,14 +93,23 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         popupView.isHidden = false
     }
     
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = Database.database().reference()
+        
         popupView.isHidden = true
         
+        popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+        
+       /* let refHandle = postRef.observe(DataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? [String : [savedListNames]] ?? [:]
+            // ...
+        })*/
         
         let name = UserDefaults.standard.string(forKey: "listNameString")
         print("Det funkar " + (name!))
@@ -208,6 +232,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         // Do any additional setup after loading the view.
         
+        savedObjects = generatedObjects
+        UserDefaults.standard.set(savedObjects, forKey: "savedObjects")
+        print(savedObjects)
     }
     
    

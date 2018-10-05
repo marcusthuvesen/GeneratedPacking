@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class TravelLength: UIViewController {
 
     
@@ -18,9 +18,13 @@ class TravelLength: UIViewController {
     @IBOutlet weak var laundryOutl: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         laundryOutl.layer.cornerRadius = 10
+        
+        ref = Database.database().reference()
     }
  
     override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +48,9 @@ class TravelLength: UIViewController {
     
     
     @IBAction func nextViewBtn(_ sender: UIButton) {
+        
+        
+        ref.child("listnameFB").setValue(packTitleInput.text)
         
          var listNameString : String = (packTitleInput.text!)
         UserDefaults.standard.set(listNameString, forKey: "listNameString")
