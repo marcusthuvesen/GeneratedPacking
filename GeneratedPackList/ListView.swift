@@ -112,6 +112,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         hideSaveBtn.isHidden = true
         popupView.isHidden = true
         
+        listNameText.layer.cornerRadius = 5
         popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
