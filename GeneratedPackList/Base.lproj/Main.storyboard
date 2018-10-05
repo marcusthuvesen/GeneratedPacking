@@ -530,12 +530,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxM-27-KN1">
-                                <rect key="frame" x="0.0" y="44" width="77" height="39"/>
+                                <rect key="frame" x="330" y="59" width="84" height="59"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="8fe-FF-DdL"/>
-                                    <constraint firstAttribute="height" constant="39" id="yi7-6Q-pDd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="UfZ-JA-Qpm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="59" id="txB-Fh-9cW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="My Lists">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -666,7 +666,8 @@
                             <constraint firstItem="h0x-My-gcg" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" constant="8" id="Iaj-Ef-ur2"/>
                             <constraint firstItem="h0x-My-gcg" firstAttribute="top" secondItem="fBR-J6-m6S" secondAttribute="bottom" constant="10" id="Jje-79-ltD"/>
                             <constraint firstAttribute="trailing" secondItem="fBR-J6-m6S" secondAttribute="trailing" id="OVL-9U-ljm"/>
-                            <constraint firstItem="lxM-27-KN1" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="UYs-Q8-yxP"/>
+                            <constraint firstItem="lxM-27-KN1" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" constant="15" id="Pcu-6R-w8x"/>
+                            <constraint firstAttribute="trailing" secondItem="lxM-27-KN1" secondAttribute="trailing" id="U8F-dm-i7b"/>
                             <constraint firstItem="isv-88-R8e" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" id="dJb-8G-FY2"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="h0x-My-gcg" secondAttribute="bottom" constant="13" id="dwV-Ch-Hzw"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" id="fP4-UF-lVy"/>
@@ -675,7 +676,6 @@
                             <constraint firstItem="tvw-1e-ukZ" firstAttribute="trailing" secondItem="Syu-Qo-oYG" secondAttribute="trailing" id="j3t-v2-E8z"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="Syu-Qo-oYG" secondAttribute="bottom" constant="8" id="lN8-Ee-TvL"/>
                             <constraint firstItem="ks3-Hu-pK2" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" constant="80" id="mY9-A3-BKm"/>
-                            <constraint firstItem="lxM-27-KN1" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" id="mz8-Bg-ICT"/>
                             <constraint firstItem="uni-NG-56B" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" constant="70" id="tFI-fh-ksp"/>
                             <constraint firstItem="Syu-Qo-oYG" firstAttribute="leading" secondItem="h0x-My-gcg" secondAttribute="trailing" id="trg-qV-58d"/>
                             <constraint firstAttribute="trailing" secondItem="isv-88-R8e" secondAttribute="trailing" id="u1V-x0-5uG"/>
@@ -687,6 +687,7 @@
                         <outlet property="hideSaveBtn" destination="uni-NG-56B" id="7Nm-q0-Waz"/>
                         <outlet property="inputAddText" destination="h0x-My-gcg" id="Etf-lE-Qvi"/>
                         <outlet property="listNameText" destination="ks3-Hu-pK2" id="YHq-pU-uu6"/>
+                        <outlet property="myListsOutl" destination="lxM-27-KN1" id="JJO-0Q-iym"/>
                         <outlet property="newListOutl" destination="8RK-5x-hbf" id="rmq-kV-K5k"/>
                         <outlet property="popupView" destination="isv-88-R8e" id="iLB-iA-a43"/>
                         <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>

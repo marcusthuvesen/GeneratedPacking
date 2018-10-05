@@ -62,18 +62,20 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var newListOutl: UIButton!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var inputAddText: UITextField!
-    
+    @IBOutlet weak var myListsOutl: UIButton!
     
     @IBAction func saveBtn(_ sender: UIButton) {
         
         listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
         hideSaveBtn.isHidden = true
+        myListsOutl.isHidden = false
         listNameText.resignFirstResponder()
     }
     
     @IBAction func listNameTextTouch(_ sender: UITextField) {
         listNameText.backgroundColor = .white
         hideSaveBtn.isHidden = false
+        myListsOutl.isHidden = true
     }
     
     
