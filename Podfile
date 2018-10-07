@@ -10,6 +10,7 @@ pod 'Firebase/Core'
   pod 'Firebase/Auth' 
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'SwiftLint', '~> 0.27'
 
   target 'GeneratedPackListTests' do
     inherit! :search_paths

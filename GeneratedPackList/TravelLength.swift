@@ -17,12 +17,14 @@ class TravelLength: UIViewController {
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var laundryOutl: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
+    @IBOutlet weak var progressBar: UIView!
     
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         laundryOutl.layer.cornerRadius = 10
+        progressBar.frame.size.width = ((view.frame.size.width)/4 - 16)
         
         ref = Database.database().reference()
     }
