@@ -306,13 +306,6 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="ORM-pO-zjw"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Packlist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHG-wU-ISb">
-                                        <rect key="frame" x="20" y="97" width="334" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TRAVEL LENGTH 1 DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-mV-Lmx">
                                         <rect key="frame" x="0.0" y="259" width="375" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -336,7 +329,6 @@
                     <navigationItem key="navigationItem" id="5F1-Wu-WEd"/>
                     <connections>
                         <outlet property="laundryOutl" destination="F6b-1Y-wsy" id="Svo-6c-vcf"/>
-                        <outlet property="packTitleInput" destination="VHG-wU-ISb" id="RJn-bt-O2Y"/>
                         <outlet property="sliderLabel" destination="3ce-mV-Lmx" id="7oS-8n-5H7"/>
                         <outlet property="viewContainer" destination="4Gq-2D-fwW" id="ccE-8X-sWi"/>
                     </connections>
@@ -377,7 +369,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="150"/>
                                         <color key="backgroundColor" red="1" green="0.36070929309999999" blue="0.2473790964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="187" id="65y-dc-2su"/>
                                             <constraint firstAttribute="height" constant="150" id="bVK-45-HRM"/>
                                         </constraints>
                                         <state key="normal" title="Hot">

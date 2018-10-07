@@ -13,7 +13,7 @@ class TravelLength: UIViewController {
     
     var sliderValue = 1
     
-    @IBOutlet weak var packTitleInput: UITextField!
+  
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var laundryOutl: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
@@ -28,7 +28,7 @@ class TravelLength: UIViewController {
     }
  
     override func viewDidAppear(_ animated: Bool) {
-        packTitleInput.text = ""
+       
     }
    
    
@@ -50,11 +50,9 @@ class TravelLength: UIViewController {
     @IBAction func nextViewBtn(_ sender: UIButton) {
         
         
-        ref.child("listnameFB").setValue(packTitleInput.text)
+        //ref.child("listnameFB").setValue(packTitleInput.text)
         
-         var listNameString : String = (packTitleInput.text!)
-        UserDefaults.standard.set(listNameString, forKey: "listNameString")
-        print(listNameString)
+        
         UserDefaults.standard.set(sliderValue, forKey: "sliderValue")
         print(sliderValue)
     }

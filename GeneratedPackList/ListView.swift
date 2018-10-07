@@ -126,9 +126,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             // ...
         })*/
         
-        let name = UserDefaults.standard.string(forKey: "listNameString")
-        print("Det funkar " + (name!))
-        listNameText.text = name
+       
         
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
@@ -136,10 +134,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
         print(sliderValue)
         
-        var sliderString = String(sliderValue)
+      /*  var sliderString = String(sliderValue)
         var sliderString2 = " Suits"
         var sliderStrings = (sliderString + sliderString2)
-        businessObjectsMan.insert(sliderStrings, at: 1)
+        businessObjectsMan.insert(sliderStrings, at: 1)*/
         
        
         //BUSINESS
