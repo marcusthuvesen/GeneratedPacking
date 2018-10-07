@@ -69,11 +69,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
         hideSaveBtn.isHidden = true
         myListsOutl.isHidden = false
+        listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
     }
     
     @IBAction func listNameTextTouch(_ sender: UITextField) {
         listNameText.backgroundColor = .white
+        listNameText.placeholder = "Add Listname"
         hideSaveBtn.isHidden = false
         myListsOutl.isHidden = true
     }
