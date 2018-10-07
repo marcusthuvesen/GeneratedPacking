@@ -1,0 +1,6 @@
+framework module Pods_GeneratedPackList {
+  umbrella header "Pods-GeneratedPackList-umbrella.h"
+
+  export *
+  module * { export * }
+}
