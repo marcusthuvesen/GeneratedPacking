@@ -655,6 +655,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.3843137254901961" green="0.61568627450980395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="ks3-Hu-pK2" secondAttribute="bottom" constant="12" id="0eT-gA-S6r"/>
                             <constraint firstAttribute="bottom" secondItem="isv-88-R8e" secondAttribute="bottom" id="11q-JW-QC0"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="5O5-05-ctA"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" id="61b-42-DJy"/>
@@ -674,7 +675,6 @@
                             <constraint firstAttribute="bottomMargin" secondItem="lSn-nA-02u" secondAttribute="bottom" id="gLp-Eo-Ymb"/>
                             <constraint firstItem="uni-NG-56B" firstAttribute="leading" secondItem="ks3-Hu-pK2" secondAttribute="trailing" id="gfb-3w-dKE"/>
                             <constraint firstItem="tvw-1e-ukZ" firstAttribute="trailing" secondItem="Syu-Qo-oYG" secondAttribute="trailing" id="j3t-v2-E8z"/>
-                            <constraint firstItem="ks3-Hu-pK2" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" constant="80" id="mY9-A3-BKm"/>
                             <constraint firstItem="uni-NG-56B" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" constant="70" id="tFI-fh-ksp"/>
                             <constraint firstItem="Syu-Qo-oYG" firstAttribute="leading" secondItem="h0x-My-gcg" secondAttribute="trailing" id="trg-qV-58d"/>
                             <constraint firstAttribute="trailing" secondItem="isv-88-R8e" secondAttribute="trailing" id="u1V-x0-5uG"/>
