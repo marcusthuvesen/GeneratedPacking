@@ -20,20 +20,31 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         super.viewDidLoad()
         ref = Database.database().reference()
         
+        ref?.child("mitt namn").observe(.childAdded, with: { (snapshot) in
+        print(snapshot)
         
-        
-        ref?.child("List").observe(.childAdded, with: { (snapshot) in
+        // PROCESSES VALUES RECEIVED FROM SERVER
+        if ( snapshot.value is NSNull ) {
+            
+            // DATA WAS NOT FOUND
+            print("– – – Data was not found – – –")
+            
+        }
+        else{
+            
+            print("data finns bror")
             //Code executed when child is added under "List"
             let post = snapshot.value as? String
-            
-            if let actualPost = post {
+        
                 
                 //Append data to savedListArray
-                self.savedListArray.append(actualPost)
+                self.savedListArray.append(post!)
                 
                 
                 self.tableVW.reloadData()
+                
             }
+            
         })
     }
     

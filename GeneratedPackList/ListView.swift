@@ -71,8 +71,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         myListsOutl.isHidden = false
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
-       
+        if listNameText != nil {
         ref.child(listNameText.text!).child("List").setValue(generatedObjects)
+        }
     }
     
     @IBAction func listNameTextTouch(_ sender: UITextField) {
