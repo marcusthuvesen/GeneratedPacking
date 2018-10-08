@@ -615,7 +615,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tap To Add Listname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-Hu-pK2">
-                                <rect key="frame" x="8" y="80" width="306" height="30"/>
+                                <rect key="frame" x="8" y="80" width="307" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Q9d-WQ-Yib"/>
                                 </constraints>
@@ -628,7 +628,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uni-NG-56B">
-                                <rect key="frame" x="314" y="78" width="100" height="35"/>
+                                <rect key="frame" x="315" y="78" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Kam-jV-GYx"/>
                                 </constraints>
@@ -660,7 +660,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxM-27-KN1">
-                                <rect key="frame" x="314" y="58" width="100" height="60"/>
+                                <rect key="frame" x="315" y="58" width="99" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0Zs-0Q-yGT"/>
                                 </constraints>
@@ -789,7 +789,6 @@
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" id="61b-42-DJy"/>
                             <constraint firstItem="ks3-Hu-pK2" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" constant="8" id="87p-ka-gkS"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="lxM-27-KN1" secondAttribute="bottom" constant="4" id="Av8-r0-fKc"/>
-                            <constraint firstItem="tvw-1e-ukZ" firstAttribute="trailing" secondItem="uni-NG-56B" secondAttribute="trailing" id="D9U-og-K5o"/>
                             <constraint firstItem="tvw-1e-ukZ" firstAttribute="trailing" secondItem="lSn-nA-02u" secondAttribute="trailing" id="Dh4-hi-yJm"/>
                             <constraint firstItem="isv-88-R8e" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" id="EhH-H2-hoe"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" constant="78" id="H3Z-HQ-i8r"/>
@@ -799,6 +798,7 @@
                             <constraint firstAttribute="trailing" secondItem="fBR-J6-m6S" secondAttribute="trailing" id="OVL-9U-ljm"/>
                             <constraint firstAttribute="trailing" secondItem="lxM-27-KN1" secondAttribute="trailing" id="U8F-dm-i7b"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="uni-NG-56B" secondAttribute="bottom" constant="9" id="YQl-dr-50W"/>
+                            <constraint firstItem="uni-NG-56B" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" constant="1" id="ac2-f4-GF2"/>
                             <constraint firstItem="isv-88-R8e" firstAttribute="top" secondItem="2jb-jL-ndL" secondAttribute="top" id="dJb-8G-FY2"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="h0x-My-gcg" secondAttribute="bottom" constant="13" id="dwV-Ch-Hzw"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="trailing" secondItem="tvw-1e-ukZ" secondAttribute="trailing" id="fP4-UF-lVy"/>
@@ -891,6 +891,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OhD-LG-NQk"/>
                     </view>
+                    <connections>
+                        <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Fz-GOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -903,7 +906,6 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z7w-6M-EE0"/>
         <segue reference="Hw4-jg-D4R"/>
     </inferredMetricsTieBreakers>
 </document>

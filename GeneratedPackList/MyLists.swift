@@ -7,18 +7,38 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
    
-
+    @IBOutlet weak var tableVW: UITableView!
+    var ref: DatabaseReference!
+    var databaseHandle:DatabaseHandle!
+    var savedListArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
+        
+        
+        
+        ref?.child("List").observe(.childAdded, with: { (snapshot) in
+            //Code executed when child is added under "List"
+            let post = snapshot.value as? String
+            
+            if let actualPost = post {
+                
+                //Append data to savedListArray
+                self.savedListArray.append(actualPost)
+                
+                
+                self.tableVW.reloadData()
+            }
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return savedListArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

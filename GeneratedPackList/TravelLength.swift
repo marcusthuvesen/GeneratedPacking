@@ -52,8 +52,6 @@ class TravelLength: UIViewController {
     @IBAction func nextViewBtn(_ sender: UIButton) {
         
         
-        //ref.child("listnameFB").setValue(packTitleInput.text)
-        
         
         UserDefaults.standard.set(sliderValue, forKey: "sliderValue")
         print(sliderValue)
