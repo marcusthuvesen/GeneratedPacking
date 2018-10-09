@@ -20,32 +20,15 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         super.viewDidLoad()
         ref = Database.database().reference()
         
-        ref?.child("mitt namn").observe(.childAdded, with: { (snapshot) in
-        print(snapshot)
-        
-        // PROCESSES VALUES RECEIVED FROM SERVER
-        if ( snapshot.value is NSNull ) {
-            
-            // DATA WAS NOT FOUND
-            print("– – – Data was not found – – –")
+        ref.child("lists").observeSingleEvent(of: .value) { (snapshot) in
+            //Get users lists
+            let value = snapshot.value as? NSDictionary
+            print(value)
             
         }
-        else{
+       
             
-            print("data finns bror")
-            //Code executed when child is added under "List"
-            let post = snapshot.value as? String
         
-                
-                //Append data to savedListArray
-                self.savedListArray.append(post!)
-                
-                
-                self.tableVW.reloadData()
-                
-            }
-            
-        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
