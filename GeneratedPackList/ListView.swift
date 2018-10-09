@@ -55,6 +55,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var savedObjects = [String]()
     var savedListNames = [String]()
     
+    var currentListKey : String?
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var listNameText: UITextField!
@@ -71,9 +72,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         myListsOutl.isHidden = false
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
-        if listNameText != nil {
-        //ref.child("lists").child(listNameText.text!).child("List").setValue(generatedObjects)
-          ref.child("lists").childByAutoId().child("listName").setValue(listNameText.text)
+        if listNameText.text != "" {
+            ref.child("lists").childByAutoId().child("listName").setValue(listNameText.text)
+            //ref.child("lists").childByAutoId().child("listName").setValue(listNameText.text)
+              //ref.child("lists").child("listName").child(listNameText.text!)
         }
     }
     
@@ -86,8 +88,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBAction func addBtn(_ sender: UIButton) {
-        generatedObjects.insert(inputAddText.text!, at: 0)
-        table.reloadData()
+        
+        ref.child("lists").child("-LONvxwuSLqnRPHqIwng").child("items").childByAutoId().child("itemname").setValue(inputAddText.text)
+        
+        //generatedObjects.insert(inputAddText.text!, at: 0)
+        //table.reloadData()
         
     }
     

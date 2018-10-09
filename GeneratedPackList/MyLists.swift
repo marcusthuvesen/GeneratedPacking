@@ -24,14 +24,21 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         ref.child("lists").observeSingleEvent(of: .value, with: { (snapshot) in
             //Get users lists
             
-            for listthing in snapshot.children.allObjects as! [DataSnapshot]
-            {
+            for listthing in snapshot.children.allObjects as! [DataSnapshot]{
               let listDict = listthing.value as! NSDictionary
-              let listName = listDict["listName"] as! String
-              print(listDict)
-              self.savedListNameArray.append(listName)
+                
+              if let testlistName = listDict["listName"]{
+                let listName = listDict["listName"] as! String
+                print(listDict)
+                self.savedListNameArray.append(listName)
+                self.tableVW.reloadData()
+              }
+                
+              else{
+                print("Error")
+              }
+            
             }
-            self.tableVW.reloadData()
         })
         {(error) in
             print(error.localizedDescription)
