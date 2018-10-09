@@ -20,34 +20,46 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        loadLists()
+    }
+    
+    
+    
+    
+    func loadLists(){
         
         ref.child("lists").observeSingleEvent(of: .value, with: { (snapshot) in
             //Get users lists
             
             for listthing in snapshot.children.allObjects as! [DataSnapshot]{
-              let listDict = listthing.value as! NSDictionary
+                let listDict = listthing.value as! NSDictionary
                 
-              if let testlistName = listDict["listName"]{
-                let listName = listDict["listName"] as! String
-                print(listDict)
-                self.savedListNameArray.append(listName)
-                self.tableVW.reloadData()
-              }
+                if let testlistName = listDict["listName"]{
+                    let listName = listDict["listName"] as! String
+                    print(listDict)
+                    self.savedListNameArray.append(listName)
+                    self.tableVW.reloadData()
+                }
+                    
+                else{
+                    print("Error")
+                }
                 
-              else{
-                print("Error")
-              }
-            
             }
         })
         {(error) in
             print(error.localizedDescription)
         }
         
-       
-            
-        
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedListNameArray.count
