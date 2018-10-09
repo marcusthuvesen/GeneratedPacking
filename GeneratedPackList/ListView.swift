@@ -72,7 +72,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
         if listNameText != nil {
-        ref.child("lists").child(listNameText.text!).child("List").setValue(generatedObjects)
+        //ref.child("lists").child(listNameText.text!).child("List").setValue(generatedObjects)
+          ref.child("lists").childByAutoId().child("listName").setValue(listNameText.text)
         }
     }
     

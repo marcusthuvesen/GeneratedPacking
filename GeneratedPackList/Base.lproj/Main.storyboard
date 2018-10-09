@@ -908,7 +908,6 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z7w-6M-EE0"/>
         <segue reference="Hw4-jg-D4R"/>
     </inferredMetricsTieBreakers>
 </document>
