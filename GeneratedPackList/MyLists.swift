@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
-   
+   var keyArray = [String]()
+    
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
    
@@ -22,8 +23,6 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         ref = Database.database().reference()
         loadLists()
     }
-    
-    
     
     
     func loadLists(){
@@ -38,7 +37,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     let listName = listDict["listName"] as! String
                     print(listDict)
                     self.savedListNameArray.append(listName)
-                    self.tableVW.reloadData()
+                    self.tableVW.reloadData() 
                 }
                     
                 else{
@@ -53,14 +52,6 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedListNameArray.count
     }
@@ -74,15 +65,35 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return cell!
     }
     
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
-    {
+    //Slide to Delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.savedListNameArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
             
+            getAllKeys()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when, execute:{
+                self.ref?.child("lists").child(self.keyArray[indexPath.row]).removeValue()
+                self.savedListNameArray.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.keyArray = []
+                
+            })
         }
     }
     
+    //Get ChildbyautoIds
+    func getAllKeys(){
+        ref?.child("lists").observeSingleEvent(of: .value , with: {(snapshot) in
+            
+            for child in snapshot.children {
+                
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.keyArray.append(key)
+            }
+            
+            
+        })
+    }
     
 }

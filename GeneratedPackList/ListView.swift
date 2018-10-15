@@ -74,7 +74,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.resignFirstResponder()
         if listNameText.text != "" {
             ref.child("lists").childByAutoId().child("listName").setValue(listNameText.text)
-            ref.child("lists").childByAutoId().child("listName").setValue(generatedObjects)
+            //ref.child("lists").childByAutoId().child("listName").setValue(generatedObjects)
         }
     }
     
