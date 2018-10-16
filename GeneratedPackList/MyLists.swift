@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
-   
+   var keyArray = [String]()
+    
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
    var keyArray = [String]()
@@ -22,8 +23,6 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         ref = Database.database().reference()
         loadLists()
     }
-    
-    
     
     
     func loadLists(){
@@ -64,7 +63,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     let listName = listDict["listName"] as! String
                     print(listDict)
                     self.savedListNameArray.append(listName)
-                    self.tableVW.reloadData()
+                    self.tableVW.reloadData() 
                 }
                     
                 else{
