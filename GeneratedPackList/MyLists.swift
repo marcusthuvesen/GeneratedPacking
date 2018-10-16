@@ -132,4 +132,11 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     
+    //Selecting List
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSeque(performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    
 }
