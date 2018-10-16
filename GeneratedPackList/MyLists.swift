@@ -14,7 +14,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
-   var keyArray = [String]()
+   
     var savedListNameArray = [String]()
     
     override func viewDidLoad() {
@@ -133,9 +133,20 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     //Selecting List
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let myIndex = indexPath.row
-        performSegue(performSegue(withIdentifier: "segue", sender: self))
+        if let new = tableVW.cellForRow(at: indexPath as IndexPath) {
+            self.performSegue(withIdentifier: "segue", sender: self)
+        }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue" {
+            if let indexPath = self.tableVW.indexPathForSelectedRow{
+                let destination = segue.destination as! ListView
+                
+                destination.whatList = savedListNameArray[indexPath.row]
+            }
+        }
+    }
     
 }

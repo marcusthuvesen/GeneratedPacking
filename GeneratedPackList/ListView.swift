@@ -54,7 +54,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var savedObjects = [String]()
     var savedListNames = [String]()
-    
+    var whatList : String?
     var currentListKey : String?
     
     @IBOutlet weak var table: UITableView!
@@ -120,9 +120,14 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBAction func newListBtn(_ sender: UIButton) {
         popupView.isHidden = false
     }
+
     
     var ref: DatabaseReference!
     
+    override func viewDidAppear(_ animated: Bool) {
+        print(whatList)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

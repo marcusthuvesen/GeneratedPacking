@@ -847,9 +847,6 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="2JW-vu-wjZ" kind="show" id="Hw4-jg-D4R"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="IDENTIFIER2" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-Ux-sVf">
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
@@ -895,6 +892,7 @@
                     </view>
                     <connections>
                         <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
+                        <segue destination="2JW-vu-wjZ" kind="showDetail" identifier="segue" id="Zxy-yO-5DI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Fz-GOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -908,6 +906,6 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hw4-jg-D4R"/>
+        <segue reference="Zxy-yO-5DI"/>
     </inferredMetricsTieBreakers>
 </document>
