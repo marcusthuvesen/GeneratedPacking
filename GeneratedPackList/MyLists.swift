@@ -13,7 +13,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
    
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
-   
+   var keyArray = [String]()
     var savedListNameArray = [String]()
     
     override func viewDidLoad() {
@@ -28,13 +28,39 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func loadLists(){
         
-        ref.child("lists").observeSingleEvent(of: .value, with: { (snapshot) in
+        //ref.child("lists").observeSingleEvent(of: .value, with: { (snapshot) in
             //Get users lists
             
-            for listthing in snapshot.children.allObjects as! [DataSnapshot]{
-                let listDict = listthing.value as! NSDictionary
+            //for listthing in snapshot.children.allObjects as! [snapshot]{
+                //let listDict = listthing.value as! NSDictionary
                 
-                if let testlistName = listDict["listName"]{
+                self.ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value, with: { (snapshot) in
+                   
+                    for child in snapshot.children{
+                
+                        let listName = child as! DataSnapshot
+                       let key = listName.key
+                        print(key)
+                        self.savedListNameArray.append(key)
+                        self.tableVW.reloadData()
+                    
+                    }
+                },withCancel: nil)
+                    
+        
+                
+   
+               /*
+                     for child in snapshot.children.allObjects as! [DataSnapshot] {
+                     
+                     let dict = child.value as? [String : AnyObject] ?? [:]
+                     print(child.value)
+                     }
+                     
+                     
+                     
+                     
+                     if let testlistName = listDict["listName"]{
                     let listName = listDict["listName"] as! String
                     print(listDict)
                     self.savedListNameArray.append(listName)
@@ -43,17 +69,15 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     
                 else{
                     print("Error")
-                }
+                }*/
                 
-            }
+         /*   }
         })
         {(error) in
             print(error.localizedDescription)
         }
-        
+        */
     }
-    
-    
     
     
     
@@ -75,13 +99,36 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
-    {
+    //Slide to Delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.savedListNameArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
             
+            getAllKeys()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when, execute:{
+                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.keyArray[indexPath.row]).removeValue()
+                self.savedListNameArray.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.keyArray = []
+                
+            })
         }
+    }
+    
+    //Get ChildbyautoIds
+    func getAllKeys(){
+        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value , with: {(snapshot) in
+            
+            for child in snapshot.children {
+                
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.keyArray.append(key)
+                print(key)
+            }
+            
+            
+        })
     }
     
     
