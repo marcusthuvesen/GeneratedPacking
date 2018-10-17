@@ -56,6 +56,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var savedListNames = [String]()
     var whatList : String?
     var currentListKey : String?
+    var keyArray = [String]()
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var listNameText: UITextField!
@@ -125,7 +126,24 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var ref: DatabaseReference!
     
     override func viewDidAppear(_ animated: Bool) {
-        print(whatList)
+        ref = Database.database().reference()
+        if whatList != nil{
+        listNameText.text = whatList
+        self.generatedObjects.removeAll()
+        self.table.reloadData()
+        
+            
+        ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(whatList!).observe(.childAdded) { (snapshot) in
+                let result = snapshot.value as? [String: Any]
+                
+                let item = result!["itemname"]
+            
+            self.generatedObjects.append(item as! String)
+            print(self.generatedObjects)
+            self.table.reloadData()
+            }
+            
+        }
     }
 
     override func viewDidLoad() {
@@ -270,15 +288,40 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
    
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  //Slide to delete
-    {
-        if editingStyle == .delete {
-            self.generatedObjects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+    //Get ChildbyautoIds
+    func getAllKeys(){
+        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value , with: {(snapshot) in
             
+            for child in snapshot.children {
+                
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.keyArray.append(key)
+                print(key)
+            }
+            
+            
+        })
+    }
+    
+    
+   
+    //Slide to Delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            getAllKeys()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when, execute:{
+                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.listNameText.text!).child(self.keyArray[indexPath.row]).removeValue()
+                self.generatedObjects.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.keyArray = []
+                
+            })
         }
     }
+    
     
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
