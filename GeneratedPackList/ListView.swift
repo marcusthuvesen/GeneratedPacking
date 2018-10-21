@@ -52,7 +52,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen7 = false
     var chosen8 = false
     
-    var savedObjects = [String]()
     var savedListNames = [String]()
     var whatList : String?
     var currentListKey : String?
@@ -74,12 +73,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
         if listNameText.text != "" {
-            
-            
-            
+
             for i in 0 ..< generatedObjects.count{
                 ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(listNameText.text!).childByAutoId().child("itemname").setValue(generatedObjects[i])
-                print(i)
+                
             }
            
         }
@@ -139,7 +136,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 let item = result!["itemname"]
             
             self.generatedObjects.append(item as! String)
-            print(self.generatedObjects)
             self.table.reloadData()
             }
             
@@ -148,7 +144,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //getAllKeys()
         ref = Database.database().reference()
         hideSaveBtn.isHidden = true
         popupView.isHidden = true
@@ -157,13 +153,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
-        
-       /* let refHandle = postRef.observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? [String : [savedListNames]] ?? [:]
-            // ...
-        })*/
-        
-       
         
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
@@ -282,15 +271,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         // Do any additional setup after loading the view.
         
-        savedObjects = generatedObjects
-        UserDefaults.standard.set(savedObjects, forKey: "savedObjects")
-        print(savedObjects)
     }
     
    
     //Get ChildbyautoIds
     func getAllKeys(){
-        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value , with: {(snapshot) in
+        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(listNameText.text!).observeSingleEvent(of: .value, with: { (snapshot) in
             
             for child in snapshot.children {
                 
@@ -310,10 +296,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            getAllKeys()
+            //getAllKeys()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when, execute:{
-                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.listNameText.text!).child(self.keyArray[indexPath.row]).removeValue()
+                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.listNameText.text!).child(self.generatedObjects[indexPath.row]).removeValue()
                 self.generatedObjects.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 self.keyArray = []

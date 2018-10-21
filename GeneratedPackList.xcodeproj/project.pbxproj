@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00749667217CEF29002B6957 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00749666217CEF29002B6957 /* LoginViewController.swift */; };
 		2505B8AB21459DFF0030BC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505B8AA21459DFF0030BC8B /* AppDelegate.swift */; };
 		2505B8AD21459DFF0030BC8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505B8AC21459DFF0030BC8B /* ViewController.swift */; };
 		2505B8B021459DFF0030BC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2505B8AE21459DFF0030BC8B /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00749666217CEF29002B6957 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2505B8A721459DFF0030BC8B /* GeneratedPackList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneratedPackList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2505B8AA21459DFF0030BC8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2505B8AC21459DFF0030BC8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				255794F1214AF79A005CF14D /* ListView.swift */,
 				251E8F7221656B9D008BE85D /* MyLists.swift */,
 				2505B8AE21459DFF0030BC8B /* Main.storyboard */,
+				00749666217CEF29002B6957 /* LoginViewController.swift */,
 				2505B8B421459E010030BC8B /* Assets.xcassets */,
 				2505B8B621459E010030BC8B /* LaunchScreen.storyboard */,
 				2505B8B921459E010030BC8B /* Info.plist */,
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00749667217CEF29002B6957 /* LoginViewController.swift in Sources */,
 				2505B8B321459DFF0030BC8B /* GeneratedPackList.xcdatamodeld in Sources */,
 				2561E2C7214A686D0019223E /* TravelLength.swift in Sources */,
 				2561E2C52149A5F00019223E /* WhatClimate.swift in Sources */,

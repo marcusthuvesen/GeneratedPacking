@@ -27,12 +27,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func loadLists(){
         
-        //ref.child("lists").observeSingleEvent(of: .value, with: { (snapshot) in
-            //Get users lists
-            
-            //for listthing in snapshot.children.allObjects as! [snapshot]{
-                //let listDict = listthing.value as! NSDictionary
-                
+        
                 self.ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value, with: { (snapshot) in
                    
                     for child in snapshot.children{
@@ -47,43 +42,9 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 },withCancel: nil)
                     
         
-                
-   
-               /*
-                     for child in snapshot.children.allObjects as! [DataSnapshot] {
-                     
-                     let dict = child.value as? [String : AnyObject] ?? [:]
-                     print(child.value)
-                     }
-                     
-                     
-                     
-                     
-                     if let testlistName = listDict["listName"]{
-                    let listName = listDict["listName"] as! String
-                    print(listDict)
-                    self.savedListNameArray.append(listName)
-                    self.tableVW.reloadData() 
-                }
-                    
-                else{
-                    print("Error")
-                }*/
-                
-         /*   }
-        })
-        {(error) in
-            print(error.localizedDescription)
-        }
-        */
     }
     
-    
-    
-    
-    
-    
-    
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedListNameArray.count
     }
