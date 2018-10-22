@@ -27,8 +27,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func loadLists(){
         
-        
-                self.ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value, with: { (snapshot) in
+                let uid = Auth.auth().currentUser?.uid
+                self.ref.child("Users").child(uid!).child("Lists").observeSingleEvent(of: .value, with: { (snapshot) in
                    
                     for child in snapshot.children{
                 
@@ -66,7 +66,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
             getAllKeys()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when, execute:{
-                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.keyArray[indexPath.row]).removeValue()
+                let uid = Auth.auth().currentUser?.uid
+                self.ref?.child("Users").child(uid!).child("Lists").child(self.keyArray[indexPath.row]).removeValue()
                 self.savedListNameArray.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 self.keyArray = []
@@ -77,7 +78,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     //Get ChildbyautoIds
     func getAllKeys(){
-        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").observeSingleEvent(of: .value , with: {(snapshot) in
+        let uid = Auth.auth().currentUser?.uid
+        self.ref.child("Users").child(uid!).child("Lists").observeSingleEvent(of: .value, with: { (snapshot) in
             
             for child in snapshot.children {
                 
@@ -95,13 +97,13 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //Selecting List
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let new = tableVW.cellForRow(at: indexPath as IndexPath) {
-            self.performSegue(withIdentifier: "segue", sender: self)
+            self.performSegue(withIdentifier: "segue3", sender: self)
         }
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue3" {
             if let indexPath = self.tableVW.indexPathForSelectedRow{
                 let destination = segue.destination as! ListView
                 

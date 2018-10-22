@@ -56,6 +56,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var whatList : String?
     var currentListKey : String?
     var keyArray = [String]()
+    let uid = Auth.auth().currentUser?.uid
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var listNameText: UITextField!
@@ -73,9 +74,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
         if listNameText.text != "" {
-
+            //Hitta ID för currentUser och spara listan under List
+            //let uid = Auth.auth().currentUser?.uid
             for i in 0 ..< generatedObjects.count{
-                ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(listNameText.text!).childByAutoId().child("itemname").setValue(generatedObjects[i])
+                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
                 
             }
            
@@ -91,12 +93,15 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBAction func addBtn(_ sender: UIButton) {
-        
-        ref.child("lists").child("-LONvxwuSLqnRPHqIwng").child("items").childByAutoId().child("itemname").setValue(inputAddText.text)
-        
-        //generatedObjects.insert(inputAddText.text!, at: 0)
-        //table.reloadData()
-        
+        if inputAddText.text != ""{
+            if listNameText.text != "" {
+                //Hitta ID för användaren och spara in Added Item in the list
+                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+                inputAddText.text = ""
+            }
+            //generatedObjects.insert(inputAddText.text!, at: 0)
+            table.reloadData()
+        }
     }
     
     
@@ -124,16 +129,17 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     override func viewDidAppear(_ animated: Bool) {
         ref = Database.database().reference()
+        self.hideKeyboardWhenTappedAround()
         if whatList != nil{
         listNameText.text = whatList
         self.generatedObjects.removeAll()
         self.table.reloadData()
         
-            
-        ref.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(whatList!).observe(.childAdded) { (snapshot) in
+         let uid = Auth.auth().currentUser?.uid
+        ref.child("Users").child(uid!).child("Lists").child(whatList!).observe(.childAdded) { (snapshot) in
                 let result = snapshot.value as? [String: Any]
                 
-                let item = result!["itemname"]
+                let item = result!["Itemname"]
             
             self.generatedObjects.append(item as! String)
             self.table.reloadData()
@@ -153,6 +159,22 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+        
+        if whatList != nil{
+            listNameText.text = whatList
+            self.generatedObjects.removeAll()
+            self.table.reloadData()
+            
+            ref.child("Users").child(uid!).child("Lists").child(whatList!).observe(.childAdded) { (snapshot) in
+                let result = snapshot.value as? [String: Any]
+                
+                let item = result!["Itemname"]
+                
+                self.generatedObjects.append(item as! String)
+                self.table.reloadData()
+            }
+            
+        }
         
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
@@ -276,7 +298,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    
     //Get ChildbyautoIds
     func getAllKeys(){
-        ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(listNameText.text!).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observeSingleEvent(of: .value, with: { (snapshot) in
             
             for child in snapshot.children {
                 
@@ -296,10 +318,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            //getAllKeys()
+            getAllKeys()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when, execute:{
-                self.ref?.child("lists").child("-LOXr5PoUvBn_tGNhql-").child(self.listNameText.text!).child(self.generatedObjects[indexPath.row]).removeValue()
+                self.ref.child("Users").child(self.uid!).child("Lists").child(self.listNameText.text!).child(self.keyArray[indexPath.row]).removeValue()
                 self.generatedObjects.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 self.keyArray = []
