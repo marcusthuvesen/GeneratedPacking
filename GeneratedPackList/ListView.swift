@@ -51,6 +51,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen6 = false
     var chosen7 = false
     var chosen8 = false
+    var firstSave = false
     
     var savedListNames = [String]()
     var whatList : String?
@@ -73,15 +74,22 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         myListsOutl.isHidden = false
         listNameText.placeholder = "Tap To Add Listname"
         listNameText.resignFirstResponder()
-        if listNameText.text != "" {
-            //Hitta ID för currentUser och spara listan under List
-            //let uid = Auth.auth().currentUser?.uid
-            for i in 0 ..< generatedObjects.count{
-                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
-                
+        
+        if firstSave == true{
+            
+        }else{
+            if listNameText.text != "" {
+                //Hitta ID för currentUser och spara listan under List
+                //let uid = Auth.auth().currentUser?.uid
+                for i in 0 ..< generatedObjects.count{
+                    ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
+                    
+                }
+                table.reloadData()
             }
-           
+            firstSave = true
         }
+        
     }
     
     @IBAction func listNameTextTouch(_ sender: UITextField) {
@@ -93,13 +101,15 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBAction func addBtn(_ sender: UIButton) {
+        
         if inputAddText.text != ""{
             if listNameText.text != "" {
                 //Hitta ID för användaren och spara in Added Item in the list
                 ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+                generatedObjects.append(inputAddText.text!)
                 inputAddText.text = ""
             }
-            //generatedObjects.insert(inputAddText.text!, at: 0)
+            
             table.reloadData()
         }
     }
@@ -113,7 +123,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         generatedObjects.removeAll()
         listNameText.text = ""
-        print(generatedObjects)
         table.reloadData()
         popupView.isHidden = true
         
@@ -125,11 +134,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
 
     
-    var ref: DatabaseReference!
+    
     
     override func viewDidAppear(_ animated: Bool) {
-        ref = Database.database().reference()
-        self.hideKeyboardWhenTappedAround()
+        
         if whatList != nil{
         listNameText.text = whatList
         self.generatedObjects.removeAll()
@@ -147,11 +155,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             
         }
     }
-
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         //getAllKeys()
         ref = Database.database().reference()
+        self.hideKeyboardWhenTappedAround()
         hideSaveBtn.isHidden = true
         popupView.isHidden = true
         
@@ -160,21 +169,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
         
-        if whatList != nil{
-            listNameText.text = whatList
-            self.generatedObjects.removeAll()
-            self.table.reloadData()
-            
-            ref.child("Users").child(uid!).child("Lists").child(whatList!).observe(.childAdded) { (snapshot) in
-                let result = snapshot.value as? [String: Any]
-                
-                let item = result!["Itemname"]
-                
-                self.generatedObjects.append(item as! String)
-                self.table.reloadData()
-            }
-            
-        }
+       
         
         let gender = UserDefaults.standard.bool(forKey: "genderSelected")
         print(gender)
@@ -341,7 +336,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath)
         
-        
+        cell.textLabel?.textColor = .black
          cell.textLabel?.text = generatedObjects[indexPath.row]
        
         

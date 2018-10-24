@@ -29,6 +29,7 @@ class ReasonUI: UIViewController{
     var clickedBtn6 = false
     var clickedBtn7 = false
     var clickedBtn8 = false
+    let myCustomColor = UIColor(red: 91/255.0, green: 168/255.0, blue: 184/255.0, alpha: 1.0)
     
     
     override func viewDidLoad() {
@@ -42,74 +43,74 @@ class ReasonUI: UIViewController{
         
         //If user clicks change BGColor
         if sender.tag == 1 && clickedBtn1 == false {
-            businessOutl.backgroundColor = UIColor.gray
+            businessOutl.backgroundColor = UIColor.darkGray
             clickedBtn1 = true
         }
         else if sender.tag == 1 && clickedBtn1 == true{
-            businessOutl.backgroundColor = UIColor.white
+            businessOutl.backgroundColor = myCustomColor
             clickedBtn1 = false
         }
         
         if sender.tag == 2 && clickedBtn2 == false{
-            beachOutl.backgroundColor = UIColor.gray
+            beachOutl.backgroundColor = UIColor.darkGray
             clickedBtn2 = true
         }
         else if sender.tag == 2 && clickedBtn2 == true{
-            beachOutl.backgroundColor = UIColor.white
+            beachOutl.backgroundColor = myCustomColor
             clickedBtn2 = false
         }
         
         if sender.tag == 3 && clickedBtn3 == false{
-            cityOutl.backgroundColor = UIColor.gray
+            cityOutl.backgroundColor = UIColor.darkGray
             clickedBtn3 = true
         }
         else if sender.tag == 3 && clickedBtn3 == true{
-            cityOutl.backgroundColor = UIColor.white
+            cityOutl.backgroundColor = myCustomColor
             clickedBtn3 = false
         }
         
         if sender.tag == 4 && clickedBtn4 == false{
-            skiingOutl.backgroundColor = UIColor.gray
+            skiingOutl.backgroundColor = UIColor.darkGray
             clickedBtn4 = true
         }
         else if sender.tag == 4 && clickedBtn4 == true{
-            skiingOutl.backgroundColor = UIColor.white
+            skiingOutl.backgroundColor = myCustomColor
             clickedBtn4 = false
         }
         
         if sender.tag == 5 && clickedBtn5 == false{
-            trainingOutl.backgroundColor = UIColor.gray
+            trainingOutl.backgroundColor = UIColor.darkGray
             clickedBtn5 = true
         }
         else if sender.tag == 5 && clickedBtn5 == true{
-            trainingOutl.backgroundColor = UIColor.white
+            trainingOutl.backgroundColor = myCustomColor
             clickedBtn5 = false
         }
         
         if sender.tag == 6 && clickedBtn6 == false{
-            partyOutl.backgroundColor = UIColor.gray
+            partyOutl.backgroundColor = UIColor.darkGray
             clickedBtn6 = true
         }
         else if sender.tag == 6 && clickedBtn6 == true{
-            partyOutl.backgroundColor = UIColor.white
+            partyOutl.backgroundColor = myCustomColor
             clickedBtn6 = false
         }
     
         if sender.tag == 7 && clickedBtn7 == false{
-            hikingOutl.backgroundColor = UIColor.gray
+            hikingOutl.backgroundColor = UIColor.darkGray
             clickedBtn7 = true
         }
         else if sender.tag == 7 && clickedBtn7 == true{
-            hikingOutl.backgroundColor = UIColor.white
+            hikingOutl.backgroundColor = myCustomColor
             clickedBtn7 = false
         }
     
         if sender.tag == 8 && clickedBtn8 == false{
-            campingOutl.backgroundColor = UIColor.gray
+            campingOutl.backgroundColor = UIColor.darkGray
             clickedBtn8 = true
         }
         else if sender.tag == 8 && clickedBtn8 == true{
-            campingOutl.backgroundColor = UIColor.white
+            campingOutl.backgroundColor = myCustomColor
             clickedBtn8 = false
         }
     }
