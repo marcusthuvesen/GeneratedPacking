@@ -715,41 +715,50 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="p7N-Cw-his">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1004"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJP-xq-vyb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJP-xq-vyb">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                                <color key="backgroundColor" red="1" green="0.36070929309999999" blue="0.2473790964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="stJ-p3-rhl"/>
                                                 </constraints>
-                                                <state key="normal" title="Hot">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Hot" backgroundImage="backlit-beauty-breathtaking-267151">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-8B-rtc">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-8B-rtc">
                                                 <rect key="frame" x="0.0" y="201" width="414" height="200"/>
-                                                <color key="backgroundColor" red="1" green="0.87385679949999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Mild">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="1" green="0.87385679949999995" blue="0.0" alpha="0.80698844178082196" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Mild" backgroundImage="bright-daylight-environment-240040">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-hO-34d">
                                                 <rect key="frame" x="0.0" y="402" width="414" height="200"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Cold">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cold" backgroundImage="bird-s-eye-view-bright-close-up-1438761">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l8-BR-foK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l8-BR-foK">
                                                 <rect key="frame" x="0.0" y="603" width="414" height="200"/>
                                                 <color key="backgroundColor" red="1" green="0.87385679949999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Dry">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Dry" backgroundImage="arid-clay-close-up-216693">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-Yf-70e">
                                                 <rect key="frame" x="0.0" y="804" width="414" height="200"/>
                                                 <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Rainy">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Rainy" backgroundImage="blue-blur-bubbles-325676">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -765,6 +774,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="p7N-Cw-his" firstAttribute="leading" secondItem="nlz-dY-hBE" secondAttribute="leading" id="4M8-UL-jTk"/>
                                     <constraint firstItem="p7N-Cw-his" firstAttribute="width" secondItem="nlz-dY-hBE" secondAttribute="width" id="JiP-H8-E7T"/>
@@ -1142,6 +1152,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arid-clay-close-up-216693" width="3264" height="2448"/>
+        <image name="backlit-beauty-breathtaking-267151" width="4872" height="2125"/>
+        <image name="bird-s-eye-view-bright-close-up-1438761" width="3200" height="1800"/>
+        <image name="blue-blur-bubbles-325676" width="5184" height="3456"/>
+        <image name="bright-daylight-environment-240040" width="5898" height="3831"/>
         <image name="detective-woman" width="160" height="370"/>
         <image name="document" width="30" height="30"/>
         <image name="icons8-password-50" width="37.5" height="37.5"/>
