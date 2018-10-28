@@ -103,9 +103,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBAction func addBtn(_ sender: UIButton) {
         
         if inputAddText.text != ""{
-            if listNameText.text != "" {
+           if listNameText.text != "" {
                 //Hitta ID för användaren och spara in Added Item in the list
                 ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+                inputAddText.text = ""
+            }
+            if listNameText.text == ""{
+                print("hamnade där")
                 generatedObjects.append(inputAddText.text!)
                 inputAddText.text = ""
             }

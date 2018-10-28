@@ -19,16 +19,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var failedMessage: UILabel!
     
     
-    @IBAction func emailTouch(_ sender: UITextField) {
+    @IBAction func emailedTouched(_ sender: UITextField) {
         UITextField.animate(withDuration: 0.2) {
             self.emailLabel.isHidden = true
             self.emailTextfield.backgroundColor = .white
             self.emailTextfield.placeholder = "Email"
         }
-        
     }
     
-    @IBAction func passwordTouch(_ sender: UITextField) {
+    @IBAction func passwordTouched(_ sender: UITextField) {
         UITextField.animate(withDuration: 0.2) {
             self.passwordLabel.isHidden = true
             self.passwordTextfield.backgroundColor = .white
@@ -49,6 +48,9 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginBtn(_ sender: UIButton) {
+        if emailTextfield.text == "" && passwordTextfield.text == "" {
+            print("tomt")
+        }
         if emailTextfield.text != "" && passwordTextfield.text != "" {
             // Logga in användaren
             Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
