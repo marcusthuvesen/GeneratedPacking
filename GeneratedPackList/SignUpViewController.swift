@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var signUpOutlet: UIButton!
+    @IBOutlet weak var failedMessage: UILabel!
     
     
     var ref : DatabaseReference?
@@ -37,15 +38,16 @@ class SignUpViewController: UIViewController {
                     let newUserReference = usersReference.child(uid!)
                     newUserReference.setValue(["email": self.emailTextfield.text])
                     print("description \(newUserReference.description())")
+                    
                     self.performSegue(withIdentifier: "segue2", sender: self)
-                    
-                    
+        
                 }
                 else {
                     
                     if let myError = error?.localizedDescription
                     {
-                        //self.failedMessage.alpha =
+                        self.failedMessage.alpha = 1
+                        self.failedMessage.text = "Invalid Email or Username"
                         print("Error är följande")
                         print(myError)
                         
@@ -57,8 +59,6 @@ class SignUpViewController: UIViewController {
             })
             
         }
-        
-        
     }
     
 
