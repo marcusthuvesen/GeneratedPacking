@@ -59,6 +59,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var keyArray = [String]()
     let uid = Auth.auth().currentUser?.uid
     
+    
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var listNameText: UITextField!
     @IBOutlet weak var hideSaveBtn: UIButton!
@@ -73,7 +74,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         hideSaveBtn.isHidden = true
         myListsOutl.isHidden = false
         listNameText.placeholder = "Tap To Add Listname"
+        listNameText.textColor = .white
         listNameText.resignFirstResponder()
+        
         
         if firstSave == true{
             
@@ -94,9 +97,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBAction func listNameTextTouch(_ sender: UITextField) {
         listNameText.backgroundColor = .white
+        listNameText.textColor = .black
         listNameText.placeholder = "Add Listname"
         hideSaveBtn.isHidden = false
         myListsOutl.isHidden = true
+        
     }
     
     
@@ -158,6 +163,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             }
             
         }
+        
     }
     var ref: DatabaseReference!
     override func viewDidLoad() {
@@ -173,124 +179,124 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
         
-       
         
-        let gender = UserDefaults.standard.bool(forKey: "genderSelected")
-        print(gender)
-        
-        let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
-        print(sliderValue)
-        
-      /*  var sliderString = String(sliderValue)
-        var sliderString2 = " Suits"
-        var sliderStrings = (sliderString + sliderString2)
-        businessObjectsMan.insert(sliderStrings, at: 1)*/
-        
-       
-        //BUSINESS
-        if chosen1 == true && gender == true {
-            generatedObjects += businessObjectsMan
-            print("Business print MAN")
+     
+            let gender = UserDefaults.standard.bool(forKey: "genderSelected")
+            print(gender)
             
-        }
-        else if chosen1 == true && gender == false {
-            generatedObjects += businessObjectsWoman
-            print("Business print WOMAN")
-        }
-        
-        //SUNBEACH
-        
-        if chosen2 == true && gender == true {
-            generatedObjects += sunBeachObjectsMan
-            print("sunBeach print MAN")
+            let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
+            print(sliderValue)
             
-        }
-        else if chosen2 == true && gender == false {
-            generatedObjects += sunBeachObjectsWoman
-            print("SunBeach print WOMAN")
-        }
-
-        //CITY
-        
-        if chosen3 == true && gender == true {
-            generatedObjects += cityObjectsMan
-            print("city print MAN")
+            /*  var sliderString = String(sliderValue)
+             var sliderString2 = " Suits"
+             var sliderStrings = (sliderString + sliderString2)
+             businessObjectsMan.insert(sliderStrings, at: 1)*/
             
-        }
-        else if chosen3 == true && gender == false {
-            generatedObjects += cityObjectsWoman
-            print("city print WOMAN")
-        }
-        
-        //SKIING
-        
-        if chosen4 == true && gender == true {
-            generatedObjects += skiingObjectsMan
-            print("skiing print MAN")
             
-        }
-        else if chosen4 == true && gender == false {
-            generatedObjects += skiingObjectsWoman
-            print("skiing print WOMAN")
-        }
-        
-        //TRAINING
-        if chosen5 == true && gender == true {
-            generatedObjects += trainingObjectsMan
-            print("training print MAN")
+            //BUSINESS
+            if chosen1 == true && gender == true {
+                generatedObjects += businessObjectsMan
+                print("Business print MAN")
+                
+            }
+            else if chosen1 == true && gender == false {
+                generatedObjects += businessObjectsWoman
+                print("Business print WOMAN")
+            }
             
-        }
-        else if chosen5 == true && gender == false {
-            generatedObjects += trainingObjectsWoman
-            print("training print WOMAN")
-        }
-        
-        //HIKING
-        if chosen6 == true && gender == true {
-            generatedObjects += hikingObjectsMan
-            print("hiking print MAN")
+            //SUNBEACH
             
-        }
-        else if chosen6 == true && gender == false {
-            generatedObjects += hikingObjectsWoman
-            print("hiking print WOMAN")
-        }
-        
-        //PARTY
-        
-        if chosen7 == true && gender == true {
-            generatedObjects += partyObjectsMan
-            print("party print MAN")
+            if chosen2 == true && gender == true {
+                generatedObjects += sunBeachObjectsMan
+                print("sunBeach print MAN")
+                
+            }
+            else if chosen2 == true && gender == false {
+                generatedObjects += sunBeachObjectsWoman
+                print("SunBeach print WOMAN")
+            }
             
-        }
-        else if chosen7 == true && gender == false {
-            generatedObjects += partyObjectsWoman
-            print("party print WOMAN")
-        }
-        
-        //CAMPING
-        
-        if chosen8 == true && gender == true {
-            generatedObjects += campingObjectsMan
-            print("camping print MAN")
+            //CITY
             
-        }
-        else if chosen8 == true && gender == false {
-            generatedObjects += campingObjectsWoman
-            print("camping print WOMAN")
-        }
-        
-        //Baselist
-        if(gender == true){
-            print("DU HAMNADE I BASLISTAN")
-            generatedObjects += baseListMan
-        }
-            //emptyList == false &&
-        else if( gender == false){
-            generatedObjects += baseListWoman
-        }
-        
-        // Do any additional setup after loading the view.
+            if chosen3 == true && gender == true {
+                generatedObjects += cityObjectsMan
+                print("city print MAN")
+                
+            }
+            else if chosen3 == true && gender == false {
+                generatedObjects += cityObjectsWoman
+                print("city print WOMAN")
+            }
+            
+            //SKIING
+            
+            if chosen4 == true && gender == true {
+                generatedObjects += skiingObjectsMan
+                print("skiing print MAN")
+                
+            }
+            else if chosen4 == true && gender == false {
+                generatedObjects += skiingObjectsWoman
+                print("skiing print WOMAN")
+            }
+            
+            //TRAINING
+            if chosen5 == true && gender == true {
+                generatedObjects += trainingObjectsMan
+                print("training print MAN")
+                
+            }
+            else if chosen5 == true && gender == false {
+                generatedObjects += trainingObjectsWoman
+                print("training print WOMAN")
+            }
+            
+            //HIKING
+            if chosen6 == true && gender == true {
+                generatedObjects += hikingObjectsMan
+                print("hiking print MAN")
+                
+            }
+            else if chosen6 == true && gender == false {
+                generatedObjects += hikingObjectsWoman
+                print("hiking print WOMAN")
+            }
+            
+            //PARTY
+            
+            if chosen7 == true && gender == true {
+                generatedObjects += partyObjectsMan
+                print("party print MAN")
+                
+            }
+            else if chosen7 == true && gender == false {
+                generatedObjects += partyObjectsWoman
+                print("party print WOMAN")
+            }
+            
+            //CAMPING
+            
+            if chosen8 == true && gender == true {
+                generatedObjects += campingObjectsMan
+                print("camping print MAN")
+                
+            }
+            else if chosen8 == true && gender == false {
+                generatedObjects += campingObjectsWoman
+                print("camping print WOMAN")
+            }
+            
+            //Baselist
+            if(gender == true){
+                print("DU HAMNADE I BASLISTAN")
+                generatedObjects += baseListMan
+            }
+                //emptyList == false &&
+            else if( gender == false){
+                generatedObjects += baseListWoman
+            }
+            
+            // Do any additional setup after loading the view.
         
     }
     

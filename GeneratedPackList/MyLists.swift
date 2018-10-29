@@ -12,16 +12,29 @@ import Firebase
 class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
    var keyArray = [String]()
     
+    @IBAction func Cross(_ sender: UIButton) {
+        popup2.isHidden = true
+    }
+    @IBAction func newListBtn(_ sender: UIButton) {
+        popup2.isHidden = false
+    }
+    @IBOutlet weak var newListsOutl: UIButton!
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
    
+    @IBOutlet weak var popup2: UIView!
+    
+    
     var savedListNameArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        popup2.isHidden = true
         ref = Database.database().reference()
         loadLists()
+        newListsOutl.layer.cornerRadius = 30
+        newListsOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+        
     }
     
     
