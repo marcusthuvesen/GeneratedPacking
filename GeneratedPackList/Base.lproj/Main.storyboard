@@ -372,7 +372,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqv-0E-iEr">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqv-0E-iEr">
                                                 <rect key="frame" x="63" y="11" width="268" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -442,7 +442,7 @@
                                                     <constraint firstAttribute="height" constant="37" id="p8w-Rr-7nk"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oU-EP-I3T">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oU-EP-I3T">
                                                 <rect key="frame" x="63" y="11" width="268" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -596,7 +596,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-95-veH">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-95-veH">
                                                 <rect key="frame" x="48" y="11" width="268" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
@@ -613,7 +613,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-MQ-4wc">
                                         <rect key="frame" x="29.666666666666657" y="242" width="316" height="52"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xg4-fB-ntf">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xg4-fB-ntf">
                                                 <rect key="frame" x="48" y="11" width="268" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
@@ -1121,7 +1121,7 @@
                                                 <rect key="frame" x="0.0" y="127" width="260" height="83"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Empty List">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1133,7 +1133,7 @@
                                                 <rect key="frame" x="0.0" y="35" width="260" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Generated List">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1221,7 +1221,7 @@
         <!--My Lists-->
         <scene sceneID="mGp-FF-gcA">
             <objects>
-                <viewController id="q5x-F4-KoW" customClass="MyLists" customModule="GeneratedPackList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="segueLogOut" id="q5x-F4-KoW" customClass="MyLists" customModule="GeneratedPackList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWY-se-mWT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1269,6 +1269,20 @@
                                     <action selector="newListBtn:" destination="q5x-F4-KoW" eventType="touchUpInside" id="KKT-fH-QLx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-7v-qJl">
+                                <rect key="frame" x="295" y="64" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Kba-LM-jw3"/>
+                                    <constraint firstAttribute="height" constant="40" id="XbM-fX-6hm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="q5x-F4-KoW" eventType="touchUpInside" id="8PD-4A-KWh"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mb0-IB-kIm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
@@ -1279,7 +1293,7 @@
                                                 <rect key="frame" x="0.0" y="127" width="260" height="83"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Empty List">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1291,7 +1305,7 @@
                                                 <rect key="frame" x="0.0" y="35" width="260" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Generated List">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1333,6 +1347,7 @@
                             <constraint firstItem="OhD-LG-NQk" firstAttribute="trailing" secondItem="6Fj-xq-lHT" secondAttribute="trailing" id="8Gr-Ua-9zc"/>
                             <constraint firstAttribute="bottom" secondItem="mb0-IB-kIm" secondAttribute="bottom" id="9kJ-4m-PJl"/>
                             <constraint firstItem="mb0-IB-kIm" firstAttribute="trailing" secondItem="OhD-LG-NQk" secondAttribute="trailing" id="LN9-Xr-S73"/>
+                            <constraint firstItem="Svn-7v-qJl" firstAttribute="top" secondItem="MWY-se-mWT" secondAttribute="topMargin" constant="20" id="Lj1-9J-Y3k"/>
                             <constraint firstItem="lWx-Ux-sVf" firstAttribute="trailing" secondItem="OhD-LG-NQk" secondAttribute="trailing" id="Rrg-Up-6h3"/>
                             <constraint firstItem="OhD-LG-NQk" firstAttribute="bottom" secondItem="lWx-Ux-sVf" secondAttribute="bottom" id="SHe-ii-ben"/>
                             <constraint firstItem="mb0-IB-kIm" firstAttribute="top" secondItem="MWY-se-mWT" secondAttribute="top" id="WFu-my-Np9"/>
@@ -1340,6 +1355,7 @@
                             <constraint firstItem="NMO-dH-61Q" firstAttribute="top" secondItem="OhD-LG-NQk" secondAttribute="top" constant="19" id="bU1-lc-10c"/>
                             <constraint firstItem="NMO-dH-61Q" firstAttribute="leading" secondItem="OhD-LG-NQk" secondAttribute="leading" id="cd6-bY-7YS"/>
                             <constraint firstItem="mb0-IB-kIm" firstAttribute="leading" secondItem="OhD-LG-NQk" secondAttribute="leading" id="daR-5o-63c"/>
+                            <constraint firstItem="OhD-LG-NQk" firstAttribute="trailing" secondItem="Svn-7v-qJl" secondAttribute="trailing" constant="20" id="dhB-vw-Pbq"/>
                             <constraint firstItem="OhD-LG-NQk" firstAttribute="trailing" secondItem="NMO-dH-61Q" secondAttribute="trailing" id="xBY-ga-oDo"/>
                             <constraint firstItem="OhD-LG-NQk" firstAttribute="bottom" secondItem="6Fj-xq-lHT" secondAttribute="bottom" id="yHm-Em-TPz"/>
                         </constraints>
@@ -1351,6 +1367,7 @@
                         <outlet property="popup2View" destination="ayT-6d-SSz" id="9ih-y0-A5g"/>
                         <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
                         <segue destination="2JW-vu-wjZ" kind="presentation" identifier="segue3" id="MGY-1T-4j9"/>
+                        <segue destination="qCI-n7-eyh" kind="presentation" identifier="segueLogOut" id="uVy-7c-Yh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Fz-GOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1391,6 +1408,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Z7w-6M-EE0"/>
         <segue reference="MGY-1T-4j9"/>
-        <segue reference="s5B-JP-cne"/>
+        <segue reference="fS0-Zm-xkC"/>
     </inferredMetricsTieBreakers>
 </document>

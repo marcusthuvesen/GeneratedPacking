@@ -26,6 +26,10 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
    
     @IBOutlet weak var popup2: UIView!
     
+    @IBAction func logOut(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "segueLogOut", sender: self)
+    }
     
     var savedListNameArray = [String]()
     
