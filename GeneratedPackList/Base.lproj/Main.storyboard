@@ -1208,7 +1208,8 @@
                         <outlet property="listNameText" destination="ks3-Hu-pK2" id="YHq-pU-uu6"/>
                         <outlet property="myListsOutl" destination="lxM-27-KN1" id="JJO-0Q-iym"/>
                         <outlet property="newListOutl" destination="8RK-5x-hbf" id="rmq-kV-K5k"/>
-                        <outlet property="popupView" destination="isv-88-R8e" id="iLB-iA-a43"/>
+                        <outlet property="popupView" destination="isv-88-R8e" id="hpk-Xo-PPm"/>
+                        <outlet property="popupViewOutl" destination="h0d-s9-Ku4" id="f6s-vb-qTP"/>
                         <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>
                         <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                     </connections>
@@ -1347,6 +1348,7 @@
                     <connections>
                         <outlet property="newListsOutl" destination="6Fj-xq-lHT" id="pEC-W3-9sd"/>
                         <outlet property="popup2" destination="mb0-IB-kIm" id="iQl-Ew-erL"/>
+                        <outlet property="popup2View" destination="ayT-6d-SSz" id="9ih-y0-A5g"/>
                         <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
                         <segue destination="2JW-vu-wjZ" kind="presentation" identifier="segue3" id="MGY-1T-4j9"/>
                     </connections>

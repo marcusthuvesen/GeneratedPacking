@@ -68,6 +68,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var inputAddText: UITextField!
     @IBOutlet weak var myListsOutl: UIButton!
     
+    @IBOutlet weak var popupViewOutl: UIView!
+    
     @IBAction func saveBtn(_ sender: UIButton) {
         
         listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
@@ -169,6 +171,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         //getAllKeys()
+        popupViewOutl.layer.cornerRadius = 10
+        popupViewOutl.clipsToBounds = true
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         hideSaveBtn.isHidden = true

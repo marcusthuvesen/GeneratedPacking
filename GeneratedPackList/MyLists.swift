@@ -18,6 +18,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBAction func newListBtn(_ sender: UIButton) {
         popup2.isHidden = false
     }
+    
+    @IBOutlet weak var popup2View: UIView!
     @IBOutlet weak var newListsOutl: UIButton!
     @IBOutlet weak var tableVW: UITableView!
     var ref: DatabaseReference!
@@ -30,6 +32,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         popup2.isHidden = true
+        popup2View.layer.cornerRadius = 10
+        popup2View.clipsToBounds = true
         ref = Database.database().reference()
         loadLists()
         newListsOutl.layer.cornerRadius = 30
