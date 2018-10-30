@@ -339,7 +339,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 75.0;//Choose your custom row height
+    }
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
