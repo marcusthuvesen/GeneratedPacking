@@ -353,7 +353,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
        let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath) as! ListViewTableViewCell
         
-        cell.textLabel?.textColor = .black
+        cell.textLabel?.textColor = .white
         cell.textLabel?.text = generatedObjects[indexPath.row]
         cell.checkMarkOutl.backgroundColor = UIColor(patternImage: UIImage(named: "Checkmarkempty.png")!)
         
