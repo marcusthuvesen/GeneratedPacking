@@ -171,12 +171,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         //getAllKeys()
+        popupView.isHidden = true
         popupViewOutl.layer.cornerRadius = 10
         popupViewOutl.clipsToBounds = true
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         hideSaveBtn.isHidden = true
-        popupView.isHidden = true
+        
         
         listNameText.layer.cornerRadius = 5
         popupView.layer.cornerRadius = 10

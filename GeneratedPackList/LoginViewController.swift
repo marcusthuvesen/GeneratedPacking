@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
     var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         loginBtn.layer.cornerRadius = 10
@@ -45,7 +46,13 @@ class LoginViewController: UIViewController {
         
     }
   
-    
+    func saveLoggedState() {
+        
+        let def = UserDefaults.standard
+        def.set(true, forKey: "is_authenticated") // save true flag to UserDefaults
+        def.synchronize()
+        
+    }
     
     @IBAction func loginBtn(_ sender: UIButton) {
         if emailTextfield.text == "" && passwordTextfield.text == "" {
@@ -57,6 +64,7 @@ class LoginViewController: UIViewController {
                 if user != nil {
                     // Användaren lyckades logga in
                     print("SUCCESS")
+                    self.saveLoggedState()
                     self.performSegue(withIdentifier: "segue", sender: self)
                 }
                 else // ERROR
