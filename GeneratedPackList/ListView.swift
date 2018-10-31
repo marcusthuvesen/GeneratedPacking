@@ -11,7 +11,7 @@ import Firebase
 
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
-   
+   //REASONS-LISTOR
     var baseListMan = ["--TOILETRIES MAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
     
      var baseListWoman = ["--TOILETRIES WOMAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
@@ -23,8 +23,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
     var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
     
-    var cityObjectsMan = ["CITYSTUFF", "Map", ""]
-    var cityObjectsWoman = ["CITYSTUFF", "Map", ""]
+    var cityObjectsMan = ["CITYSTUFF", "Map", "Walking Shoes"]
+    var cityObjectsWoman = ["CITYSTUFF", "Map", "Walking Shoes"]
    
     var skiingObjectsMan = ["SKISTUFF", "Ski boots", ""]
     var skiingObjectsWoman = ["SKISTUFF", "Ski boots", ""]
@@ -40,9 +40,22 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var campingObjectsMan = ["CAMPINGSTUFF", ""]
     var campingObjectsWoman = ["CAMPINGSTUFF", ""]
+   //WEATHER-LISTOR
+    
+    var hotObjects = ["--FOR HOT CLIMATE--", "Hat", "Water"]
+    var mildObjects = ["--FOR HOT MILD CLIMATE--",]
+    var coldObjects = ["--FOR COLD CLIMATE--", "Warm Jacket", "Jumper/Hoodie", "Gloves", "Headwear", "Warm Socks", "Warm Shoes/boots"]
+    var rainyObjects = ["--FOR RAINY CLIMATE--", "Rain Coat", "Umbrella"]
+    
+    
+    
     
     var generatedObjects = [String]()
     
+    var weatherHot = false
+    var weatherMild = false
+    var weatherCold = false
+    var weatherRainy = false
     var chosen1 = false
     var chosen2 = false
     var chosen3 = false
@@ -196,8 +209,22 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
              var sliderString2 = " Suits"
              var sliderStrings = (sliderString + sliderString2)
              businessObjectsMan.insert(sliderStrings, at: 1)*/
-            
-            
+        
+            //WEATHER
+            if weatherHot == true {
+                generatedObjects += hotObjects
+            }
+            if weatherMild == true {
+                generatedObjects += mildObjects
+            }
+            if weatherCold == true {
+                generatedObjects += coldObjects
+            }
+            if weatherRainy == true {
+                generatedObjects += rainyObjects
+            }
+        
+        
             //BUSINESS
             if chosen1 == true && gender == true {
                 generatedObjects += businessObjectsMan
