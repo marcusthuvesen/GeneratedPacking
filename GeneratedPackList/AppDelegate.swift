@@ -19,14 +19,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        let def = UserDefaults.standard
-        let is_authenticated = def.bool(forKey: "is_authenticated") // return false if not found or stored value
-        
-        if is_authenticated {
-            // user logged in
-           print("Authenticated") // show window
-        }
+        addUserListener()
         return true
+    }
+    func addUserListener() {
+        let listenHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user == nil {
+                // We are Logged Out of Firebase.
+                // Move to Login Screen
+            } else {
+                // we are Logged In to Firebase.
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "MyLists")
+                
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
