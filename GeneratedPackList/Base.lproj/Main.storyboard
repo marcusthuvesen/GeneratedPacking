@@ -860,7 +860,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="p7N-Cw-his">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="803"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJP-xq-vyb">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJP-xq-vyb">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="stJ-p3-rhl"/>
@@ -870,8 +870,11 @@
                                                 <state key="normal" title="Hot" backgroundImage="backlit-beauty-breathtaking-267151">
                                                     <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chosenWeather:" destination="oyj-at-0Y8" eventType="touchUpInside" id="7rM-m3-lsD"/>
+                                                </connections>
                                             </button>
-                                            <button tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-8B-rtc">
+                                            <button tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-8B-rtc">
                                                 <rect key="frame" x="0.0" y="201" width="414" height="200"/>
                                                 <color key="backgroundColor" red="1" green="0.87385679949999995" blue="0.0" alpha="0.80698844178082196" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
@@ -879,8 +882,11 @@
                                                 <state key="normal" title="Mild" backgroundImage="bright-daylight-environment-240040">
                                                     <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chosenWeather:" destination="oyj-at-0Y8" eventType="touchUpInside" id="U8p-FA-J6s"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-hO-34d">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-hO-34d">
                                                 <rect key="frame" x="0.0" y="402" width="414" height="200"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
@@ -888,8 +894,11 @@
                                                 <state key="normal" title="Cold" backgroundImage="bird-s-eye-view-bright-close-up-1438761">
                                                     <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chosenWeather:" destination="oyj-at-0Y8" eventType="touchUpInside" id="tyT-DZ-ezD"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-Yf-70e">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-Yf-70e">
                                                 <rect key="frame" x="0.0" y="603" width="414" height="200"/>
                                                 <color key="backgroundColor" red="0.33946397569999998" green="0.5639648438" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
@@ -897,6 +906,9 @@
                                                 <state key="normal" title="Rainy" backgroundImage="blue-blur-bubbles-325676">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="chosenWeather:" destination="oyj-at-0Y8" eventType="touchUpInside" id="NMl-e1-clh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -979,6 +991,12 @@
                         <viewLayoutGuide key="safeArea" id="VPW-Kk-vzh"/>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="coldOutl" destination="yNj-hO-34d" id="1ky-ZW-e3R"/>
+                        <outlet property="hotOutl" destination="fJP-xq-vyb" id="eYa-BT-dOX"/>
+                        <outlet property="mildOutl" destination="FZE-8B-rtc" id="3o6-zW-et3"/>
+                        <outlet property="rainyOutl" destination="HtA-Yf-70e" id="oYi-xy-sYr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bU-ph-bEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
