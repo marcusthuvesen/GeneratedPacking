@@ -31,9 +31,11 @@ class ListViewTableViewCell: UITableViewCell {
         if checked == false{
             self.checkMarkOutl.setImage(UIImage(named: "Checkmark.png"), for: .normal)
             checked = true
+            self.alpha = 0.3
         }else{
             self.checkMarkOutl.setImage(UIImage(named: "Checkmarkempty.png"), for: .normal)
             checked = false
+            self.alpha = 1
         }
         
     }

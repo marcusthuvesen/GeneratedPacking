@@ -379,14 +379,21 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-       let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath) as! ListViewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath) as! ListViewTableViewCell
         
         cell.textLabel?.textColor = .white
         cell.textLabel?.text = generatedObjects[indexPath.row]
+        var text = generatedObjects[indexPath.row]
+        if text != "" {
+            cell.checkMarkOutl.isHidden = false
+        }else{
+            cell.checkMarkOutl.isHidden = true
+        }
         cell.checkMarkOutl.backgroundColor = UIColor(patternImage: UIImage(named: "Checkmarkempty.png")!)
         
         return cell
-
+        
     }
     
 }
+
