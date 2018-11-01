@@ -93,20 +93,27 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.resignFirstResponder()
         
         
-        if firstSave == true{
-            
-        }else{
+       
             if listNameText.text != "" {
                 //Hitta ID för currentUser och spara listan under List
-                //let uid = Auth.auth().currentUser?.uid
+                
                 for i in 0 ..< generatedObjects.count{
-                    ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
+                    ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
                     
                 }
-                table.reloadData()
+                self.generatedObjects.removeAll()
+                self.table.reloadData()
+         
+                ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
+                    let result = snapshot.value as? [String: Any]
+                    
+                    let item = result!["Itemname"]
+                    
+                    self.generatedObjects.append(item as! String)
+                    self.table.reloadData()
+                }
+                
             }
-            firstSave = true
-        }
         
     }
     
@@ -149,17 +156,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         listNameText.text = ""
         table.reloadData()
         popupView.isHidden = true
-        
-        
     }
     
     @IBAction func newListBtn(_ sender: UIButton) {
         popupView.isHidden = false
     }
 
-    
-    
-    
+  
     override func viewDidAppear(_ animated: Bool) {
         
         if whatList != nil{
@@ -168,7 +171,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         self.table.reloadData()
         
          let uid = Auth.auth().currentUser?.uid
-        ref.child("Users").child(uid!).child("Lists").child(whatList!).observe(.childAdded) { (snapshot) in
+        ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
                 let result = snapshot.value as? [String: Any]
                 
                 let item = result!["Itemname"]
@@ -367,10 +370,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 75.0;//Choose your custom row height
-    }
+    
+    
+    
+   
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
@@ -383,17 +386,15 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         cell.textLabel?.textColor = .white
         cell.textLabel?.text = generatedObjects[indexPath.row]
-        var text = generatedObjects[indexPath.row]
-        if text != "" {
-            cell.checkMarkOutl.isHidden = false
-        }else{
-            cell.checkMarkOutl.isHidden = true
-        }
-        cell.checkMarkOutl.backgroundColor = UIColor(patternImage: UIImage(named: "Checkmarkempty.png")!)
+        
         
         return cell
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 75.0;//Choose your custom row height
+    }
 }
 
