@@ -79,6 +79,16 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return cell!
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Force your tableview margins (this may be a bad idea)
+        if tableVW.responds(to: #selector(setter: UITableView.separatorInset)) {
+            tableVW.separatorInset = .zero
+        }
+        if tableVW.responds(to: #selector(setter: UITableView.layoutMargins)) {
+            tableVW.layoutMargins = .zero
+        }
+    }
     
     //Slide to Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
