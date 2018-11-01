@@ -371,8 +371,31 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Remove seperator inset
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = .zero
+        }
+        // Prevent the cell from inheriting the Table View's margin settings
+        if cell.responds(to: #selector(setter: UITableViewCell.preservesSuperviewLayoutMargins)) {
+            cell.preservesSuperviewLayoutMargins = false
+        }
+        // Explictly set your cell's layout margins
+        if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
+            cell.layoutMargins = .zero
+        }
+    }
     
-    
+   override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Force your tableview margins (this may be a bad idea)
+        if table.responds(to: #selector(setter: UITableView.separatorInset)) {
+            table.separatorInset = .zero
+        }
+        if table.responds(to: #selector(setter: UITableView.layoutMargins)) {
+            table.layoutMargins = .zero
+        }
+    }
    
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
