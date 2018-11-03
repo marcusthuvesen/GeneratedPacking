@@ -12,13 +12,13 @@ import Firebase
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    //REASONS-LISTOR
-    var baseListMan = ["--TOILETRIES MAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
+    var baseListMan = ["--TOILETRIES MAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", ""]
     
-     var baseListWoman = ["--TOILETRIES WOMAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contact", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book", ""]
+     var baseListWoman = ["--TOILETRIES WOMAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", ""]
     
     
-    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ""]
-    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "Work Suit", "Tie", "Briefcase", "Work Belt", "Work Socks", "Work Belt", "Business Cards", "Work Cell Phone", "Work Cell Phone Charger", "Laptop", "Laptop Charger", ""]
+    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "--Shoes--", "Walking Shoes/Sneakers", "Dress Shoes", "--Business Clothes--", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "--Shoes--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "--Business Clothes--", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
     
     var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
     var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
@@ -65,7 +65,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen7 = false
     var chosen8 = false
     var firstSave = false
-    
+    var sliderString : String = ""
     var savedListNames = [String]()
     var whatList : String?
     var currentListKey : String?
@@ -208,11 +208,33 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
             print(sliderValue)
             
-            /*  var sliderString = String(sliderValue)
-             var sliderString2 = " Suits"
-             var sliderStrings = (sliderString + sliderString2)
-             businessObjectsMan.insert(sliderStrings, at: 1)*/
-        
+             sliderString = String(sliderValue)
+            if sliderValue > 1{
+                var underWearValue = "Underwear x \(sliderString)"
+                var socksValue = "Socks x \(sliderString)"
+                var TshirtValue = "T-shirt x \(sliderString)"
+                var shirtValue = "Shirt x \(sliderString)"
+                var costumeSocks = "Costume Socks x \(sliderString)"
+                if gender == true{
+                    baseListMan.insert(underWearValue, at: 19)
+                    baseListMan.remove(at: 20)
+                    baseListMan.insert(socksValue, at: 20)
+                    baseListMan.remove(at: 21)
+                    baseListMan.insert(TshirtValue, at: 22)
+                    baseListMan.remove(at: 23)
+                    businessObjectsMan.insert(TshirtValue, at: 6)
+                    businessObjectsMan.remove(at: 7)
+                    businessObjectsMan.insert(costumeSocks, at: 6)
+                    businessObjectsMan.remove(at: 9)
+                }else{
+                    baseListWoman.insert(underWearValue, at: 19)
+                    baseListWoman.remove(at: 20)
+                    baseListWoman.insert(socksValue, at: 20)
+                    baseListWoman.remove(at: 21)
+                    baseListWoman.insert(TshirtValue, at: 22)
+                    baseListWoman.remove(at: 23)
+                }
+            }
             //WEATHER
             if weatherHot == true {
                 generatedObjects += hotObjects

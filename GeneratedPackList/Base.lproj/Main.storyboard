@@ -964,7 +964,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gaH-IC-prC" kind="show" id="cGW-fZ-ue4"/>
+                                    <segue destination="gaH-IC-prC" kind="show" id="F8r-UX-IJu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1446,7 +1446,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Z7w-6M-EE0"/>
-        <segue reference="MGY-1T-4j9"/>
+        <segue reference="sQx-A0-wd1"/>
         <segue reference="s5B-JP-cne"/>
     </inferredMetricsTieBreakers>
 </document>
