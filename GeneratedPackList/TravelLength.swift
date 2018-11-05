@@ -12,14 +12,15 @@ class TravelLength: UIViewController {
 
     
     var sliderValue = 1
-    
-  
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var laundryOutl: UIButton!
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
-    
+    var wasClicked = false
+    var valueSave : Int = 1
     var ref: DatabaseReference!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +39,28 @@ class TravelLength: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderValue = Int(sender.value)
         print(sliderValue)
+        valueSave = sliderValue
         sliderLabel.text = "Travelling for " + String(sliderValue) + " days"
     }
     
     @IBAction func laundryAccess(_ sender: UIButton) {
-        if(sliderValue > 6){
+        
+        if wasClicked == false{
+            laundryOutl.alpha = 0.5
+            wasClicked = true
+        }
+        else if wasClicked == true{
+            laundryOutl.alpha = 1
+            wasClicked = false
+            sliderValue = valueSave
+        }
+ 
+        if sliderValue > 6 && wasClicked == false{
             sliderValue = 7
             print("landry ändrad till " + String(sliderValue))
+           
         }
+
     }
     
     
