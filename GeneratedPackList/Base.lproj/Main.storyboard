@@ -145,11 +145,11 @@
                                 <rect key="frame" x="0.0" y="120" width="414" height="1320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AW-sJ-PcE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1607"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1205"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-yF-12C">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1607"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1205"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85e-Ce-hjw">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -220,35 +220,11 @@
                                                     <action selector="chosenActivities:" destination="gaH-IC-prC" eventType="touchUpInside" id="ccU-J4-c25"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ix-Yj-BZ9">
-                                                <rect key="frame" x="0.0" y="1206" width="414" height="200"/>
-                                                <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <state key="normal" title="Hiking">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="chosenActivities:" destination="gaH-IC-prC" eventType="touchUpInside" id="DpH-e8-1eC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcw-fr-haQ">
-                                                <rect key="frame" x="0.0" y="1407" width="414" height="200"/>
-                                                <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <state key="normal" title="Camping">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="chosenActivities:" destination="gaH-IC-prC" eventType="touchUpInside" id="SKZ-k9-aOs"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="85e-Ce-hjw" secondAttribute="trailing" id="1lH-B6-925"/>
-                                            <constraint firstItem="4ix-Yj-BZ9" firstAttribute="width" secondItem="iQq-Kh-jm4" secondAttribute="width" id="9J1-0p-tHr"/>
                                             <constraint firstItem="B8w-mi-ZwU" firstAttribute="width" secondItem="5A7-ZR-gvB" secondAttribute="width" id="DXC-BQ-eRo"/>
                                             <constraint firstItem="5A7-ZR-gvB" firstAttribute="width" secondItem="FM9-Eg-PpG" secondAttribute="width" id="GdH-Fx-jb7"/>
-                                            <constraint firstItem="Xcw-fr-haQ" firstAttribute="width" secondItem="4ix-Yj-BZ9" secondAttribute="width" id="Z7D-95-92C"/>
                                             <constraint firstItem="FM9-Eg-PpG" firstAttribute="width" secondItem="E7l-tp-4O9" secondAttribute="width" id="ev8-aB-J1h"/>
                                             <constraint firstItem="iQq-Kh-jm4" firstAttribute="width" secondItem="B8w-mi-ZwU" secondAttribute="width" id="lXP-El-LZm"/>
                                             <constraint firstItem="85e-Ce-hjw" firstAttribute="leading" secondItem="Bz7-yF-12C" secondAttribute="leading" id="oyH-W3-qop"/>
@@ -329,9 +305,7 @@
                     <connections>
                         <outlet property="beachOutl" destination="E7l-tp-4O9" id="TtI-3l-sQs"/>
                         <outlet property="businessOutl" destination="85e-Ce-hjw" id="dJZ-DT-j2s"/>
-                        <outlet property="campingOutl" destination="Xcw-fr-haQ" id="HQd-P6-ecs"/>
                         <outlet property="cityOutl" destination="FM9-Eg-PpG" id="Jss-2m-grj"/>
-                        <outlet property="hikingOutl" destination="4ix-Yj-BZ9" id="zaJ-kg-Kus"/>
                         <outlet property="partyOutl" destination="iQq-Kh-jm4" id="j2K-iZ-LvT"/>
                         <outlet property="skiingOutl" destination="5A7-ZR-gvB" id="uG8-9P-VSw"/>
                         <outlet property="trainingOutl" destination="B8w-mi-ZwU" id="bEa-9s-Dlu"/>

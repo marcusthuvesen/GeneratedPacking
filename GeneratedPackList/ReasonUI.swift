@@ -16,8 +16,6 @@ class ReasonUI: UIViewController{
     @IBOutlet weak var skiingOutl: UIButton!
     @IBOutlet weak var trainingOutl: UIButton!
     @IBOutlet weak var partyOutl: UIButton!
-    @IBOutlet weak var hikingOutl: UIButton!
-    @IBOutlet weak var campingOutl: UIButton!
     
     
     //Variable for color change
@@ -96,23 +94,6 @@ class ReasonUI: UIViewController{
             clickedBtn6 = false
         }
     
-        if sender.tag == 7 && clickedBtn7 == false{
-            hikingOutl.backgroundColor = UIColor.darkGray
-            clickedBtn7 = true
-        }
-        else if sender.tag == 7 && clickedBtn7 == true{
-            hikingOutl.backgroundColor = myCustomColor
-            clickedBtn7 = false
-        }
-    
-        if sender.tag == 8 && clickedBtn8 == false{
-            campingOutl.backgroundColor = UIColor.darkGray
-            clickedBtn8 = true
-        }
-        else if sender.tag == 8 && clickedBtn8 == true{
-            campingOutl.backgroundColor = myCustomColor
-            clickedBtn8 = false
-        }
     }
     
  
@@ -126,8 +107,7 @@ class ReasonUI: UIViewController{
         myVar.chosen4 = clickedBtn4
         myVar.chosen5 = clickedBtn5
         myVar.chosen6 = clickedBtn6
-        myVar.chosen7 = clickedBtn7
-        myVar.chosen8 = clickedBtn8
+        
         
         self.present(myVar, animated: true)
         

@@ -12,34 +12,33 @@ import Firebase
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    //REASONS-LISTOR
-    var baseListMan = ["--TOILETRIES MAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", ""]
     
-     var baseListWoman = ["--TOILETRIES WOMAN--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", ""]
+    var travelAbroad = ["Travel Adapter"]
     
+    var baseListMan = ["--TOILETRIES--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
+    var baseListWoman = ["--TOILETRIES--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
+    var businessObjectsMan = ["--BUSINESSSTUFF--", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsWoman = ["BUSINESSSTUFF", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var sunBeachObjectsMan = ["--SUNBEACHSTUFF--","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
+    var sunBeachObjectsWoman = ["--SUNBEACHSTUFF--","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
     
-    var businessObjectsMan = ["BUSINESSSTUFF-MAN", "--Shoes--", "Walking Shoes/Sneakers", "Dress Shoes", "--Business Clothes--", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var businessObjectsWoman = ["BUSINESSSTUFF-WOMAN", "--Shoes--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "--Business Clothes--", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    
-    var sunBeachObjectsMan = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
-    var sunBeachObjectsWoman = ["SUNBEACHSTUFF","Swimsuit", "Taning oil", "Sun Screen", "Water", "Beach shoes", "Showe Slippers", ""]
-    
-    var cityObjectsMan = ["CITYSTUFF", "Map", "Walking Shoes"]
-    var cityObjectsWoman = ["CITYSTUFF", "Map", "Walking Shoes"]
+    var cityObjectsMan = ["CITYSTUFF", "City Map", "Walking Shoes", "Day Backpack", ""]
+    var cityObjectsWoman = ["CITYSTUFF", "City Map", "Walking Shoes", "Day Backpack/Purse", "" ]
    
-    var skiingObjectsMan = ["SKISTUFF", "Ski boots", ""]
-    var skiingObjectsWoman = ["SKISTUFF", "Ski boots", ""]
+    var skiingObjectsMan = ["--SKISTUFF--","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
+    var skiingObjectsWoman = ["--SKISTUFF--","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
     
-    var trainingObjectsMan = ["TRAININGSTUFF", "Joggers", "Running Shoes", ""]
-    var trainingObjectsWoman = ["TRAININGSTUFF", "Joggers", "Running Shoes", ""]
+    var trainingObjectsMan = ["TRAININGSTUFF", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
+    var trainingObjectsWoman = ["TRAININGSTUFF","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
     
-    var hikingObjectsMan = ["HIKINGSTUFF", "Walking Stick", ""]
-    var hikingObjectsWoman = ["HIKINGSTUFF", "Walking Stick", ""]
+   /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
+    var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
     
-    var partyObjectsMan = ["PARTYSTUFF", ""]
-    var partyObjectsWoman = ["PARTYSTUFF", ""]
+    var partyObjectsMan = ["---PARTYSTUFF---", "Footwear/Clothes", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--Accessories--", "Hairdryer", "Speakers", "Playing Cards"  ]
+    var partyObjectsWoman = ["PARTYSTUFF", "--Footwear/Clothes--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--Accesssories--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
     
-    var campingObjectsMan = ["CAMPINGSTUFF", ""]
-    var campingObjectsWoman = ["CAMPINGSTUFF", ""]
+    /*var campingObjectsMan = ["CAMPINGSTUFF", ""]
+    var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
    //WEATHER-LISTOR
     
     var hotObjects = ["--FOR HOT CLIMATE--", "Hat", "Water"]
@@ -62,8 +61,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen4 = false
     var chosen5 = false
     var chosen6 = false
-    var chosen7 = false
-    var chosen8 = false
+    
     var firstSave = false
     var sliderString : String = ""
     var savedListNames = [String]()
@@ -83,85 +81,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var popupViewOutl: UIView!
     
-    @IBAction func saveBtn(_ sender: UIButton) {
-        
-        listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
-        hideSaveBtn.isHidden = true
-        myListsOutl.isHidden = false
-        listNameText.placeholder = "Tap To Add Listname"
-        listNameText.textColor = .white
-        listNameText.resignFirstResponder()
-        
-        
-       
-            if listNameText.text != "" {
-                //Hitta ID för currentUser och spara listan under List
-                
-                for i in 0 ..< generatedObjects.count{
-                    ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
-                    
-                }
-                self.generatedObjects.removeAll()
-                self.table.reloadData()
-         
-                ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
-                    let result = snapshot.value as? [String: Any]
-                    
-                    let item = result!["Itemname"]
-                    
-                    self.generatedObjects.append(item as! String)
-                    self.table.reloadData()
-                }
-                
-            }
-        
-    }
-    
-    @IBAction func listNameTextTouch(_ sender: UITextField) {
-        listNameText.backgroundColor = .white
-        listNameText.textColor = .black
-        listNameText.placeholder = "Add Listname"
-        hideSaveBtn.isHidden = false
-        myListsOutl.isHidden = true
-        
-    }
-    
-    
-    @IBAction func addBtn(_ sender: UIButton) {
-        
-        if inputAddText.text != ""{
-           if listNameText.text != "" {
-                //Hitta ID för användaren och spara in Added Item in the list
-                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
-                inputAddText.text = ""
-            }
-            if listNameText.text == ""{
-                print("hamnade där")
-                generatedObjects.append(inputAddText.text!)
-                inputAddText.text = ""
-            }
-            
-            table.reloadData()
-        }
-    }
-    
-    
-    @IBAction func popupExitBtn(_ sender: UIButton) {
-        popupView.isHidden = true
-    }
-    
-    @IBAction func newEmptyList(_ sender: UIButton) {
-        
-        generatedObjects.removeAll()
-        listNameText.text = ""
-        table.reloadData()
-        popupView.isHidden = true
-    }
-    
-    @IBAction func newListBtn(_ sender: UIButton) {
-        popupView.isHidden = false
-    }
-
+   
   
     override func viewDidAppear(_ animated: Bool) {
         
@@ -222,7 +142,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                     baseListMan.remove(at: 21)
                     baseListMan.insert(TshirtValue, at: 22)
                     baseListMan.remove(at: 23)
-                    businessObjectsMan.insert(TshirtValue, at: 6)
+                    businessObjectsMan.insert(shirtValue, at: 6)
                     businessObjectsMan.remove(at: 7)
                     businessObjectsMan.insert(costumeSocks, at: 6)
                     businessObjectsMan.remove(at: 9)
@@ -306,9 +226,18 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             else if chosen5 == true && gender == false {
                 generatedObjects += trainingObjectsWoman
                 print("training print WOMAN")
+                }
+        
+            if chosen6 == true && gender == true {
+                generatedObjects += partyObjectsMan
+                print("party print MAN")
+                
             }
-            
-            //HIKING
+            else if chosen6 == true && gender == false {
+                generatedObjects += partyObjectsWoman
+                print("party print WOMAN")
+            }
+           /* //HIKING
             if chosen6 == true && gender == true {
                 generatedObjects += hikingObjectsMan
                 print("hiking print MAN")
@@ -317,21 +246,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             else if chosen6 == true && gender == false {
                 generatedObjects += hikingObjectsWoman
                 print("hiking print WOMAN")
-            }
+            }*/
             
             //PARTY
-            
-            if chosen7 == true && gender == true {
-                generatedObjects += partyObjectsMan
-                print("party print MAN")
-                
-            }
-            else if chosen7 == true && gender == false {
-                generatedObjects += partyObjectsWoman
-                print("party print WOMAN")
-            }
-            
-            //CAMPING
+        
+            /*//CAMPING
             
             if chosen8 == true && gender == true {
                 generatedObjects += campingObjectsMan
@@ -341,7 +260,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             else if chosen8 == true && gender == false {
                 generatedObjects += campingObjectsWoman
                 print("camping print WOMAN")
-            }
+            }*/
             
             //Baselist
             if(gender == true){
@@ -357,6 +276,85 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
     }
     
+    @IBAction func saveBtn(_ sender: UIButton) {
+        
+        listNameText.backgroundColor = UIColor(white: 1, alpha: 0)
+        hideSaveBtn.isHidden = true
+        myListsOutl.isHidden = false
+        listNameText.placeholder = "Tap To Add Listname"
+        listNameText.textColor = .white
+        listNameText.resignFirstResponder()
+        
+        
+        
+        if listNameText.text != "" {
+            //Hitta ID för currentUser och spara listan under List
+            
+            for i in 0 ..< generatedObjects.count{
+                ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(generatedObjects[i])
+                
+            }
+            self.generatedObjects.removeAll()
+            self.table.reloadData()
+            
+            ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
+                let result = snapshot.value as? [String: Any]
+                
+                let item = result!["Itemname"]
+                
+                self.generatedObjects.append(item as! String)
+                self.table.reloadData()
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func listNameTextTouch(_ sender: UITextField) {
+        listNameText.backgroundColor = .white
+        listNameText.textColor = .black
+        listNameText.placeholder = "Add Listname"
+        hideSaveBtn.isHidden = false
+        myListsOutl.isHidden = true
+        
+    }
+    
+    
+    @IBAction func addBtn(_ sender: UIButton) {
+        
+        if inputAddText.text != ""{
+            if listNameText.text != "" {
+                //Hitta ID för användaren och spara in Added Item in the list
+                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+                inputAddText.text = ""
+            }
+            if listNameText.text == ""{
+                print("hamnade där")
+                generatedObjects.append(inputAddText.text!)
+                inputAddText.text = ""
+            }
+            
+            table.reloadData()
+        }
+    }
+    
+    
+    @IBAction func popupExitBtn(_ sender: UIButton) {
+        popupView.isHidden = true
+    }
+    
+    @IBAction func newEmptyList(_ sender: UIButton) {
+        
+        generatedObjects.removeAll()
+        listNameText.text = ""
+        table.reloadData()
+        popupView.isHidden = true
+    }
+    
+    @IBAction func newListBtn(_ sender: UIButton) {
+        popupView.isHidden = false
+    }
+
    
     //Get ChildbyautoIds
     func getAllKeys(){
@@ -411,12 +409,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Force your tableview margins (this may be a bad idea)
-        if table.responds(to: #selector(setter: UITableView.separatorInset)) {
+       /* if table.responds(to: #selector(setter: UITableView.separatorInset)) {
             table.separatorInset = .zero
         }
         if table.responds(to: #selector(setter: UITableView.layoutMargins)) {
             table.layoutMargins = .zero
-        }
+        }*/
     }
    
   
