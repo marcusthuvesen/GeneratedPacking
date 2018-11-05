@@ -65,14 +65,14 @@ class WhatClimate: UIViewController {
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {  //Sending values when user clicks next
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        /*var myVar = storyboard.instantiateViewController(withIdentifier: "ListView") as! ListView
+        var myVar = storyboard.instantiateViewController(withIdentifier: "ListView") as! ListView
         myVar.weatherHot = clickedBtn1
         myVar.weatherMild = clickedBtn2
         myVar.weatherCold = clickedBtn3
         myVar.weatherRainy = clickedBtn4
         
         
-        self.present(myVar, animated: true)*/
+        self.present(myVar, animated: true)
         
     }*/
     

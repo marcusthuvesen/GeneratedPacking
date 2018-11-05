@@ -15,21 +15,21 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var travelAbroad = ["Travel Adapter"]
     
-    var baseListMan = ["--TOILETRIES--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
-    var baseListWoman = ["--TOILETRIES--", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
-    var businessObjectsMan = ["--BUSINESSSTUFF--", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var businessObjectsWoman = ["BUSINESSSTUFF", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var sunBeachObjectsMan = ["--SUNBEACHSTUFF--","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
-    var sunBeachObjectsWoman = ["--SUNBEACHSTUFF--","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
+    var baseListMan = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
+    var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
+    var businessObjectsMan = ["BUSINESSS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsWoman = ["BUSINESSS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var sunBeachObjectsMan = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
+    var sunBeachObjectsWoman = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
     
-    var cityObjectsMan = ["CITYSTUFF", "City Map", "Walking Shoes", "Day Backpack", ""]
-    var cityObjectsWoman = ["CITYSTUFF", "City Map", "Walking Shoes", "Day Backpack/Purse", "" ]
+    var cityObjectsMan = ["CITY", "City Map", "Walking Shoes", "Day Backpack", ""]
+    var cityObjectsWoman = ["CITY", "City Map", "Walking Shoes", "Day Backpack/Purse", "" ]
    
-    var skiingObjectsMan = ["--SKISTUFF--","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
-    var skiingObjectsWoman = ["--SKISTUFF--","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
+    var skiingObjectsMan = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
+    var skiingObjectsWoman = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
     
-    var trainingObjectsMan = ["TRAININGSTUFF", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
-    var trainingObjectsWoman = ["TRAININGSTUFF","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
+    var trainingObjectsMan = ["TRAINING", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
+    var trainingObjectsWoman = ["TRAINING","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
     
    /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
     var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
@@ -426,7 +426,27 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath) as! ListViewTableViewCell
-        
+        if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
+            cell.textLabel?.textAlignment = .center
+        }
+        if String(generatedObjects[indexPath.row]) == "BUSINESS" {
+            cell.textLabel?.textAlignment = .center
+        }
+        if String(generatedObjects[indexPath.row]) == "BEACH/SWIM" {
+            cell.textLabel?.textAlignment = .center
+        }
+        if String(generatedObjects[indexPath.row]) == "CITY" {
+            cell.textLabel?.textAlignment = .center
+        }
+        if String(generatedObjects[indexPath.row]) == "SKIING" {
+            cell.textLabel?.textAlignment = .center
+        }
+        if String(generatedObjects[indexPath.row]) == "TRAINING" {
+            cell.textLabel?.textAlignment = .center
+        }
+        else{
+            cell.textLabel?.textAlignment = .left
+        }
         cell.textLabel?.textColor = .white
         cell.textLabel?.text = generatedObjects[indexPath.row]
         
