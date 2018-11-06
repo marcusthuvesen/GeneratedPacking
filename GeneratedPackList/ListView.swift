@@ -41,14 +41,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
    //WEATHER-LISTOR
     
-    var hotObjects = ["--FOR HOT CLIMATE--", "Hat", "Water"]
-    var mildObjects = ["--FOR HOT MILD CLIMATE--",]
-    var coldObjects = ["--FOR COLD CLIMATE--", "Warm Jacket", "Jumper/Hoodie", "Gloves", "Headwear", "Warm Socks", "Warm Shoes/boots"]
-    var rainyObjects = ["--FOR RAINY CLIMATE--", "Rain Coat", "Umbrella"]
-    
-    
-    
-    
+   
     var generatedObjects = [String]()
     
     var weatherHot = false

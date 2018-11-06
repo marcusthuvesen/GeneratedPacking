@@ -14,14 +14,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var signUpOutlet: UIButton!
-    @IBOutlet weak var failedMessage: UILabel!
+    @IBOutlet weak var invalidLabel: UILabel!
     
     
     var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        // Do any additional setup after loading the view.
+        invalidLabel.alpha = 0
     }
     
     @IBAction func signUpBtn(_ sender: UIButton) {
@@ -46,11 +46,7 @@ class SignUpViewController: UIViewController {
                     
                     if let myError = error?.localizedDescription
                     {
-                        self.failedMessage.alpha = 1
-                        self.failedMessage.text = "Invalid Email or Username"
-                        print("Error är följande")
-                        print(myError)
-                        
+                        self.invalidLabel.alpha = 1
                     }
                     else {
                         print("ERROR")

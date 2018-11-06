@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
     var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        failedMessage.alpha = 0
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         loginBtn.layer.cornerRadius = 10
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginBtn(_ sender: UIButton) {
         if emailTextfield.text == "" && passwordTextfield.text == "" {
-            print("tomt")
+             self.failedMessage.alpha = 1
         }
         if emailTextfield.text != "" && passwordTextfield.text != "" {
             // Logga in användaren
@@ -83,6 +83,12 @@ class LoginViewController: UIViewController {
             })
         }
     }
+  
+    
+    
+    
+    
+    
 }
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
