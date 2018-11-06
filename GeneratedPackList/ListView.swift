@@ -95,8 +95,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 let result = snapshot.value as? [String: Any]
                 
                 let item = result!["Itemname"]
-            
-            self.generatedObjects.append(item as! String)
+            if item != nil{
+                self.generatedObjects.append(item as! String)
+            }
             self.table.reloadData()
             }
             
@@ -297,7 +298,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             self.generatedObjects.removeAll()
             self.table.reloadData()
             
-            ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
+         ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
                 let result = snapshot.value as? [String: Any]
                 
                 let item = result!["Itemname"]
@@ -324,17 +325,23 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         if inputAddText.text != ""{
             if listNameText.text != "" {
+                 print("här hamnade du")
+                
                 //Hitta ID för användaren och spara in Added Item in the list
-                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+               
+            ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
                 inputAddText.text = ""
+                
             }
             if listNameText.text == ""{
-                print("hamnade där")
+                print("eller här")
+                print("ingen titel finns")
                 generatedObjects.append(inputAddText.text!)
                 inputAddText.text = ""
+                table.reloadData()
             }
             
-            table.reloadData()
+            
         }
     }
     
@@ -378,15 +385,22 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            getAllKeys()
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when, execute:{
-                self.ref.child("Users").child(self.uid!).child("Lists").child(self.listNameText.text!).child(self.keyArray[indexPath.row]).removeValue()
+            print(listNameText.text)
+            if listNameText.text != ""{
+                getAllKeys()
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when, execute:{
+                    self.ref.child("Users").child(self.uid!).child("Lists").child(self.listNameText.text!).child(self.keyArray[indexPath.row]).removeValue()
+                    self.generatedObjects.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.keyArray = []
+                    
+                })
+            }else{
+                //Om inget listnamn finns
                 self.generatedObjects.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                self.keyArray = []
-                
-            })
+            }
         }
     }
     

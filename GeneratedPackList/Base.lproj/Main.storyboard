@@ -1014,7 +1014,7 @@
                                 <rect key="frame" x="12" y="133" width="307" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syu-Qo-oYG">
                                 <rect key="frame" x="319" y="132" width="95" height="36"/>
@@ -1093,7 +1093,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="41"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="newListBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="rf6-j3-ULN"/>
@@ -1228,7 +1228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="IDENTIFIER2" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-Ux-sVf">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDENTIFIER2" id="aIo-g3-Ph7">
@@ -1246,11 +1246,11 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMO-dH-61Q">
-                                <rect key="frame" x="0.0" y="63" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="63" width="414" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="hwH-N8-jmK"/>
+                                    <constraint firstAttribute="height" constant="45" id="hwH-N8-jmK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1263,7 +1263,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="41"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="newListBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="1OY-qZ-csK"/>
@@ -1271,10 +1271,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-7v-qJl">
-                                <rect key="frame" x="334" y="64" width="60" height="40"/>
+                                <rect key="frame" x="319" y="64" width="75" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Kba-LM-jw3"/>
-                                    <constraint firstAttribute="height" constant="40" id="XbM-fX-6hm"/>
+                                    <constraint firstAttribute="width" constant="75" id="Kba-LM-jw3"/>
+                                    <constraint firstAttribute="height" constant="45" id="XbM-fX-6hm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Log Out">
@@ -1376,6 +1376,7 @@
                         <viewLayoutGuide key="safeArea" id="OhD-LG-NQk"/>
                     </view>
                     <connections>
+                        <outlet property="logOutOutlet" destination="Svn-7v-qJl" id="qlX-fs-dwi"/>
                         <outlet property="newListsOutl" destination="6Fj-xq-lHT" id="pEC-W3-9sd"/>
                         <outlet property="popup2" destination="mb0-IB-kIm" id="iQl-Ew-erL"/>
                         <outlet property="popup2View" destination="ayT-6d-SSz" id="9ih-y0-A5g"/>

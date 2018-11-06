@@ -12,12 +12,8 @@ import Firebase
 class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
    var keyArray = [String]()
     
-    @IBAction func Cross(_ sender: UIButton) {
-        popup2.isHidden = true
-    }
-    @IBAction func newListBtn(_ sender: UIButton) {
-        popup2.isHidden = false
-    }
+    @IBOutlet weak var logOutOutlet: UIButton!
+    
     
     @IBOutlet weak var popup2View: UIView!
     @IBOutlet weak var newListsOutl: UIButton!
@@ -25,12 +21,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var ref: DatabaseReference!
    
     @IBOutlet weak var popup2: UIView!
-    
-    @IBAction func logOut(_ sender: UIButton) {
-        try! Auth.auth().signOut()
-        performSegue(withIdentifier: "segueLogOut", sender: self)
-    }
-    
+   
     var savedListNameArray = [String]()
     
     override func viewDidLoad() {
@@ -42,7 +33,21 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
         loadLists()
         newListsOutl.layer.cornerRadius = 30
         newListsOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+        logOutOutlet.layer.cornerRadius = 10
+        logOutOutlet.layer.borderWidth = 1
+        logOutOutlet.layer.borderColor = UIColor.white.cgColor
         
+    }
+    @IBAction func Cross(_ sender: UIButton) {
+        popup2.isHidden = true
+    }
+    @IBAction func newListBtn(_ sender: UIButton) {
+        popup2.isHidden = false
+    }
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "segueLogOut", sender: self)
     }
     
     
