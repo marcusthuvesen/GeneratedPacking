@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        manOutl.layer.borderColor = UIColor.white.cgColor
         
         // Do any additional setup after loading the view, typically from a nib.
     }

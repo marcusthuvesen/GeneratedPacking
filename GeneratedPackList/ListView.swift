@@ -13,7 +13,7 @@ import Firebase
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    //REASONS-LISTOR
     
-    var travelAbroad = ["Travel Adapter"]
+    var travelAbroad = ["Passport", "Visa Document", "Insurance documents", "Transportation Tickets",  "Travel Adapter", ""]
     
     var baseListMan = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
     var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
@@ -149,21 +149,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                     baseListWoman.remove(at: 23)
                 }
             }
-            //WEATHER
-            if weatherHot == true {
-                generatedObjects += hotObjects
-            }
-            if weatherMild == true {
-                generatedObjects += mildObjects
-            }
-            if weatherCold == true {
-                generatedObjects += coldObjects
-            }
-            if weatherRainy == true {
-                generatedObjects += rainyObjects
-            }
-        
-        
+           
             //BUSINESS
             if chosen1 == true && gender == 1 {
                 generatedObjects += businessObjectsMan
