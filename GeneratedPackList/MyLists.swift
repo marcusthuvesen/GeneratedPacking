@@ -48,20 +48,20 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func loadLists(){
         
-                let uid = Auth.auth().currentUser?.uid
-                self.ref.child("Users").child(uid!).child("Lists").observeSingleEvent(of: .value, with: { (snapshot) in
-                   
-                    for child in snapshot.children{
+        let uid = Auth.auth().currentUser?.uid
+        self.ref.child("Users").child(uid!).child("Lists").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            for child in snapshot.children{
                 
-                        let listName = child as! DataSnapshot
-                       let key = listName.key
-                        print(key)
-                        self.savedListNameArray.append(key)
-                        self.tableVW.reloadData()
-                    
-                    }
-                },withCancel: nil)
-                    
+                let listName = child as! DataSnapshot
+                let key = listName.key
+                print(key)
+                self.savedListNameArray.append(key)
+                self.tableVW.reloadData()
+                
+            }
+        },withCancel: nil)
+        
         
     }
     
@@ -128,13 +128,13 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //Selecting List
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let new = tableVW.cellForRow(at: indexPath as IndexPath) {
-            self.performSegue(withIdentifier: "segue3", sender: self)
+        performSegue(withIdentifier: "unwindSequeToLV", sender: self)
         }
     }
     
     
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue3" {
+        if segue.identifier == "unwindSequeToLV" {
             if let indexPath = self.tableVW.indexPathForSelectedRow{
                 let destination = segue.destination as! ListView
                 

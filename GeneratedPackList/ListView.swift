@@ -81,7 +81,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var popupViewOutl: UIView!
     
-   
+   @IBAction func unwindToLV(segue:UIStoryboardSegue) { }
   
     override func viewDidAppear(_ animated: Bool) {
         
@@ -393,7 +393,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // Remove seperator inset
-        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+      /*  if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
             cell.separatorInset = .zero
         }
         // Prevent the cell from inheriting the Table View's margin settings
@@ -403,7 +403,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         // Explictly set your cell's layout margins
         if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
             cell.layoutMargins = .zero
-        }
+        }*/
     }
     
    override func viewDidLayoutSubviews() {

@@ -1380,11 +1380,12 @@
                         <outlet property="popup2" destination="mb0-IB-kIm" id="iQl-Ew-erL"/>
                         <outlet property="popup2View" destination="ayT-6d-SSz" id="9ih-y0-A5g"/>
                         <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
-                        <segue destination="2JW-vu-wjZ" kind="presentation" identifier="segue3" id="MGY-1T-4j9"/>
                         <segue destination="qCI-n7-eyh" kind="presentation" identifier="segueLogOut" id="uVy-7c-Yh6"/>
+                        <segue destination="ySp-bJ-KaQ" kind="unwind" identifier="unwindSequeToLV" unwindAction="unwindToLVWithSegue:" id="7TW-ah-gbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Fz-GOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ySp-bJ-KaQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6831.1999999999998" y="173.64532019704436"/>
         </scene>
@@ -1419,9 +1420,7 @@
         <image name="silhouette-2632477_960_720-1" width="160" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ORM-pO-zjw"/>
         <segue reference="Z7w-6M-EE0"/>
-        <segue reference="sQx-A0-wd1"/>
-        <segue reference="s5B-JP-cne"/>
+        <segue reference="fS0-Zm-xkC"/>
     </inferredMetricsTieBreakers>
 </document>
