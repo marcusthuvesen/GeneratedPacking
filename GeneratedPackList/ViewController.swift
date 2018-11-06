@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //Default value true, man
-    var genderSelected = true
+    var genderSelected = 0
     var clickedBtnManValue = false
     var clickedBtnWomanValue = false
     
@@ -39,7 +39,8 @@ class ViewController: UIViewController {
             }
             clickedBtnManValue = true
             manOutl.alpha = 0.5
-            UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+            genderSelected = 1
+            UserDefaults.standard.setValue(genderSelected, forKey: "genderSelected")
             print("MAN")
         }
         else if clickedBtnManValue == true{
@@ -62,8 +63,8 @@ class ViewController: UIViewController {
             }
             clickedBtnWomanValue  = true
             womanOutl.alpha = 0.5
-            genderSelected = false //Kvinna
-            UserDefaults.standard.set(genderSelected, forKey: "genderSelected")
+            genderSelected = 2 //Kvinna
+            UserDefaults.standard.setValue(genderSelected, forKey: "genderSelected")
             print("KVINNA")
         }
         else if clickedBtnWomanValue == true{

@@ -122,7 +122,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         
      
-            let gender = UserDefaults.standard.bool(forKey: "genderSelected")
+            let gender = UserDefaults.standard.integer(forKey: "genderSelected")
             print(gender)
             
             let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
@@ -135,7 +135,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 var TshirtValue = "T-shirt x \(sliderString)"
                 var shirtValue = "Shirt x \(sliderString)"
                 var costumeSocks = "Costume Socks x \(sliderString)"
-                if gender == true{
+                if gender == 1{
                     baseListMan.insert(underWearValue, at: 19)
                     baseListMan.remove(at: 20)
                     baseListMan.insert(socksValue, at: 20)
@@ -146,7 +146,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                     businessObjectsMan.remove(at: 7)
                     businessObjectsMan.insert(costumeSocks, at: 6)
                     businessObjectsMan.remove(at: 9)
-                }else{
+                }else if gender == 2{
                     baseListWoman.insert(underWearValue, at: 19)
                     baseListWoman.remove(at: 20)
                     baseListWoman.insert(socksValue, at: 20)
@@ -171,69 +171,69 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         
             //BUSINESS
-            if chosen1 == true && gender == true {
+            if chosen1 == true && gender == 1 {
                 generatedObjects += businessObjectsMan
                 print("Business print MAN")
                 
             }
-            else if chosen1 == true && gender == false {
+            else if chosen1 == true && gender == 2 {
                 generatedObjects += businessObjectsWoman
                 print("Business print WOMAN")
             }
             
             //SUNBEACH
             
-            if chosen2 == true && gender == true {
+            if chosen2 == true && gender == 1 {
                 generatedObjects += sunBeachObjectsMan
                 print("sunBeach print MAN")
                 
             }
-            else if chosen2 == true && gender == false {
+            else if chosen2 == true && gender == 2 {
                 generatedObjects += sunBeachObjectsWoman
                 print("SunBeach print WOMAN")
             }
             
             //CITY
             
-            if chosen3 == true && gender == true {
+            if chosen3 == true && gender == 1 {
                 generatedObjects += cityObjectsMan
                 print("city print MAN")
                 
             }
-            else if chosen3 == true && gender == false {
+            else if chosen3 == true && gender == 2 {
                 generatedObjects += cityObjectsWoman
                 print("city print WOMAN")
             }
             
             //SKIING
             
-            if chosen4 == true && gender == true {
+            if chosen4 == true && gender == 1 {
                 generatedObjects += skiingObjectsMan
                 print("skiing print MAN")
                 
             }
-            else if chosen4 == true && gender == false {
+            else if chosen4 == true && gender == 2 {
                 generatedObjects += skiingObjectsWoman
                 print("skiing print WOMAN")
             }
             
             //TRAINING
-            if chosen5 == true && gender == true {
+            if chosen5 == true && gender == 1 {
                 generatedObjects += trainingObjectsMan
                 print("training print MAN")
                 
             }
-            else if chosen5 == true && gender == false {
+            else if chosen5 == true && gender == 2 {
                 generatedObjects += trainingObjectsWoman
                 print("training print WOMAN")
                 }
         
-            if chosen6 == true && gender == true {
+            if chosen6 == true && gender == 1 {
                 generatedObjects += partyObjectsMan
                 print("party print MAN")
                 
             }
-            else if chosen6 == true && gender == false {
+            else if chosen6 == true && gender == 2 {
                 generatedObjects += partyObjectsWoman
                 print("party print WOMAN")
             }
@@ -263,12 +263,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             }*/
             
             //Baselist
-            if(gender == true){
+            if(gender == 1){
                 print("DU HAMNADE I BASLISTAN")
                 generatedObjects += baseListMan
             }
                 //emptyList == false &&
-            else if( gender == false){
+            else if(gender == 2){
                 generatedObjects += baseListWoman
             }
             
@@ -409,12 +409,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Force your tableview margins (this may be a bad idea)
-       /* if table.responds(to: #selector(setter: UITableView.separatorInset)) {
+        if table.responds(to: #selector(setter: UITableView.separatorInset)) {
             table.separatorInset = .zero
         }
         if table.responds(to: #selector(setter: UITableView.layoutMargins)) {
             table.layoutMargins = .zero
-        }*/
+        }
     }
    
   

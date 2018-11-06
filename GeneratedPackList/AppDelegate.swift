@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "ListView")
-                
+                UserDefaults.standard.setValue(0, forKey: "genderSelected")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }
