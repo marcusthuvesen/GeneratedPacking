@@ -11,6 +11,8 @@ pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SwiftLint', '~> 0.27'
+  pod 'ChameleonFramework/Swift'
+  pod 'SVProgressHUD'
 
   target 'GeneratedPackListTests' do
     inherit! :search_paths

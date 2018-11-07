@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import ChameleonFramework
 
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    //REASONS-LISTOR
@@ -419,30 +419,38 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "IDENTIFIER", for: indexPath) as! ListViewTableViewCell
-        if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
-            cell.textLabel?.textAlignment = .center
+        let myCustomColor = UIColor(red: 91/255.0, green: 168/255.0, blue: 184/255.0, alpha: 1.0)
+        if let colour = myCustomColor.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(generatedObjects.count + 5)){
+            cell.backgroundColor = colour
+            cell.contentView.backgroundColor = colour
+            cell.textLabel?.backgroundColor = colour
+            
         }
-        if String(generatedObjects[indexPath.row]) == "BUSINESS" {
-            cell.textLabel?.textAlignment = .center
-        }
-        if String(generatedObjects[indexPath.row]) == "BEACH/SWIM" {
-            cell.textLabel?.textAlignment = .center
-        }
-        if String(generatedObjects[indexPath.row]) == "CITY" {
-            cell.textLabel?.textAlignment = .center
-        }
-        if String(generatedObjects[indexPath.row]) == "SKIING" {
-            cell.textLabel?.textAlignment = .center
-        }
-        if String(generatedObjects[indexPath.row]) == "TRAINING" {
-            cell.textLabel?.textAlignment = .center
-        }
-        else{
-            cell.textLabel?.textAlignment = .left
-        }
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.text = generatedObjects[indexPath.row]
-        
+        /*
+            if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
+                cell.textLabel?.textAlignment = .center
+            }
+            if String(generatedObjects[indexPath.row]) == "BUSINESS" {
+                cell.textLabel?.textAlignment = .center
+            }
+            if String(generatedObjects[indexPath.row]) == "BEACH/SWIM" {
+                cell.textLabel?.textAlignment = .center
+            }
+            if String(generatedObjects[indexPath.row]) == "CITY" {
+                cell.textLabel?.textAlignment = .center
+            }
+            if String(generatedObjects[indexPath.row]) == "SKIING" {
+                cell.textLabel?.textAlignment = .center
+            }
+            if String(generatedObjects[indexPath.row]) == "TRAINING" {
+                cell.textLabel?.textAlignment = .center
+            }
+            else{
+                cell.textLabel?.textAlignment = .left
+            }*/
+            cell.textLabel?.textColor = .white
+            cell.textLabel?.text = generatedObjects[indexPath.row]
+            
         
         return cell
         

@@ -14,10 +14,13 @@ class TravelLength: UIViewController {
     var sliderValue = 1
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var laundryOutl: UIButton!
+    @IBOutlet weak var abroadOutl: UIButton!
+    
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
     var wasClicked = false
     var valueSave : Int = 1
+    var travelWasClicked = false
     var ref: DatabaseReference!
     
     
@@ -25,6 +28,9 @@ class TravelLength: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         laundryOutl.layer.cornerRadius = 10
+        laundryOutl.clipsToBounds = true
+        abroadOutl.layer.cornerRadius = 10
+        abroadOutl.clipsToBounds = true
         progressBar.frame.size.width = ((view.frame.size.width)/4 - 16)
         
         ref = Database.database().reference()
@@ -63,6 +69,16 @@ class TravelLength: UIViewController {
 
     }
     
+    @IBAction func abroadBtn(_ sender: UIButton) {
+        if travelWasClicked == false{
+            abroadOutl.alpha = 0.5
+            travelWasClicked = true
+        }
+        else if travelWasClicked == true{
+            abroadOutl.alpha = 1
+            travelWasClicked = false
+        }
+    }
     
     @IBAction func nextViewBtn(_ sender: UIButton) {
         
