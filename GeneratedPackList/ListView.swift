@@ -426,7 +426,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             cell.textLabel?.backgroundColor = colour
             
         }
-        /*
+         cell.textLabel?.text = generatedObjects[indexPath.row]
+         cell.textLabel?.textColor = .white
+        
             if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
                 cell.textLabel?.textAlignment = .center
             }
@@ -445,13 +447,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             if String(generatedObjects[indexPath.row]) == "TRAINING" {
                 cell.textLabel?.textAlignment = .center
             }
+            
             else{
                 cell.textLabel?.textAlignment = .left
-            }*/
-            cell.textLabel?.textColor = .white
-            cell.textLabel?.text = generatedObjects[indexPath.row]
-            
+        }
         
+     
         return cell
         
     }

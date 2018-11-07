@@ -15,6 +15,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var signUpOutlet: UIButton!
     @IBOutlet weak var invalidLabel: UILabel!
+    @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var passwordView: UIView!
     
     
     var ref : DatabaseReference?
@@ -22,6 +24,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         invalidLabel.alpha = 0
+        signUpOutlet.layer.cornerRadius = 10
+        emailView.layer.cornerRadius = 10
+        passwordView.layer.cornerRadius = 10
     }
     
     @IBAction func signUpBtn(_ sender: UIButton) {

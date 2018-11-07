@@ -42,7 +42,8 @@ class LoginViewController: UIViewController {
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         loginBtn.layer.cornerRadius = 10
-        
+        emailTextfield.layer.cornerRadius = 5
+        passwordTextfield.layer.cornerRadius = 5
         
     }
   
