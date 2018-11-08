@@ -17,8 +17,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var baseListMan = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
     var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
-    var businessObjectsMan = ["BUSINESSS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var businessObjectsWoman = ["BUSINESSS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsMan = ["BUSINESS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsWoman = ["BUSINESS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
     var sunBeachObjectsMan = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
     var sunBeachObjectsWoman = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
     
@@ -34,8 +34,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
    /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
     var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
     
-    var partyObjectsMan = ["---PARTYSTUFF---", "Footwear/Clothes", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--Accessories--", "Hairdryer", "Speakers", "Playing Cards"  ]
-    var partyObjectsWoman = ["PARTYSTUFF", "--Footwear/Clothes--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--Accesssories--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
+    var partyObjectsMan = ["PARTY", "Footwear/Clothes", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--Accessories--", "Hairdryer", "Speakers", "Playing Cards"  ]
+    var partyObjectsWoman = ["PARTY", "--Footwear/Clothes--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--Accesssories--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
     
     /*var campingObjectsMan = ["CAMPINGSTUFF", ""]
     var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
@@ -428,6 +428,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
          cell.textLabel?.text = generatedObjects[indexPath.row]
          cell.textLabel?.textColor = .white
+         cell.textLabel?.textAlignment = .left
+       
         
             if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
                 cell.textLabel?.textAlignment = .center
@@ -447,10 +449,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             if String(generatedObjects[indexPath.row]) == "TRAINING" {
                 cell.textLabel?.textAlignment = .center
             }
-            
-            else{
-                cell.textLabel?.textAlignment = .left
-        }
+            if String(generatedObjects[indexPath.row]) == "PARTY" {
+                cell.textLabel?.textAlignment = .center
+            }
+        
+        
         
      
         return cell
