@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 class SignUpViewController: UIViewController {
 
     
@@ -31,7 +32,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpBtn(_ sender: UIButton) {
         if emailTextfield.text != "" && passwordTextfield.text != "" {
-            
+            SVProgressHUD.show()
             // Registrera användaren
             Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: {(user, error) in
                 if user != nil {
@@ -58,7 +59,7 @@ class SignUpViewController: UIViewController {
                     }
                 }
             })
-            
+           SVProgressHUD.dismiss()
         }
     }
     

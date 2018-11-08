@@ -9,9 +9,9 @@
 import UIKit
 import Firebase
 import ChameleonFramework
-
+import SVProgressHUD
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
-   //REASONS-LISTOR
+    //REASONS-LISTOR
     
     var travelAbroad = ["Passport", "Visa Document", "Insurance documents", "Transportation Tickets",  "Travel Adapter", ""]
     
@@ -24,24 +24,24 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var cityObjectsMan = ["CITY", "City Map", "Walking Shoes", "Day Backpack", ""]
     var cityObjectsWoman = ["CITY", "City Map", "Walking Shoes", "Day Backpack/Purse", "" ]
-   
+    
     var skiingObjectsMan = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
     var skiingObjectsWoman = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
     
     var trainingObjectsMan = ["TRAINING", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
     var trainingObjectsWoman = ["TRAINING","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
     
-   /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
-    var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
+    /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
+     var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
     
     var partyObjectsMan = ["PARTY", "Footwear/Clothes", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--Accessories--", "Hairdryer", "Speakers", "Playing Cards"  ]
     var partyObjectsWoman = ["PARTY", "--Footwear/Clothes--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--Accesssories--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
     
     /*var campingObjectsMan = ["CAMPINGSTUFF", ""]
-    var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
-   //WEATHER-LISTOR
+     var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
+    //WEATHER-LISTOR
     
-   
+    
     var generatedObjects = [String]()
     
     var weatherHot = false
@@ -74,24 +74,24 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var popupViewOutl: UIView!
     
-   @IBAction func unwindToLV(segue:UIStoryboardSegue) { }
-  
+    @IBAction func unwindToLV(segue:UIStoryboardSegue) { }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         if whatList != nil{
-        listNameText.text = whatList
-        self.generatedObjects.removeAll()
-        self.table.reloadData()
-        
-         let uid = Auth.auth().currentUser?.uid
-        ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
+            listNameText.text = whatList
+            self.generatedObjects.removeAll()
+            self.table.reloadData()
+            
+            let uid = Auth.auth().currentUser?.uid
+            ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
                 let result = snapshot.value as? [String: Any]
                 
                 let item = result!["Itemname"]
-            if item != nil{
-                self.generatedObjects.append(item as! String)
-            }
-            self.table.reloadData()
+                if item != nil{
+                    self.generatedObjects.append(item as! String)
+                }
+                self.table.reloadData()
             }
             
         }
@@ -107,152 +107,153 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
         hideSaveBtn.isHidden = true
-        
-        
+      
         listNameText.layer.cornerRadius = 5
         popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
+       
         
         
-     
-            let gender = UserDefaults.standard.integer(forKey: "genderSelected")
-            print(gender)
-            
-            let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
-            print(sliderValue)
-            
-             sliderString = String(sliderValue)
-            if sliderValue > 1{
-                var underWearValue = "Underwear x \(sliderString)"
-                var socksValue = "Socks x \(sliderString)"
-                var TshirtValue = "T-shirt x \(sliderString)"
-                var shirtValue = "Shirt x \(sliderString)"
-                var costumeSocks = "Costume Socks x \(sliderString)"
-                if gender == 1{
-                    baseListMan.insert(underWearValue, at: 19)
-                    baseListMan.remove(at: 20)
-                    baseListMan.insert(socksValue, at: 20)
-                    baseListMan.remove(at: 21)
-                    baseListMan.insert(TshirtValue, at: 22)
-                    baseListMan.remove(at: 23)
-                    businessObjectsMan.insert(shirtValue, at: 6)
-                    businessObjectsMan.remove(at: 7)
-                    businessObjectsMan.insert(costumeSocks, at: 6)
-                    businessObjectsMan.remove(at: 9)
-                }else if gender == 2{
-                    baseListWoman.insert(underWearValue, at: 19)
-                    baseListWoman.remove(at: 20)
-                    baseListWoman.insert(socksValue, at: 20)
-                    baseListWoman.remove(at: 21)
-                    baseListWoman.insert(TshirtValue, at: 22)
-                    baseListWoman.remove(at: 23)
-                }
-            }
-           
-            //BUSINESS
-            if chosen1 == true && gender == 1 {
-                generatedObjects += businessObjectsMan
-                print("Business print MAN")
-                
-            }
-            else if chosen1 == true && gender == 2 {
-                generatedObjects += businessObjectsWoman
-                print("Business print WOMAN")
-            }
-            
-            //SUNBEACH
-            
-            if chosen2 == true && gender == 1 {
-                generatedObjects += sunBeachObjectsMan
-                print("sunBeach print MAN")
-                
-            }
-            else if chosen2 == true && gender == 2 {
-                generatedObjects += sunBeachObjectsWoman
-                print("SunBeach print WOMAN")
-            }
-            
-            //CITY
-            
-            if chosen3 == true && gender == 1 {
-                generatedObjects += cityObjectsMan
-                print("city print MAN")
-                
-            }
-            else if chosen3 == true && gender == 2 {
-                generatedObjects += cityObjectsWoman
-                print("city print WOMAN")
-            }
-            
-            //SKIING
-            
-            if chosen4 == true && gender == 1 {
-                generatedObjects += skiingObjectsMan
-                print("skiing print MAN")
-                
-            }
-            else if chosen4 == true && gender == 2 {
-                generatedObjects += skiingObjectsWoman
-                print("skiing print WOMAN")
-            }
-            
-            //TRAINING
-            if chosen5 == true && gender == 1 {
-                generatedObjects += trainingObjectsMan
-                print("training print MAN")
-                
-            }
-            else if chosen5 == true && gender == 2 {
-                generatedObjects += trainingObjectsWoman
-                print("training print WOMAN")
-                }
         
-            if chosen6 == true && gender == 1 {
-                generatedObjects += partyObjectsMan
-                print("party print MAN")
-                
-            }
-            else if chosen6 == true && gender == 2 {
-                generatedObjects += partyObjectsWoman
-                print("party print WOMAN")
-            }
-           /* //HIKING
-            if chosen6 == true && gender == true {
-                generatedObjects += hikingObjectsMan
-                print("hiking print MAN")
-                
-            }
-            else if chosen6 == true && gender == false {
-                generatedObjects += hikingObjectsWoman
-                print("hiking print WOMAN")
-            }*/
-            
-            //PARTY
+        let gender = UserDefaults.standard.integer(forKey: "genderSelected")
+        print(gender)
         
-            /*//CAMPING
-            
-            if chosen8 == true && gender == true {
-                generatedObjects += campingObjectsMan
-                print("camping print MAN")
-                
+        let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
+        print(sliderValue)
+        
+        sliderString = String(sliderValue)
+        if sliderValue > 1{
+            var underWearValue = "Underwear x \(sliderString)"
+            var socksValue = "Socks x \(sliderString)"
+            var TshirtValue = "T-shirt x \(sliderString)"
+            var shirtValue = "Shirt x \(sliderString)"
+            var costumeSocks = "Costume Socks x \(sliderString)"
+            if gender == 1{
+                baseListMan.insert(underWearValue, at: 19)
+                baseListMan.remove(at: 20)
+                baseListMan.insert(socksValue, at: 20)
+                baseListMan.remove(at: 21)
+                baseListMan.insert(TshirtValue, at: 22)
+                baseListMan.remove(at: 23)
+                businessObjectsMan.insert(shirtValue, at: 6)
+                businessObjectsMan.remove(at: 7)
+                businessObjectsMan.insert(costumeSocks, at: 6)
+                businessObjectsMan.remove(at: 9)
+            }else if gender == 2{
+                baseListWoman.insert(underWearValue, at: 19)
+                baseListWoman.remove(at: 20)
+                baseListWoman.insert(socksValue, at: 20)
+                baseListWoman.remove(at: 21)
+                baseListWoman.insert(TshirtValue, at: 22)
+                baseListWoman.remove(at: 23)
             }
-            else if chosen8 == true && gender == false {
-                generatedObjects += campingObjectsWoman
-                print("camping print WOMAN")
-            }*/
+        }
+        
+        //BUSINESS
+        if chosen1 == true && gender == 1 {
+            generatedObjects += businessObjectsMan
+            print("Business print MAN")
             
-            //Baselist
-            if(gender == 1){
-                print("DU HAMNADE I BASLISTAN")
-                generatedObjects += baseListMan
-            }
-                //emptyList == false &&
-            else if(gender == 2){
-                generatedObjects += baseListWoman
-            }
+        }
+        else if chosen1 == true && gender == 2 {
+            generatedObjects += businessObjectsWoman
+            print("Business print WOMAN")
+        }
+        
+        //SUNBEACH
+        
+        if chosen2 == true && gender == 1 {
+            generatedObjects += sunBeachObjectsMan
+            print("sunBeach print MAN")
             
-            // Do any additional setup after loading the view.
+        }
+        else if chosen2 == true && gender == 2 {
+            generatedObjects += sunBeachObjectsWoman
+            print("SunBeach print WOMAN")
+        }
+        
+        //CITY
+        
+        if chosen3 == true && gender == 1 {
+            generatedObjects += cityObjectsMan
+            print("city print MAN")
+            
+        }
+        else if chosen3 == true && gender == 2 {
+            generatedObjects += cityObjectsWoman
+            print("city print WOMAN")
+        }
+        
+        //SKIING
+        
+        if chosen4 == true && gender == 1 {
+            generatedObjects += skiingObjectsMan
+            print("skiing print MAN")
+            
+        }
+        else if chosen4 == true && gender == 2 {
+            generatedObjects += skiingObjectsWoman
+            print("skiing print WOMAN")
+        }
+        
+        //TRAINING
+        if chosen5 == true && gender == 1 {
+            generatedObjects += trainingObjectsMan
+            print("training print MAN")
+            
+        }
+        else if chosen5 == true && gender == 2 {
+            generatedObjects += trainingObjectsWoman
+            print("training print WOMAN")
+        }
+        
+        if chosen6 == true && gender == 1 {
+            generatedObjects += partyObjectsMan
+            print("party print MAN")
+            
+        }
+        else if chosen6 == true && gender == 2 {
+            generatedObjects += partyObjectsWoman
+            print("party print WOMAN")
+        }
+        /* //HIKING
+         if chosen6 == true && gender == true {
+         generatedObjects += hikingObjectsMan
+         print("hiking print MAN")
+         
+         }
+         else if chosen6 == true && gender == false {
+         generatedObjects += hikingObjectsWoman
+         print("hiking print WOMAN")
+         }*/
+        
+        //PARTY
+        
+        /*//CAMPING
+         
+         if chosen8 == true && gender == true {
+         generatedObjects += campingObjectsMan
+         print("camping print MAN")
+         
+         }
+         else if chosen8 == true && gender == false {
+         generatedObjects += campingObjectsWoman
+         print("camping print WOMAN")
+         }*/
+        
+        //Baselist
+        if(gender == 1){
+            print("DU HAMNADE I BASLISTAN")
+            generatedObjects += baseListMan
+        }
+            //emptyList == false &&
+        else if(gender == 2){
+            generatedObjects += baseListWoman
+        }
+        
+        // Do any additional setup after loading the view.
+        
         
     }
     
@@ -268,6 +269,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         
         if listNameText.text != "" {
+            SVProgressHUD.show(withStatus: "Saving")
+            
             //Hitta ID för currentUser och spara listan under List
             
             for i in 0 ..< generatedObjects.count{
@@ -277,13 +280,16 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             self.generatedObjects.removeAll()
             self.table.reloadData()
             
-         ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
+            ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observe(.childAdded) { (snapshot) in
                 let result = snapshot.value as? [String: Any]
                 
                 let item = result!["Itemname"]
                 
                 self.generatedObjects.append(item as! String)
                 self.table.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                    SVProgressHUD.dismiss()
+                }
             }
             
         }
@@ -304,11 +310,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         if inputAddText.text != ""{
             if listNameText.text != "" {
-                 print("här hamnade du")
+                print("här hamnade du")
                 
                 //Hitta ID för användaren och spara in Added Item in the list
-               
-            ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
+                
+                ref.child("Users").child(uid!).child("Lists").child(listNameText.text!).childByAutoId().child("Itemname").setValue(inputAddText.text)
                 inputAddText.text = ""
                 
             }
@@ -322,6 +328,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             
             
         }
+        self.table.scrollToRow(at: IndexPath(row: self.generatedObjects.count-1, section: 0), at: .bottom, animated: true)
     }
     
     
@@ -340,8 +347,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBAction func newListBtn(_ sender: UIButton) {
         popupView.isHidden = false
     }
-
-   
+    
+    
     //Get ChildbyautoIds
     func getAllKeys(){
         self.ref.child("Users").child(self.uid!).child("Lists").child(listNameText.text!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -359,7 +366,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     
-   
+    
     //Slide to Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -383,23 +390,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Remove seperator inset
-      /*  if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-            cell.separatorInset = .zero
-        }
-        // Prevent the cell from inheriting the Table View's margin settings
-        if cell.responds(to: #selector(setter: UITableViewCell.preservesSuperviewLayoutMargins)) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
-        // Explictly set your cell's layout margins
-        if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
-            cell.layoutMargins = .zero
-        }*/
-    }
-    
-   override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Force your tableview margins (this may be a bad idea)
         if table.responds(to: #selector(setter: UITableView.separatorInset)) {
@@ -409,10 +400,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             table.layoutMargins = .zero
         }
     }
-   
-  
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
+        
         return generatedObjects.count 
         
     }
@@ -426,36 +417,47 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             cell.textLabel?.backgroundColor = colour
             
         }
-         cell.textLabel?.text = generatedObjects[indexPath.row]
-         cell.textLabel?.textColor = .white
-         cell.textLabel?.textAlignment = .left
-       
+        cell.textLabel?.text = generatedObjects[indexPath.row]
+        cell.textLabel?.textColor = .white
+        cell.textLabel?.textAlignment = .left
+        cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 20.0)
         
-            if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "BUSINESS" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "BEACH/SWIM" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "CITY" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "SKIING" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "TRAINING" {
-                cell.textLabel?.textAlignment = .center
-            }
-            if String(generatedObjects[indexPath.row]) == "PARTY" {
-                cell.textLabel?.textAlignment = .center
-            }
-        
-        
-        
-     
+        if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "BUSINESS" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "BEACH/SWIM" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "CITY" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "SKIING" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "TRAINING" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        if String(generatedObjects[indexPath.row]) == "PARTY" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+    
         return cell
         
     }
@@ -465,4 +467,3 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         return 75.0;//Choose your custom row height
     }
 }
-

@@ -949,7 +949,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-5x-hbf">
                                 <rect key="frame" x="339" y="800" width="75" height="62"/>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.1960784314" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.63272877080000001" blue="0.24547838180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="SVN-OF-k5T"/>
                                     <constraint firstAttribute="width" constant="75" id="VZD-6Q-FCH"/>
@@ -1274,7 +1274,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Z7w-6M-EE0"/>
-        <segue reference="fS0-Zm-xkC"/>
+        <segue reference="s5B-JP-cne"/>
         <segue reference="uVy-7c-Yh6"/>
     </inferredMetricsTieBreakers>
 </document>

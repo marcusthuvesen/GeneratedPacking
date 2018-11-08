@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 class LoginViewController: UIViewController {
 
     
@@ -56,10 +57,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {
+        SVProgressHUD.show()
         if emailTextfield.text == "" && passwordTextfield.text == "" {
              self.failedMessage.alpha = 1
         }
         if emailTextfield.text != "" && passwordTextfield.text != "" {
+            
             // Logga in användaren
             Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
                 if user != nil {
@@ -83,6 +86,7 @@ class LoginViewController: UIViewController {
                 }
             })
         }
+        SVProgressHUD.dismiss()
     }
   
     
