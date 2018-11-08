@@ -83,6 +83,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             emptylist = false
         }
         if whatList != nil{
+            SVProgressHUD.show()
             listNameText.text = whatList
             self.generatedObjects.removeAll()
             self.table.reloadData()
@@ -97,7 +98,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 }
                 self.table.reloadData()
             }
-            
+           SVProgressHUD.dismiss()
         }
         
     }

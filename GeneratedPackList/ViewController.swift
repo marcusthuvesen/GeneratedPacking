@@ -44,10 +44,10 @@ class ViewController: UIViewController {
             print("MAN")
         }
         else if clickedBtnManValue == true{
-            manOutl.alpha = 1
-            womanOutl.alpha = 0.5
-            clickedBtnManValue = false
-            clickedBtnWomanValue = true
+            manOutl.alpha = 0.5
+            womanOutl.alpha = 1
+            clickedBtnManValue = true
+            clickedBtnWomanValue = false
         }
         
     }
@@ -68,10 +68,10 @@ class ViewController: UIViewController {
             print("KVINNA")
         }
         else if clickedBtnWomanValue == true{
-            womanOutl.alpha = 1
-            manOutl.alpha = 0.5
-            clickedBtnWomanValue = false
-            clickedBtnManValue = true
+            womanOutl.alpha = 0.5
+            manOutl.alpha = 1
+            clickedBtnWomanValue = true
+            clickedBtnManValue = false
         }
     }
     
