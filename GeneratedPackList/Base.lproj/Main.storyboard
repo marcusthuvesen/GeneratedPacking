@@ -969,11 +969,11 @@
                                         <rect key="frame" x="77" y="343" width="260" height="210"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKc-z3-KcO">
-                                                <rect key="frame" x="0.0" y="127" width="260" height="83"/>
+                                                <rect key="frame" x="0.0" y="120" width="260" height="90"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="260" id="hKU-iK-pDi"/>
-                                                    <constraint firstAttribute="height" constant="83" id="vRX-FH-s55"/>
+                                                    <constraint firstAttribute="height" constant="90" id="vRX-FH-s55"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Empty List">
@@ -984,7 +984,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-gL-Ydx">
-                                                <rect key="frame" x="0.0" y="34" width="260" height="93"/>
+                                                <rect key="frame" x="0.0" y="34" width="260" height="86"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Generated List">
@@ -1162,23 +1162,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayT-6d-SSz">
                                         <rect key="frame" x="77" y="343" width="260" height="210"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFU-N2-kgn">
-                                                <rect key="frame" x="0.0" y="127" width="260" height="83"/>
-                                                <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="83" id="2G3-2J-Zzq"/>
-                                                    <constraint firstAttribute="width" constant="260" id="a6z-f3-eJ4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="New Empty List">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="newEmptyList:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="ef2-Ia-fw1"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbZ-DV-CMy">
-                                                <rect key="frame" x="0.0" y="42" width="260" height="77"/>
+                                                <rect key="frame" x="0.0" y="34" width="260" height="86"/>
                                                 <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="New Generated List">
@@ -1204,19 +1189,34 @@
                                                     <action selector="popupExitBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="wEL-rG-QpJ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz0-py-os9">
+                                                <rect key="frame" x="0.0" y="120" width="260" height="90"/>
+                                                <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="260" id="Q2c-gI-tne"/>
+                                                    <constraint firstAttribute="height" constant="90" id="oMg-zj-uYA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <state key="normal" title="New Empty List">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="newEmptyListBtn:" destination="q5x-F4-KoW" eventType="touchUpInside" id="FNM-J8-o7F"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.35618749259999999" green="0.65856224299999999" blue="0.72207659479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="NbZ-DV-CMy" firstAttribute="top" secondItem="Ksp-z1-evd" secondAttribute="bottom" constant="8" id="01d-Wv-3aM"/>
+                                            <constraint firstItem="NbZ-DV-CMy" firstAttribute="top" secondItem="Ksp-z1-evd" secondAttribute="bottom" id="01d-Wv-3aM"/>
                                             <constraint firstAttribute="trailing" secondItem="NbZ-DV-CMy" secondAttribute="trailing" id="8ai-DJ-cW2"/>
                                             <constraint firstAttribute="width" constant="260" id="BGg-aj-Y8H"/>
-                                            <constraint firstItem="FFU-N2-kgn" firstAttribute="top" secondItem="NbZ-DV-CMy" secondAttribute="bottom" constant="8" id="MDy-Lm-j73"/>
+                                            <constraint firstItem="Bz0-py-os9" firstAttribute="top" secondItem="NbZ-DV-CMy" secondAttribute="bottom" id="Cg0-zB-zB5"/>
                                             <constraint firstItem="Ksp-z1-evd" firstAttribute="top" secondItem="ayT-6d-SSz" secondAttribute="top" id="QQ0-Ek-syC"/>
                                             <constraint firstItem="Ksp-z1-evd" firstAttribute="leading" secondItem="ayT-6d-SSz" secondAttribute="leading" id="R9S-On-tUW"/>
                                             <constraint firstAttribute="height" constant="210" id="WGu-Fg-6A3"/>
-                                            <constraint firstItem="FFU-N2-kgn" firstAttribute="leading" secondItem="ayT-6d-SSz" secondAttribute="leading" id="WJl-3J-Gq8"/>
                                             <constraint firstItem="NbZ-DV-CMy" firstAttribute="leading" secondItem="ayT-6d-SSz" secondAttribute="leading" id="ZVz-cS-zXe"/>
-                                            <constraint firstAttribute="bottom" secondItem="FFU-N2-kgn" secondAttribute="bottom" id="vyE-ic-kkU"/>
+                                            <constraint firstAttribute="bottom" secondItem="Bz0-py-os9" secondAttribute="bottom" id="dfn-Ik-VDk"/>
+                                            <constraint firstItem="Bz0-py-os9" firstAttribute="leading" secondItem="ayT-6d-SSz" secondAttribute="leading" id="xcD-0M-iIT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1255,12 +1255,13 @@
                         <outlet property="tableVW" destination="lWx-Ux-sVf" id="g4f-vE-s5J"/>
                         <segue destination="qCI-n7-eyh" kind="presentation" identifier="segueLogOut" id="uVy-7c-Yh6"/>
                         <segue destination="ySp-bJ-KaQ" kind="unwind" identifier="unwindSequeToLV" unwindAction="unwindToLVWithSegue:" id="7TW-ah-gbc"/>
+                        <segue destination="ySp-bJ-KaQ" kind="unwind" identifier="NewListSegue" unwindAction="unwindToLVWithSegue:" id="P9J-MQ-xfe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Fz-GOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ySp-bJ-KaQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5846" y="175"/>
+            <point key="canvasLocation" x="5844.9275362318849" y="174.77678571428569"/>
         </scene>
     </scenes>
     <resources>

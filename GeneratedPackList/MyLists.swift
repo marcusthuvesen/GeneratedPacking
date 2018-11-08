@@ -136,12 +136,16 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //Selecting List
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let new = tableVW.cellForRow(at: indexPath as IndexPath) {
-        performSegue(withIdentifier: "unwindSequeToLV", sender: self)
+            performSegue(withIdentifier: "unwindSequeToLV", sender: self)
         }
     }
     
+    @IBAction func newEmptyListBtn(_ sender: Any) {
+        performSegue(withIdentifier: "NewListSegue", sender: self)
+    }
     
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindSequeToLV" {
             if let indexPath = self.tableVW.indexPathForSelectedRow{
                 let destination = segue.destination as! ListView
@@ -149,6 +153,11 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 destination.whatList = savedListNameArray[indexPath.row]
             }
         }
+        if segue.identifier == "NewListSegue" {
+            print("här")
+            let destination = segue.destination as! ListView
+            destination.emptylist = true
+            destination.whatList = nil
+        }
     }
-    
 }

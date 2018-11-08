@@ -54,7 +54,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var chosen4 = false
     var chosen5 = false
     var chosen6 = false
-    
+    var emptylist = false
     var firstSave = false
     var sliderString : String = ""
     var savedListNames = [String]()
@@ -75,9 +75,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var popupViewOutl: UIView!
     
     @IBAction func unwindToLV(segue:UIStoryboardSegue) { }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        
+        if emptylist == true{
+            
+            newEmptyList(self)
+            emptylist = false
+        }
         if whatList != nil{
             listNameText.text = whatList
             self.generatedObjects.removeAll()
@@ -113,7 +117,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
        
-        
+       
         
         
         let gender = UserDefaults.standard.integer(forKey: "genderSelected")
@@ -336,7 +340,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         popupView.isHidden = true
     }
     
-    @IBAction func newEmptyList(_ sender: UIButton) {
+    @IBAction func newEmptyList(_ sender: Any) {
         
         generatedObjects.removeAll()
         listNameText.text = ""
