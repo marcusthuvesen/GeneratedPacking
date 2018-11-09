@@ -906,8 +906,8 @@
                                     <segue destination="q5x-F4-KoW" kind="show" id="Z7w-6M-EE0"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-Ci-DvM">
-                                <rect key="frame" x="0.0" y="176" width="414" height="686"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-Ci-DvM">
+                                <rect key="frame" x="0.0" y="176" width="414" height="720"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.1960784314" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
@@ -948,7 +948,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-5x-hbf">
-                                <rect key="frame" x="339" y="800" width="75" height="62"/>
+                                <rect key="frame" x="339" y="834" width="75" height="62"/>
                                 <color key="backgroundColor" red="1" green="0.63272877080000001" blue="0.24547838180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="SVN-OF-k5T"/>
@@ -1044,7 +1044,6 @@
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="fBR-J6-m6S" secondAttribute="bottom" constant="53" id="IOG-qA-zCt"/>
                             <constraint firstItem="h0x-My-gcg" firstAttribute="leading" secondItem="2jb-jL-ndL" secondAttribute="leading" constant="12" id="Iaj-Ef-ur2"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="Syu-Qo-oYG" secondAttribute="bottom" constant="8" id="Ivc-dJ-vGK"/>
-                            <constraint firstItem="3u9-Ci-DvM" firstAttribute="bottom" secondItem="tvw-1e-ukZ" secondAttribute="bottom" id="OAk-iq-z3h"/>
                             <constraint firstAttribute="trailing" secondItem="fBR-J6-m6S" secondAttribute="trailing" id="OVL-9U-ljm"/>
                             <constraint firstItem="Syu-Qo-oYG" firstAttribute="top" secondItem="fBR-J6-m6S" secondAttribute="bottom" constant="9" id="Oz9-7E-NQT"/>
                             <constraint firstItem="fBR-J6-m6S" firstAttribute="top" secondItem="ks3-Hu-pK2" secondAttribute="bottom" constant="12" id="R3a-bv-mpg"/>
@@ -1056,9 +1055,10 @@
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="top" secondItem="h0x-My-gcg" secondAttribute="bottom" constant="13" id="hYd-GJ-JBf"/>
                             <constraint firstItem="tvw-1e-ukZ" firstAttribute="trailing" secondItem="Syu-Qo-oYG" secondAttribute="trailing" id="j3t-v2-E8z"/>
                             <constraint firstItem="lxM-27-KN1" firstAttribute="leading" secondItem="ks3-Hu-pK2" secondAttribute="trailing" id="kBj-nw-0WE"/>
-                            <constraint firstItem="8RK-5x-hbf" firstAttribute="bottom" secondItem="tvw-1e-ukZ" secondAttribute="bottom" id="kHh-j7-Pus"/>
                             <constraint firstItem="3u9-Ci-DvM" firstAttribute="leading" secondItem="tvw-1e-ukZ" secondAttribute="leading" id="lNt-BV-tSJ"/>
                             <constraint firstAttribute="trailing" secondItem="uni-NG-56B" secondAttribute="trailing" id="mLK-uX-sys"/>
+                            <constraint firstAttribute="bottom" secondItem="8RK-5x-hbf" secondAttribute="bottom" id="n9Y-sn-nex"/>
+                            <constraint firstAttribute="bottom" secondItem="3u9-Ci-DvM" secondAttribute="bottom" id="sTN-v5-Lmo"/>
                             <constraint firstItem="Syu-Qo-oYG" firstAttribute="leading" secondItem="h0x-My-gcg" secondAttribute="trailing" id="trg-qV-58d"/>
                             <constraint firstAttribute="trailing" secondItem="isv-88-R8e" secondAttribute="trailing" id="u1V-x0-5uG"/>
                             <constraint firstItem="uni-NG-56B" firstAttribute="top" secondItem="tvw-1e-ukZ" secondAttribute="top" constant="25" id="vfj-4u-4p9"/>
@@ -1275,7 +1275,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Z7w-6M-EE0"/>
-        <segue reference="fS0-Zm-xkC"/>
+        <segue reference="s5B-JP-cne"/>
         <segue reference="uVy-7c-Yh6"/>
     </inferredMetricsTieBreakers>
 </document>

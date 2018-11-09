@@ -13,7 +13,7 @@ import SVProgressHUD
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     //REASONS-LISTOR
     
-    var travelAbroad = ["Passport", "Visa Document", "Insurance documents", "Transportation Tickets",  "Travel Adapter", ""]
+    var travelAbroad = ["GOING ABROAD", "Passport", "Visa Document", "Insurance documents", "Transportation Tickets", "Cash", "Travel Adapter", ""]
     
     var baseListMan = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
     var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
@@ -127,6 +127,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
         print(sliderValue)
         
+        let travelValue = UserDefaults.standard.bool(forKey: "travelValue")
+        
         sliderString = String(sliderValue)
         if sliderValue > 1{
             var underWearValue = "Underwear x \(sliderString)"
@@ -154,6 +156,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 baseListWoman.remove(at: 23)
             }
         }
+        //TRAVEL ABROAD
+        if travelValue == true{
+            generatedObjects += travelAbroad
+        }
+        
         
         //BUSINESS
         if chosen1 == true && gender == 1 {
@@ -462,7 +469,13 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
             cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
         }
-    
+        if String(generatedObjects[indexPath.row]) == "GOING ABROAD" {
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
+            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+        }
+        
+        
         return cell
         
     }
