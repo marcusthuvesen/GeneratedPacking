@@ -127,7 +127,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
         print(sliderValue)
         
-        let travelValue = UserDefaults.standard.bool(forKey: "travelValue")
+        //let travelValue = UserDefaults.standard.bool(forKey: "travelValue")
         
         sliderString = String(sliderValue)
         if sliderValue > 1{
@@ -156,10 +156,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 baseListWoman.remove(at: 23)
             }
         }
-        //TRAVEL ABROAD
+      /*  //TRAVEL ABROAD
         if travelValue == true{
             generatedObjects += travelAbroad
-        }
+        }*/
         
         
         //BUSINESS

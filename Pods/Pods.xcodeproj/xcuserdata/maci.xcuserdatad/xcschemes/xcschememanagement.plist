@@ -18,10 +18,20 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>FirebaseAuth.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>FirebaseCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>FirebaseCore.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
@@ -32,10 +42,20 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>FirebaseDatabase.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>FirebaseStorage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>FirebaseStorage.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
@@ -46,10 +66,20 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>GTMSessionFetcher.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>GoogleUtilities.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
@@ -60,6 +90,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>Pods-GeneratedPackList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Pods-GeneratedPackListTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,10 +102,20 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>Pods-GeneratedPackListTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Pods-GeneratedPackListUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Pods-GeneratedPackListUITests.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
@@ -88,10 +133,20 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>leveldb-library.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>nanopb.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>

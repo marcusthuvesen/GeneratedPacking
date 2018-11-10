@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qCI-n7-eyh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qCI-n7-eyh">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1138,7 +1138,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="newListBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="1OY-qZ-csK"/>
                                     <action selector="newListBtn:" destination="q5x-F4-KoW" eventType="touchUpInside" id="KKT-fH-QLx"/>
                                 </connections>
                             </button>
@@ -1186,7 +1185,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="Cross:" destination="q5x-F4-KoW" eventType="touchUpInside" id="ZdC-Vx-mXm"/>
-                                                    <action selector="popupExitBtn:" destination="2JW-vu-wjZ" eventType="touchUpInside" id="wEL-rG-QpJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz0-py-os9">
@@ -1275,7 +1273,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Z7w-6M-EE0"/>
-        <segue reference="s5B-JP-cne"/>
+        <segue reference="fS0-Zm-xkC"/>
         <segue reference="uVy-7c-Yh6"/>
     </inferredMetricsTieBreakers>
 </document>
