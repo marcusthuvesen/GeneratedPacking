@@ -151,12 +151,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 businessObjectsMan.insert(costumeSocks, at: 7)
                 businessObjectsMan.remove(at: 8)
             }else if gender == 2{
-                baseListWoman.insert(underWearValue, at: 19)
-                baseListWoman.remove(at: 20)
-                baseListWoman.insert(socksValue, at: 20)
+                baseListWoman.insert(underWearValue, at: 20)
                 baseListWoman.remove(at: 21)
-                baseListWoman.insert(TshirtValue, at: 22)
-                baseListWoman.remove(at: 23)
+                baseListWoman.insert(socksValue, at: 21)
+                baseListWoman.remove(at: 22)
+                baseListWoman.insert(TshirtValue, at: 23)
+                baseListWoman.remove(at: 24)
             }
         }
         //TRAVEL ABROAD
