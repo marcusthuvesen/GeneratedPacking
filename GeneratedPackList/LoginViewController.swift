@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {
-        SVProgressHUD.show()
+       
         if emailTextfield.text == "" && passwordTextfield.text == "" {
              self.failedMessage.alpha = 1
         }
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
                 }
             })
         }
-        SVProgressHUD.dismiss()
+      
     }
   
     

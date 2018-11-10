@@ -41,56 +41,56 @@ class ReasonUI: UIViewController{
         
         //If user clicks change BGColor
         if sender.tag == 1 && clickedBtn1 == false {
-            businessOutl.backgroundColor = UIColor.darkGray
+            businessOutl.alpha = 0.5
             clickedBtn1 = true
         }
         else if sender.tag == 1 && clickedBtn1 == true{
-            businessOutl.backgroundColor = myCustomColor
+            businessOutl.alpha = 1
             clickedBtn1 = false
         }
         
         if sender.tag == 2 && clickedBtn2 == false{
-            beachOutl.backgroundColor = UIColor.darkGray
+            beachOutl.alpha = 0.5
             clickedBtn2 = true
         }
         else if sender.tag == 2 && clickedBtn2 == true{
-            beachOutl.backgroundColor = myCustomColor
+            beachOutl.alpha = 1
             clickedBtn2 = false
         }
         
         if sender.tag == 3 && clickedBtn3 == false{
-            cityOutl.backgroundColor = UIColor.darkGray
+            cityOutl.alpha = 0.5
             clickedBtn3 = true
         }
         else if sender.tag == 3 && clickedBtn3 == true{
-            cityOutl.backgroundColor = myCustomColor
+            cityOutl.alpha = 1
             clickedBtn3 = false
         }
         
         if sender.tag == 4 && clickedBtn4 == false{
-            skiingOutl.backgroundColor = UIColor.darkGray
+            skiingOutl.alpha = 0.5
             clickedBtn4 = true
         }
         else if sender.tag == 4 && clickedBtn4 == true{
-            skiingOutl.backgroundColor = myCustomColor
+            skiingOutl.alpha = 1
             clickedBtn4 = false
         }
         
         if sender.tag == 5 && clickedBtn5 == false{
-            trainingOutl.backgroundColor = UIColor.darkGray
+            trainingOutl.alpha = 0.5
             clickedBtn5 = true
         }
         else if sender.tag == 5 && clickedBtn5 == true{
-            trainingOutl.backgroundColor = myCustomColor
+            trainingOutl.alpha = 1
             clickedBtn5 = false
         }
         
         if sender.tag == 6 && clickedBtn6 == false{
-            partyOutl.backgroundColor = UIColor.darkGray
+            partyOutl.alpha = 0.5
             clickedBtn6 = true
         }
         else if sender.tag == 6 && clickedBtn6 == true{
-            partyOutl.backgroundColor = myCustomColor
+            partyOutl.alpha = 1
             clickedBtn6 = false
         }
     

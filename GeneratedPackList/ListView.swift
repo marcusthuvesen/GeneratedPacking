@@ -33,18 +33,11 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var trainingObjectsMan = ["TRAINING", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
     var trainingObjectsWoman = ["TRAINING","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
-    
-    /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
-     var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
+   
     
     var partyObjectsMan = ["PARTY", "--FOOTWEAR/CLOTHING--", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--ACCESSORIES--", "Hairdryer", "Speakers", "Playing Cards"  ]
     var partyObjectsWoman = ["PARTY", "--FOOTWEAR/CLOTHING--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--ACCESSORIES--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
-    
-    /*var campingObjectsMan = ["CAMPINGSTUFF", ""]
-     var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
-    //WEATHER-LISTOR
-    
-    
+
     var generatedObjects = [String]()
     
     var weatherHot = false
@@ -65,7 +58,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var currentListKey : String?
     var keyArray = [String]()
     let uid = Auth.auth().currentUser?.uid
-    
+    let myOrangeColor = UIColor(red: 255/255.0, green: 161/255.0, blue: 63/255.0, alpha: 1.0)
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var listNameText: UITextField!
@@ -232,30 +225,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             generatedObjects += partyObjectsWoman
             print("party print WOMAN")
         }
-        /* //HIKING
-         if chosen6 == true && gender == true {
-         generatedObjects += hikingObjectsMan
-         print("hiking print MAN")
-         
-         }
-         else if chosen6 == true && gender == false {
-         generatedObjects += hikingObjectsWoman
-         print("hiking print WOMAN")
-         }*/
-        
-        //PARTY
-        
-        /*//CAMPING
-         
-         if chosen8 == true && gender == true {
-         generatedObjects += campingObjectsMan
-         print("camping print MAN")
-         
-         }
-         else if chosen8 == true && gender == false {
-         generatedObjects += campingObjectsWoman
-         print("camping print WOMAN")
-         }*/
         
         //Baselist
         if(gender == 1){
@@ -439,8 +408,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         if String(generatedObjects[indexPath.row]) == "TOILETRIES" {
             cell.textLabel?.textAlignment = .center
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 27.0)
             cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
-            cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 27.0)
+            
         }
         if String(generatedObjects[indexPath.row]) == "BUSINESS" {
             cell.textLabel?.textAlignment = .center

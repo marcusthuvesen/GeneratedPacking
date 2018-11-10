@@ -54,21 +54,25 @@ class TravelLength: UIViewController {
         if wasClicked == false{
             laundryOutl.alpha = 0.5
             wasClicked = true
+            print(sliderValue)
         }
         else if wasClicked == true{
             laundryOutl.alpha = 1
             wasClicked = false
             sliderValue = valueSave
+            print(sliderValue)
         }
  
-        if sliderValue > 6 && wasClicked == false{
+        if sliderValue >= 14 && wasClicked == true{
             sliderValue = 7
             print("landry ändrad till " + String(sliderValue))
            
         }
-
+        else if sliderValue > 2 && sliderValue <= 13 && wasClicked == true{
+            sliderValue = Int(sliderValue/2)
+            print(sliderValue)
+        }
     }
-    
     @IBAction func abroadBtn(_ sender: UIButton) {
         if travelWasClicked == false{
             abroadOutl.alpha = 0.5
