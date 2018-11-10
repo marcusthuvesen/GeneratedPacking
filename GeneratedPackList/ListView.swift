@@ -140,12 +140,12 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             var shirtValue = "Shirt x \(sliderString)"
             var costumeSocks = "Costume Socks x \(sliderString)"
             if gender == 1{
-                baseListMan.insert(underWearValue, at: 19)
-                baseListMan.remove(at: 20)
-                baseListMan.insert(socksValue, at: 20)
+                baseListMan.insert(underWearValue, at: 20)
                 baseListMan.remove(at: 21)
-                baseListMan.insert(TshirtValue, at: 22)
-                baseListMan.remove(at: 23)
+                baseListMan.insert(socksValue, at: 21)
+                baseListMan.remove(at: 22)
+                baseListMan.insert(TshirtValue, at: 23)
+                baseListMan.remove(at: 24)
                 businessObjectsMan.insert(shirtValue, at: 5)
                 businessObjectsMan.remove(at: 6)
                 businessObjectsMan.insert(costumeSocks, at: 7)
