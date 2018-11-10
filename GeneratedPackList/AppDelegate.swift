@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "ListView")
                 UserDefaults.standard.setValue(0, forKey: "genderSelected")
+                UserDefaults.standard.setValue(false, forKey: "travelValue")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }
