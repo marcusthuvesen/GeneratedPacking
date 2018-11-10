@@ -13,20 +13,23 @@ import SVProgressHUD
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     //REASONS-LISTOR
     
-    var travelAbroad = ["GOING ABROAD", "Passport", "Visa Document", "Insurance documents", "Transportation Tickets", "Cash", "Travel Adapter", ""]
+    var travelAbroad = ["GOING ABROAD", "Passport", "Visa Documents", "Insurance Documents", "Transportation Tickets", "Cash", "Travel Adapter", ""]
     
     var baseListMan = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Shaving Gel", "Razor", "Cotton Swabs", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
-    var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
-    var businessObjectsMan = ["BUSINESS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var businessObjectsWoman = ["BUSINESS", "--Footwear/Clothing--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--Business Accessories--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
-    var sunBeachObjectsMan = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
-    var sunBeachObjectsWoman = ["BEACH/SWIM","--Beach Clothing--", "Cover up Clothing", "Swimwear", "Shorts", "Sun Hat", "--Beach shoes--", "Flip Flops/Sandals", "Water Shoes", "--Beach Accessories--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
+    
+    var baseListWoman = ["TOILETRIES", "Toiletry Bag", "Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Shaving Gel", "Razor", "Cotton Swabs", "Make-up", "Make-up Remover", "Nail Clippers", "Dental Floss", "Perfume", "Medication", "Glasses", "Contacts", "Contact Fluid", "Ear Plugs", "Plasters", "Sanitary Products", "--BASIC CLOTHES--", "Underwear", "Socks", "Pajamas/Sleepwear", "T-shirt/Shirt", "Bra/Sports Bra", "Jacket", "", "--ACCESSORIES--", "Belt", "Watch", "Pen", "Book/E-book", "Phone", "Phone Charger", "Headphones", "Wallet", ""]
+    
+    var businessObjectsMan = ["BUSINESS", "--FOOTWEAR/CLOTHING--", "Walking Shoes/Sneakers", "Dress Shoes", "Suit", "Shirt", "Tie", "Costume Socks", "--ACCESSORIES--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var businessObjectsWoman = ["BUSINESS", "--FOOTWEAR/CLOTHING--", "Walking Shoes/Sneakers", "Dress Shoes/High Heels", "Business Attire", "--ACCESSORIES--", "Briefcase", "Laptop", "Laptop Charger", "Work Cell Phone", "Work Cell Phone Charger", "Business Cards", ""]
+    var sunBeachObjectsMan = ["BEACH/SWIM","--FOOTWEAR/CLOTHING--", "Flip Flops/Sandals", "Water Shoes", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--ACCESSORIES--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
+    
+    var sunBeachObjectsWoman = ["BEACH/SWIM","--FOOTWEAR/CLOTHING--", "Flip Flops/Sandals", "Water Shoes", "Cover up Clothing", "Swimwear", "Shorts/Beachwear", "Sun Hat", "--ACCESSORIES--", "Beach Bag", "Beach Towel", "Sunscreen", "Aftersun", "Floatie", "Sunhat", "SunGlasses", "Portable Speaker", "Fins & Snorkel Gear", "Frisbee or Beach Games", ""]
     
     var cityObjectsMan = ["CITY", "City Map", "Walking Shoes", "Day Backpack", ""]
     var cityObjectsWoman = ["CITY", "City Map", "Walking Shoes", "Day Backpack/Purse", "" ]
     
-    var skiingObjectsMan = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
-    var skiingObjectsWoman = ["SKIING","--Footwear/Clothing--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--Accesories--", "Ski Goggles", "Sunscreen", ""]
+    var skiingObjectsMan = ["SKIING","--FOOTWEAR/CLOTHING--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--ACCESSORIES-", "Ski Goggles", "Sunscreen", ""]
+    var skiingObjectsWoman = ["SKIING","--FOOTWEAR/CLOTHING--", "Winter Boots", "Ski/Snowboard Boots", "Warm Hat/Beanie", "Thermal Top", "Thermal Bottoms", "Fleece", "Ski/Snowboard Jacket", "Ski/Snowboard Trousers", "Gloves", "Comfy Trousers", "Scarf", "--ACCESSORIES--", "Ski Goggles", "Sunscreen", ""]
     
     var trainingObjectsMan = ["TRAINING", "Training Shoes", "Joggers/Shorts", "Training Socks", "Water Bottle" ]
     var trainingObjectsWoman = ["TRAINING","Training Shoes", "Joggers/Shorts/Tights", "Training Socks", "Water Bottle"]
@@ -34,8 +37,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     /* var hikingObjectsMan = ["--HIKINGSTUFF--", "--Gear--", "Backpack", "Sleepingbag", "Sleeping Mat", "Walking Sticks", "Map", "Compass", "First Aid", "Lighter/Matches", "Hand Sanitizer", "Insect Repellent", "Toilet Paper", "Knife/Multi-tool", "Headlamp/Flashlight + Batteries", "Water Bottle", "Water Purifier", "--Clothing/Footwear--","Hiking Shoes", "Comfy Shoes", "Moisture-wicking underwear",  "Socks", "Moisture-wicking T-shirt", "Long-sleeve shirt", ""]
      var hikingObjectsWoman = ["--HIKINGSTUFF--", "Walking Stick", ""]*/
     
-    var partyObjectsMan = ["PARTY", "Footwear/Clothes", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--Accessories--", "Hairdryer", "Speakers", "Playing Cards"  ]
-    var partyObjectsWoman = ["PARTY", "--Footwear/Clothes--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--Accesssories--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
+    var partyObjectsMan = ["PARTY", "--FOOTWEAR/CLOTHING--", "Flat Shoes", "Walking Shoes", "Outfit For going out", "Comfy Outfit", "--ACCESSORIES--", "Hairdryer", "Speakers", "Playing Cards"  ]
+    var partyObjectsWoman = ["PARTY", "--FOOTWEAR/CLOTHING--", "Dressy Flats", "Walking shoes", "Party Outfit", "Comfy Outfit", "--ACCESSORIES--", "Hairdryer", "Hair straighteners/curlers", "Jewellery", "Speakers", "Playing Cards"]
     
     /*var campingObjectsMan = ["CAMPINGSTUFF", ""]
      var campingObjectsWoman = ["CAMPINGSTUFF", ""]*/
@@ -127,7 +130,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let sliderValue = UserDefaults.standard.integer(forKey: "sliderValue")
         print(sliderValue)
         
-        //let travelValue = UserDefaults.standard.bool(forKey: "travelValue")
+        let travelValue = UserDefaults.standard.bool(forKey: "travelValue")
         
         sliderString = String(sliderValue)
         if sliderValue > 1{
@@ -143,10 +146,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 baseListMan.remove(at: 21)
                 baseListMan.insert(TshirtValue, at: 22)
                 baseListMan.remove(at: 23)
-                businessObjectsMan.insert(shirtValue, at: 6)
-                businessObjectsMan.remove(at: 7)
-                businessObjectsMan.insert(costumeSocks, at: 6)
-                businessObjectsMan.remove(at: 9)
+                businessObjectsMan.insert(shirtValue, at: 5)
+                businessObjectsMan.remove(at: 6)
+                businessObjectsMan.insert(costumeSocks, at: 7)
+                businessObjectsMan.remove(at: 8)
             }else if gender == 2{
                 baseListWoman.insert(underWearValue, at: 19)
                 baseListWoman.remove(at: 20)
@@ -156,10 +159,10 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 baseListWoman.remove(at: 23)
             }
         }
-      /*  //TRAVEL ABROAD
+        //TRAVEL ABROAD
         if travelValue == true{
             generatedObjects += travelAbroad
-        }*/
+        }
         
         
         //BUSINESS

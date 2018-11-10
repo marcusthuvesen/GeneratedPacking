@@ -82,7 +82,7 @@ class TravelLength: UIViewController {
     
     @IBAction func nextViewBtn(_ sender: UIButton) {
         
-     //   UserDefaults.standard.set(travelWasClicked, forKey: "travelValue")
+        UserDefaults.standard.set(travelWasClicked, forKey: "travelValue")
         
         UserDefaults.standard.set(sliderValue, forKey: "sliderValue")
         print(sliderValue)
