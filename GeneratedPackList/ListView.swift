@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-import ChameleonFramework
 import SVProgressHUD
+import ChameleonFramework
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     //REASONS-LISTOR
     
@@ -40,10 +40,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     var generatedObjects = [String]()
     
-    var weatherHot = false
-    var weatherMild = false
-    var weatherCold = false
-    var weatherRainy = false
     var chosen1 = false
     var chosen2 = false
     var chosen3 = false

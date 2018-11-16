@@ -153,7 +153,7 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 destination.whatList = savedListNameArray[indexPath.row]
             }
         }
-        if segue.identifier == "NewListSegue" {
+       else if segue.identifier == "NewListSegue" {
             print("här")
             let destination = segue.destination as! ListView
             destination.emptylist = true

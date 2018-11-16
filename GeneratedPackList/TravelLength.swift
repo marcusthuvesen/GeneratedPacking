@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 class TravelLength: UIViewController {
 
-    
     var sliderValue = 1
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var laundryOutl: UIButton!
@@ -23,8 +22,6 @@ class TravelLength: UIViewController {
     var travelWasClicked = false
     var ref: DatabaseReference!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         laundryOutl.layer.cornerRadius = 10
@@ -32,16 +29,9 @@ class TravelLength: UIViewController {
         abroadOutl.layer.cornerRadius = 10
         abroadOutl.clipsToBounds = true
         progressBar.frame.size.width = ((view.frame.size.width)/4 - 16)
-        
         ref = Database.database().reference()
     }
  
-    override func viewDidAppear(_ animated: Bool) {
-       
-    }
-   
-   
-    
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderValue = Int(sender.value)
         print(sliderValue)
