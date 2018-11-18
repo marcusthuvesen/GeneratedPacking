@@ -63,7 +63,10 @@ class SignUpViewController: UIViewController {
         }
     }
     
-
+    @IBAction func backBtn(_ sender: Any) {
+        performSegue(withIdentifier: "SignIn", sender: self)
+    }
+    
    
 
 }

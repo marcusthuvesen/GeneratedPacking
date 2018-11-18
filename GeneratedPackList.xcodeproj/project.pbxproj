@@ -85,8 +85,8 @@
 		2505B8A921459DFF0030BC8B /* GeneratedPackList */ = {
 			isa = PBXGroup;
 			children = (
-				2561E2C6214A686D0019223E /* TravelLength.swift */,
 				2505B8AA21459DFF0030BC8B /* AppDelegate.swift */,
+				2561E2C6214A686D0019223E /* TravelLength.swift */,
 				2505B8AC21459DFF0030BC8B /* ViewController.swift */,
 				2561E2C221497DDA0019223E /* ReasonUI.swift */,
 				255794F1214AF79A005CF14D /* ListView.swift */,
@@ -423,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = se.marcusthuvesen.PacklistGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -443,7 +443,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = se.marcusthuvesen.PacklistGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

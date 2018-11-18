@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
                     // Användaren lyckades logga in
                     print("SUCCESS")
                     self.saveLoggedState()
-                    self.performSegue(withIdentifier: "segue", sender: self)
+                    self.performSegue(withIdentifier: "segueToStart", sender: self)
                 }
                 else // ERROR
                 {
@@ -88,6 +88,9 @@ class LoginViewController: UIViewController {
       
     }
   
+    @IBAction func signUpBtn(_ sender: Any) {
+        performSegue(withIdentifier: "SignUp", sender: self)
+    }
     
     
     
