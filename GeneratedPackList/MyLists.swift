@@ -128,6 +128,9 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
             
         })
     }
+    @IBAction func generatedBtn2(_ sender: Any) {
+        performSegue(withIdentifier: "generateNew2", sender: self)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 75.0;//Choose your custom row height

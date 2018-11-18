@@ -109,7 +109,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         popupView.layer.cornerRadius = 10
         newListOutl.layer.cornerRadius = 30
         newListOutl.layer.maskedCorners = [.layerMinXMinYCorner]
-       
+       // isUserLoggedIn()
        
         
         
@@ -236,6 +236,14 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         
     }
+    @IBAction func myListsBtn(_ sender: Any) {
+        performSegue(withIdentifier: "MyLists", sender: self)
+    }
+    
+    @IBAction func generateBtn(_ sender: Any) {
+        performSegue(withIdentifier: "generateNew1", sender: self)
+    }
+    
     
     @IBAction func saveBtn(_ sender: UIButton) {
         
@@ -306,9 +314,9 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
                 table.reloadData()
             }
             
-            
+            self.table.scrollToRow(at: IndexPath(row: self.generatedObjects.count-1, section: 0), at: .bottom, animated: true)
         }
-        self.table.scrollToRow(at: IndexPath(row: self.generatedObjects.count-1, section: 0), at: .bottom, animated: true)
+        
     }
     
     
@@ -448,6 +456,8 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         return cell
         
     }
+    
+    // Kolla om användaren är inloggad
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {

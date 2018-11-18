@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func addUserListener() {
-        let listenHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
+        Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil {
                 // We are Logged Out of Firebase.
                 // Move to Login Screen
