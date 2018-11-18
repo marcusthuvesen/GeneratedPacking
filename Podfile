@@ -14,14 +14,4 @@ pod 'Firebase/Core'
   pod 'ChameleonFramework/Swift'
   pod 'SVProgressHUD'
 
-  target 'GeneratedPackListTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'GeneratedPackListUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

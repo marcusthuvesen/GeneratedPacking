@@ -1,6 +1,0 @@
-framework module Pods_GeneratedPackListTests {
-  umbrella header "Pods-GeneratedPackListTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
