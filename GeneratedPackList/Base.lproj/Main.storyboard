@@ -1079,7 +1079,6 @@
                         <outlet property="popupView" destination="isv-88-R8e" id="hpk-Xo-PPm"/>
                         <outlet property="popupViewOutl" destination="h0d-s9-Ku4" id="f6s-vb-qTP"/>
                         <outlet property="table" destination="3u9-Ci-DvM" id="Av2-3N-u4v"/>
-                        <outlet property="view" destination="3u9-Ci-DvM" id="jhW-La-ZKO"/>
                         <segue destination="qCI-n7-eyh" kind="presentation" identifier="LogOut" id="GmS-mt-rPn"/>
                     </connections>
                 </viewController>
@@ -1279,7 +1278,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4DC-Ur-Bck"/>
-        <segue reference="EXs-43-q9E"/>
-        <segue reference="uVy-7c-Yh6"/>
+        <segue reference="SAh-rb-evw"/>
+        <segue reference="GmS-mt-rPn"/>
     </inferredMetricsTieBreakers>
 </document>
