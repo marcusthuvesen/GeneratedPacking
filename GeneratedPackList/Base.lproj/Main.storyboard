@@ -523,7 +523,7 @@
                         <outlet property="loginBtn" destination="c98-GZ-bBr" id="cTU-Nx-m4m"/>
                         <outlet property="passwordLabel" destination="bvk-PJ-LFX" id="q1s-gt-62I"/>
                         <outlet property="passwordTextfield" destination="6oU-EP-I3T" id="vzC-Aw-Xae"/>
-                        <segue destination="2JW-vu-wjZ" kind="presentation" identifier="segueToStart" id="Cru-df-AtB"/>
+                        <segue destination="2JW-vu-wjZ" kind="presentation" identifier="segueToStart" id="4DC-Ur-Bck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfI-Tv-H3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1278,8 +1278,8 @@
         <image name="women-toilet" width="272" height="511"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cru-df-AtB"/>
-        <segue reference="SAh-rb-evw"/>
-        <segue reference="GmS-mt-rPn"/>
+        <segue reference="4DC-Ur-Bck"/>
+        <segue reference="EXs-43-q9E"/>
+        <segue reference="uVy-7c-Yh6"/>
     </inferredMetricsTieBreakers>
 </document>

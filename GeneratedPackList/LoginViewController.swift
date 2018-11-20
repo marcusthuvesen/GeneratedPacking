@@ -38,10 +38,7 @@ class LoginViewController: UIViewController {
     var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loggedIn = UserDefaults.standard.bool(forKey: "is_authenticated")
-        if loggedIn == true {
-            performSegue(withIdentifier: "segueToStart", sender: self)
-        }
+        
         failedMessage.alpha = 0
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
@@ -51,12 +48,18 @@ class LoginViewController: UIViewController {
         
     }
   
+    override func viewDidAppear(_ animated: Bool) {
+        let loggedIn = UserDefaults.standard.bool(forKey: "is_authenticated")
+        print(loggedIn)
+        if loggedIn == true {
+            UserDefaults.standard.setValue(0, forKey: "genderSelected")
+            UserDefaults.standard.setValue(false, forKey: "travelValue")
+            performSegue(withIdentifier: "segueToStart", sender: self)
+        }
+    }
+    
     func saveLoggedState() {
-        
-        let def = UserDefaults.standard
-        def.set(true, forKey: "is_authenticated") // save true flag to UserDefaults
-        def.synchronize()
-        
+        UserDefaults.standard.set(true, forKey: "is_authenticated") // save true flag to UserDefaults
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {

@@ -46,6 +46,8 @@ class MyLists: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func logOut(_ sender: UIButton) {
+        
+        UserDefaults.standard.set(false, forKey: "is_authenticated")
         try! Auth.auth().signOut()
         performSegue(withIdentifier: "segueLogOut", sender: self)
     }
