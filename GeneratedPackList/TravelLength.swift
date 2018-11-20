@@ -30,6 +30,9 @@ class TravelLength: UIViewController {
         abroadOutl.clipsToBounds = true
         progressBar.frame.size.width = ((view.frame.size.width)/4 - 16)
         ref = Database.database().reference()
+        
+        UserDefaults.standard.setValue(0, forKey: "genderSelected")
+        UserDefaults.standard.setValue(false, forKey: "travelValue")
     }
  
     @IBAction func sliderChanged(_ sender: UISlider) {

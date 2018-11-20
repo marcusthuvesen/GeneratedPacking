@@ -38,6 +38,10 @@ class LoginViewController: UIViewController {
     var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loggedIn = UserDefaults.standard.bool(forKey: "is_authenticated")
+        if loggedIn == true {
+            performSegue(withIdentifier: "segueToStart", sender: self)
+        }
         failedMessage.alpha = 0
         ref = Database.database().reference()
         self.hideKeyboardWhenTappedAround()
